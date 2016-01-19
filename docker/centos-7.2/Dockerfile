@@ -13,6 +13,11 @@ RUN systemctl enable sshd.service
 
 RUN wget -O /etc/yum.repos.d/mongodb-org.repo https://repo.mongodb.org/yum/redhat/mongodb-org.repo
 RUN yum install -y mongodb-org
+RUN systemctl enable mongod
+
+RUN rpm -Uvh https://download.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
+RUN yum install -y redis
+RUN systemctl enable redis.service
 
 RUN wget -O- https://raw.githubusercontent.com/creationix/nvm/v0.30.1/install.sh | bash
 RUN nvm install v4.2.4
