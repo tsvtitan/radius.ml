@@ -24,10 +24,11 @@ RUN wget -O- https://raw.githubusercontent.com/creationix/nvm/v0.30.1/install.sh
 RUN . ~/.nvm/nvm.sh &&\
     nvm install $NODE_VERSION &&\
     npm install pm2 -g &&\
+	  npm install sails -g &&\
     echo "nvm use $NODE_VERSION" >> ~/.bashrc
 
 RUN echo "export TERM=xterm" >> ~/.bashrc
 
-EXPOSE 22 6379 27017
+EXPOSE 22 1337 6379 9292 27017
 
 CMD ["/sbin/init", "3"]
