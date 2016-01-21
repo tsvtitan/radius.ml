@@ -5,7 +5,7 @@
   "description": "Radius Admin",
   "keywords": [],
   "dependencies": {
-    "agenda": "~0.6.28",
+    "agenda": "~0.7.6",
     "bcrypt": "~0.8.5",
     "canvas-captcha": "~2.0.0",
     "connect-redis": "~1.4.5",
