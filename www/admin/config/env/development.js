@@ -25,7 +25,7 @@ module.exports = {
       adapter: 'sails-mongo',
       host: 'localhost',
       port: 27017,
-      database: 'admin'
+      database: 'work'
     }
   },
   
@@ -54,7 +54,7 @@ module.exports = {
     disabled: false,
     
     db: {
-      address: 'localhost:27017/admin',
+      address: 'localhost:27017/work',
       collection: 'jobs'
     },
     
