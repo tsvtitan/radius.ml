@@ -7,7 +7,7 @@ ENV NODE_VERSION v4.2.4
 RUN yum swap -y fakesystemd systemd
 RUN yum -y update; yum clean all
 RUN yum install -y initscripts
-RUN yum install -y mc net-tools wget git
+RUN yum install -y mc net-tools wget git which
 
 RUN yum install -y openssh-server openssh-clients
 RUN systemctl enable sshd.service
