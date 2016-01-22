@@ -28,7 +28,7 @@ trap tearDown 0 1 2 3 6 9 15
 
 #echo ${#DIR}
 echo $SCRIPT
-#echo $DEBUG
+echo "Debugging: $DEBUG"
 
 #/usr/local/bin/sshpass -p 'root' ssh root@radius.ml -p 50022 /www/start.sh $SCRIPT $DEBUG
 $(which sshpass) -p 'root' ssh root@radius.ml -p 50022 /www/start.sh $SCRIPT $DEBUG
