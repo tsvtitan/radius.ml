@@ -22,8 +22,8 @@ echo "Starting..."
             
 #echo $1
             
-#pwd/stop.sh $1 $DEBUG
-pwd/stop.sh all
+#/www/stop.sh $1 $DEBUG
+/www/stop.sh all
 
 sleep 1
 
