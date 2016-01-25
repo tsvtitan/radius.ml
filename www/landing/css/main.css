@@ -80,7 +80,7 @@ textarea {
 /* line 24, ../sass/_type.sass */
 p {
   margin-bottom: 30px;
-  font-family: "Comfortaa", cursive;
+  font-family: "Open Sans", Arial, sans-serif;
   font-weight: 300;
   font-size: 18px;
   font-size: 1.8rem;
@@ -125,8 +125,8 @@ a:hover {
 /* line 48, ../sass/_type.sass */
 h1,
 h2 {
-  font-size: 32px;
-  font-size: 3.2rem;
+  font-size: 28px;
+  font-size: 2.8rem;
   font-family: "Comfortaa", cursive;
   font-weight: 700;
 }
@@ -141,7 +141,7 @@ h3 {
 /* line 58, ../sass/_type.sass */
 .slide-titles {
   font-family: "Comfortaa", cursive;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 /* line 62, ../sass/_type.sass */
@@ -902,8 +902,8 @@ h1 {
 @media (min-width: 992px) {
   /* line 1, ../sass/partials/_home.sass */
   h1 {
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 60px;
+    margin-bottom: 60px;
     font-size: 72px;
     font-size: 7.2rem;
   }
@@ -927,7 +927,7 @@ p {
   /* line 22, ../sass/partials/_home.sass */
   p {
     padding: 0;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     font-size: 17px;
     font-size: 1.7rem;
     line-height: 24px;
@@ -937,7 +937,7 @@ p {
 @media (min-width: 1200px) {
   /* line 22, ../sass/partials/_home.sass */
   p {
-    margin-bottom: 25px;
+    margin-bottom: 60px;
   }
 }
 
@@ -952,7 +952,7 @@ p span {
   display: block;
   width: 170px;
   margin: 0 auto;
-  padding: 5px 10px;
+  padding: 8px 16px;
   border: solid 2px #fff;
   text-align: center;
   color: #fff;
@@ -1012,17 +1012,34 @@ p span {
 .home {
   -webkit-backface-visibility: hidden;
   -webkit-transform: translateZ(0);
-  background-color: #ff9966;
+  background-color: #e67e22;
   background-color: rgba(230, 126, 34, 0.9);
 }
 /* line 8, ../sass/partials/_slides.sass */
 .home.full-color {
-  background-color: #ff9966;
+  background-color: #e67e22;
+}
+
+/* line 11, ../sass/partials/_slides.sass */
+.slide-1 {
+  background-color: rgba(26, 188, 156, 0.9);
+  -moz-transition: all, 400ms;
+  -o-transition: all, 400ms;
+  -webkit-transition: all, 400ms;
+  transition: all, 400ms;
+}
+/* line 15, ../sass/partials/_slides.sass */
+.slide-1.fade-background {
+  background-color: #3498db;
+}
+/* line 18, ../sass/partials/_slides.sass */
+.slide-1.full-color {
+  background-color: #1ABC9C;
 }
 
 /* line 21, ../sass/partials/_slides.sass */
 .slide-2 {
-  background-color: rgba(26, 188, 156, 0.9);
+  background-color: rgba(52, 73, 94, 0.9);
   -moz-transition: all, 400ms;
   -o-transition: all, 400ms;
   -webkit-transition: all, 400ms;
@@ -1030,17 +1047,17 @@ p span {
 }
 /* line 25, ../sass/partials/_slides.sass */
 .slide-2.fade-background {
-  background-color: #3498db;
+  background-color: #1ABC9C;
 }
 @media (min-width: 768px) {
   /* line 28, ../sass/partials/_slides.sass */
-  .slide-2 .iphone-1 {
+  .slide-2 .iphone-2 {
     margin-top: 150px;
   }
 }
 @media (min-width: 992px) {
   /* line 28, ../sass/partials/_slides.sass */
-  .slide-2 .iphone-1 {
+  .slide-2 .iphone-2 {
     margin-top: 60px;
   }
 }
@@ -1052,7 +1069,7 @@ p span {
 }
 /* line 40, ../sass/partials/_slides.sass */
 .slide-2.full-color {
-  background-color: #1ABC9C;
+  background-color: #34495e;
 }
 
 /* line 43, ../sass/partials/_slides.sass */
@@ -1069,10 +1086,9 @@ p span {
 }
 @media (min-width: 768px) {
   /* line 51, ../sass/partials/_slides.sass */
-  .slide-3 .iphone-2 {
-    margin-top: 150px;
+  .slide-3 .iphone-3 {
+    margin-top: 80px;
   }
-
 }
 @media (min-width: 992px) {
   /* line 56, ../sass/partials/_slides.sass */
@@ -1089,7 +1105,7 @@ p span {
 .contact {
   -webkit-backface-visibility: hidden;
   -webkit-transform: translateZ(0);
-  background-color: rgba(230, 126, 34, 0.9);
+  background-color: rgba(230, 126, 34, 0.7);
   -moz-transition: all, 400ms;
   -o-transition: all, 400ms;
   -webkit-transition: all, 400ms;
@@ -1142,13 +1158,13 @@ p span {
 @media (min-width: 768px) {
   /* line 93, ../sass/partials/_slides.sass */
   .slide .copy p {
-    margin: 15px 0;
+    margin: 5px 0;
   }
 }
 @media (min-width: 1200px) {
   /* line 93, ../sass/partials/_slides.sass */
   .slide .copy p {
-    margin: 40px 0;
+    margin: 5px 0;
   }
 }
 
@@ -1167,8 +1183,8 @@ p span {
 .slide-2-title,
 .slide-3-title {
   margin-top: 50px;
-  font-size: 36px;
-  font-size: 3.6rem;
+  font-size: 22px;
+  font-size: 2.2rem;
 }
 @media (min-width: 768px) {
   /* line 110, ../sass/partials/_slides.sass */
@@ -1195,7 +1211,8 @@ p span {
 
 /* line 127, ../sass/partials/_slides.sass */
 .iphone-1,
-.iphone-2 {
+.iphone-2,
+.iphone-3 {
   max-width: 100%;
 }
 
@@ -1216,7 +1233,7 @@ p span {
 /* line 145, ../sass/partials/_slides.sass */
 .slide-2 .iphone-container,
 .slide-3 .iphone-container {
-  max-height: 50%%;
+  max-height: 50%;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1283,7 +1300,7 @@ p span {
 @media (min-width: 1200px) {
   /* line 24, ../sass/partials/_contact.sass */
   .contact .newsletter {
-    margin-top: 100px;
+    margin-top: 60px;
   }
 }
 /* line 36, ../sass/partials/_contact.sass */
@@ -1370,7 +1387,7 @@ p span {
   font-size: 1.8rem;
 }
 /* line 90, ../sass/partials/_contact.sass */
-.contact .fa-paper-plane {
+.contact .fa-envelope-o {
   font-size: 18px;
   font-size: 1.8rem;
   line-height: 32px;
@@ -1378,7 +1395,7 @@ p span {
 }
 @media (min-width: 768px) {
   /* line 90, ../sass/partials/_contact.sass */
-  .contact .fa-paper-plane {
+  .contact .fa-envelope-o {
     font-size: 30px;
     font-size: 3rem;
     line-height: 52px;
@@ -1400,14 +1417,14 @@ p span {
 @media (min-width: 1200px) {
   /* line 98, ../sass/partials/_contact.sass */
   .contact .social {
-    margin-top: 100px;
+    margin-top: 60px;
   }
 }
 /* line 109, ../sass/partials/_contact.sass */
-.contact .social .vkontakte,
 .contact .social .facebook,
+.contact .social .odnoklassniki,
 .contact .social .mailru,
-.contact .social .odnoklassniki {
+.contact .social .vkontakte {
   border: solid 0px transparent;
   text-align: center;
   display: block;
@@ -1426,9 +1443,9 @@ p span {
   cursor: pointer;
 }
 /* line 123, ../sass/partials/_contact.sass */
-.contact .social .vkontakte:hover,
 .contact .social .facebook:hover,
 .contact .social .mailru:hover,
+.contact .social .vkontakte:hover,
 .contact .social .odnoklassniki:hover {
   background-color: #2c3e50;
   color: #fff;
@@ -3688,7 +3705,7 @@ html {
 /* line 23, ../sass/main.sass */
 body {
   background: url(../img/background.png) #000 center fixed no-repeat;
-  background-size: 100%;
+  background-size: 150%;
   -moz-background-size: cover;
   -o-background-size: cover;
   -webkit-background-size: cover;

@@ -2,7 +2,7 @@ var s,
     app = {
 
     settings : {
-        textFadeSpeed: 2500 // How fast to rotate text on the homepage
+        textFadeSpeed: 2000 // How fast to rotate text on the homepage
     },
     init: function() {
         //Global settings
@@ -15,11 +15,6 @@ var s,
         this.editNavigation();
         this.mailChimpAjax();
         this.keepSettings();
-
-        //Settings -> can be removed in your production code and change any on click actions into the keep settings function
-        this.settingOptions();
-
-        $('#big-video-wrap').addClass('hide-video');
     },
 
     bindUiActions: function (){
@@ -69,8 +64,6 @@ var s,
             BV.show("img/background.png");
         }else{
             BV.show("img/background.png",{
-                ambient: true,
-                doLoop: true,
             });
         }
     },
@@ -107,29 +100,29 @@ var s,
 
         if ( this.isSlide(2) ) {
 
-            $('.slide-2-title').removeClass('hide').addClass('animated fadeInRight delay-1');
-            $('.slide-2-1').removeClass('hide').addClass('animated fadeInRight delay-3');
+            $('.slide-1-title').removeClass('hide').addClass('animated fadeInRight delay-1');
+            $('.slide-1-1').removeClass('hide').addClass('animated fadeInRight delay-3');
             $('.iphone-1').removeClass('hide').addClass('animated fadeInUp delay-3');
-            $('.slide-2-2').removeClass('hide').addClass('animated fadeInDown delay-6');
-            $('.slide-2-3').removeClass('hide').addClass('animated fadeInDown delay-9');
-            $('.slide-2-4').removeClass('hide').addClass('animated fadeInDown delay-12');
-            $('.slide-2-scroll').removeClass('hide').addClass('animated fadeInDown delay-15');
+            $('.slide-1-2').removeClass('hide').addClass('animated fadeInDown delay-5');
+            $('.slide-1-3').removeClass('hide').addClass('animated fadeInDown delay-7');
+            $('.slide-1-4').removeClass('hide').addClass('animated fadeInDown delay-9');
+            $('.slide-1-scroll').removeClass('hide').addClass('animated fadeInDown delay-12');
 
             $('.icon span').css("color", "#fff");
 
-        } else if ( this.isSlide(3)) {
+        } else if ( this.isSlide(3) ) {
 
-            $('.slide-3-title').removeClass('hide').addClass('animated fadeIn delay-1');
-            $('.slide-3-1').removeClass('hide').addClass('animated fadeIn delay-3');
-            $('.iphone-2').removeClass('hide').addClass('animated fadeInDown delay-3');
-            $('.slide-3-2').removeClass('hide').addClass('animated fadeInDown delay-6');
-            $('.slide-3-3').removeClass('hide').addClass('animated fadeInDown delay-9');
-            $('.slide-3-4').removeClass('hide').addClass('animated fadeInDown delay-12');
-            $('.slide-3-scroll').removeClass('hide').addClass('animated fadeInDown delay-15');
+            $('.slide-3-title').removeClass('hide').addClass('animated fadeInLeft delay-1');
+            $('.slide-3-1').removeClass('hide').addClass('animated fadeInLeft delay-3');
+            $('.iphone-3').removeClass('hide').addClass('animated fadeInUp delay-3');
+            $('.slide-3-2').removeClass('hide').addClass('animated fadeInDown delay-5');
+            $('.slide-3-3').removeClass('hide').addClass('animated fadeInDown delay-7');
+            $('.slide-3-4').removeClass('hide').addClass('animated fadeInDown delay-9');
+            $('.slide-3-scroll').removeClass('hide').addClass('animated fadeInDown delay-12');
 
-            $('.icon span').css("color", "#fff");
+            $('.icon span').css("color", "#333");
 
-        } else if ( this.isSlide(5) ) {
+        } else if ( this.isSlide(4) ) {
             $('.icon span').css("color", "#fff");
         }
     },
@@ -155,7 +148,7 @@ var s,
         });
 
         $('.toggle-opacity-all').on('click', function() {
-            $('.home, .slide-2, .slide-3, .contact').toggleClass('full-color');
+            $('.home, .slide-1, .slide-2, .slide-3, .contact').toggleClass('full-color');
 
         });
 
@@ -196,16 +189,16 @@ var s,
             contentType: "application/json; charset=utf-8",
             error       : function(err) {
                 console.log(" Could not connect to the registration server. Please try again later. ", err);
-                $message.text('Мы не смогли подписать ваш адрес, попробуйте позднее').removeClass('hidden').addClass(' error animated fadeInDown');
+                $message.text('There was an error submitting your email, please try again').removeClass('hidden').addClass(' error animated fadeInDown');
             },
             success     : function(data) {
                 console.log("success");
                 if (data.result != "success") {
 
-                    $message.text('Мы не смогли подписать ваш адрес, попробуйте еще раз').removeClass('hidden').addClass(' error animated fadeInDown');
+                    $message.text('There was an error submitting your email, please try again').removeClass('hidden').addClass(' error animated fadeInDown');
 
                 } else {
-                    $message.html('Спасибо. Ваш адрес успешно подписан!');
+                    $message.html('Thank you. Your email was successfully submitted');
                     $message.removeClass('hidden').addClass(' animated fadeInDown');
                 }
             }
