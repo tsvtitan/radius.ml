@@ -10,8 +10,8 @@ then
     DEBUG=true
 else
     SCRIPT=$1
-fi    
-    
+fi
+
 SCRIPT=${SCRIPT:DIR_LEN}
 
 export DIR
@@ -27,8 +27,17 @@ function tearDown {
 trap tearDown 0 1 2 3 6 9 15
 
 #echo ${#DIR}
-echo $SCRIPT
+#echo $SCRIPT
 echo "Debugging: $DEBUG"
+
+LANG="en_US.UTF-8"
+LC_COLLATE="en_US.UTF-8"
+LC_CTYPE="en_US.UTF-8"
+LC_MESSAGES="en_US.UTF-8"
+LC_MONETARY="en_US.UTF-8"
+LC_NUMERIC="en_US.UTF-8"
+LC_TIME="en_US.UTF-8"
+LC_ALL=
 
 #/usr/local/bin/sshpass -p 'root' ssh root@radius.ml -p 50022 /www/start.sh $SCRIPT $DEBUG
 $(which sshpass) -p 'root' ssh root@radius.ml -p 50022 /www/start.sh $SCRIPT $DEBUG
