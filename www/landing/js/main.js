@@ -189,16 +189,16 @@ var s,
             contentType: "application/json; charset=utf-8",
             error       : function(err) {
                 console.log(" Could not connect to the registration server. Please try again later. ", err);
-                $message.text('There was an error submitting your email, please try again').removeClass('hidden').addClass(' error animated fadeInDown');
+                $message.text('Попробуйте еще раз, какая-то ошибка...').removeClass('hidden').addClass(' error animated fadeInDown');
             },
             success     : function(data) {
                 console.log("success");
                 if (data.result != "success") {
 
-                    $message.text('There was an error submitting your email, please try again').removeClass('hidden').addClass(' error animated fadeInDown');
+                    $message.text('Произошла ошибка, попробуйте еще раз').removeClass('hidden').addClass(' error animated fadeInDown');
 
                 } else {
-                    $message.html('Thank you. Your email was successfully submitted');
+                    $message.html('Спасибо! Адрес успешно подписан!');
                     $message.removeClass('hidden').addClass(' animated fadeInDown');
                 }
             }
