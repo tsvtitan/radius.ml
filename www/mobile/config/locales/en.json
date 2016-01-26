@@ -1,0 +1,132 @@
+{
+  "Lang": "en-EN",
+  "Title": "Radius: Admin panel",
+  "Version": "0.0.1",
+  "Logo": "R",
+  "Copyright": "© 2016 Radius",
+  "UrlHomePage": "/admin",
+  
+  "back": {
+    
+    "404": {
+      "Страница не найдена": "Page is not found",
+      "Извините, но страница которую вы ищите не найдена.": "Sorry, but the page is not found.",
+      "Поиск страницы": "Find page",
+      "Найти": "Search"
+    },
+    
+    "403": {
+      "Доступ запрещен": "Forbidden",
+      "Извините, но доступ к странице ограничен": "Sorry, but the access is restricted",
+      "На главную": "Home page"
+    },
+    
+    "500": {
+      "Ошибка сервера": "Server Error",
+      "Сервер столкнулся с непредвиденной ошибкой": "The server encountered an unexpected error",
+      "На главную": "Home page"
+    },
+    
+    "captcha": {
+      "bgColor": "#f3f3f4",
+      "strokeStyle": "#1ab394"
+    },
+    
+    "page": {
+      "tableTemplate": "tables/default.html"
+      
+    }
+  },
+  
+  "front": {
+    
+    "Ошибка": "Error",
+    "Информация": "Information",
+    "Предупреждение": "Warning",
+    "Успех": "Success",
+    "OK": "OK",
+    "Отмена": "Cancel",
+    "Добавить": "Add",
+    "Изменить": "Change",
+    "Создать": "Create",
+  
+    "Проверьте поля": "Check fields",
+    "Соединение разорвано": "Connection failed",
+    
+    "header": {
+      "Выйти": "Log out",
+      "Поиск...": "Search..."
+    },
+    
+    "footer": {
+      
+    },
+    
+    "menu": {
+      "Главная": "Home",
+      "Импорт": "Import",
+      "Профиль": "Profile",
+      "Выйти": "Log out"
+    },
+    
+    "pageLogin": {
+      "Логин": "Login",
+      "Укажите логин": "Input login",
+      "Пароль": "Password",
+      "Код": "Code",
+      "Введите код": "Input code",
+      "Нажмите чтобы обновить": "Click to refresh",
+      "Укажите пароль": "Input password",
+      "Войти": "Login",
+      "Забыли пароль?": "Forgot password?"
+    },
+    
+    "pageHome": {
+      "Главная": "Home"
+    },
+    
+    "pageProfile": {
+      "Профиль": "Profile"
+    },
+    
+    "actionFile": {
+      "Импорт": "Import"
+    },
+    
+    "actionOptions": {
+      "Настройка": "Options",
+      "Предупреждение": "Warning2"
+    },
+    
+    "[LOADING...]": "Loading...",
+    
+    "table": {
+      "Зарплаты": "Salaries",
+      "columns": {
+        "Наименование": "Name",
+        "Коэффициент": "Ratio",
+        "Уровень": "Level",
+        "Грейд": "Grade",
+        "Код": "Code"
+      }
+    },
+    
+    "tableSectors": {
+      "Отрасли": "Sectors",
+      "columns": {
+        "Наименование": "Name2",
+        "Коэффициент": "Ratio2"
+      }
+    },
+    
+    "tableCorrections": {
+      "Коэффициенты специализаций": "Corrections"
+    },
+
+    "Check fields": "Проверьте поля",
+    "Connection failed": "Соединение разорвано",
+    "Could not subscribe on event": "Не могу подписаться на событие",
+    "Could not unsubscribe from event": "Не могу отписаться от события"
+    
+  }
+}
