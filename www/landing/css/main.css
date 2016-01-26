@@ -141,7 +141,7 @@ h3 {
 /* line 58, ../sass/_type.sass */
 .slide-titles {
   font-family: "Comfortaa", cursive;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 /* line 62, ../sass/_type.sass */
@@ -911,7 +911,7 @@ h1 {
 
 /* line 22, ../sass/partials/_home.sass */
 p {
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   padding: 0 15px;
   text-align: center;
   color: #fff;
@@ -1105,7 +1105,7 @@ p span {
 .contact {
   -webkit-backface-visibility: hidden;
   -webkit-transform: translateZ(0);
-  background-color: rgba(230, 126, 34, 0.7);
+  background-color: rgba(230, 126, 34, 0.9);
   -moz-transition: all, 400ms;
   -o-transition: all, 400ms;
   -webkit-transition: all, 400ms;
@@ -1125,8 +1125,8 @@ p span {
 .slide p {
   font-size: 16px;
   font-size: 1.6rem;
-  line-height: 18px;
-  line-height: 1.8rem;
+  line-height: 22px;
+  line-height: 2.2rem;
   text-transform: normal;
   text-align: left;
 }
@@ -1139,6 +1139,7 @@ p span {
     line-height: 2.2rem;
   }
 }
+
 /* line 87, ../sass/partials/_slides.sass */
 .slide .copy {
   margin-top: 15px;
@@ -1182,9 +1183,9 @@ p span {
 /* line 110, ../sass/partials/_slides.sass */
 .slide-2-title,
 .slide-3-title {
-  margin-top: 50px;
-  font-size: 22px;
-  font-size: 2.2rem;
+  margin-top: 20px;
+  font-size: 28px;
+  font-size: 2.8rem;
 }
 @media (min-width: 768px) {
   /* line 110, ../sass/partials/_slides.sass */
