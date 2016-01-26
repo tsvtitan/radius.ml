@@ -1,9 +1,9 @@
 {
   "Lang": "ru-RU",
-  "Title": "Зарплатная карта: Административная панель",
-  "Version": "0.0.3",
-  "Copyright": "© 2015 Salary Card",
-  "Logo": "SC",
+  "Title": "Radius: Административная панель",
+  "Version": "0.0.1",
+  "Copyright": "© 2016 Radius",
+  "Logo": "R",
   "UrlHomePage": "/admin",
 
   "back": {

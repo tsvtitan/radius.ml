@@ -1,9 +1,9 @@
 {
   "Lang": "en-EN",
-  "Title": "Salary Card: Admin panel",
-  "Version": "0.0.3",
-  "Logo": "SC",
-  "Copyright": "© 2015 Salary Card",
+  "Title": "Radius: Admin panel",
+  "Version": "0.0.1",
+  "Logo": "R",
+  "Copyright": "© 2016 Radius",
   "UrlHomePage": "/admin",
   
   "back": {
