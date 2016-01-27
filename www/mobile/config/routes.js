@@ -46,17 +46,15 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  'get /admin/cookie': 'CookieController.get', 
-  
-  'post /admin/api/init': 'InitController.get',
+  'post /mobile/api/init': 'InitController.get',
  
-  'post /admin/api/login': 'AuthController.login',
-  'post /admin/api/logout': {controller:'AuthController', action:'logout', policy:'sessionAuth'},
+  /*'post /mobile/api/login': 'AuthController.login',
+  'post /mobile/api/logout': {controller:'AuthController', action:'logout', policy:'sessionAuth'},*/
   
-  '/test': {view:'test',locals:{layout:'layouts/test'}},
-  '/test/default': {view:'test',locals:{layout:'layouts/default'}},
+  '/mobile/test': {view:'test',locals:{layout:'layouts/test'}},
+  '/mobile/test/default': {view:'test',locals:{layout:'layouts/default'}},
   
-  '/test/req': {controller:'TestController', action:'req'/*, policy:'accessGranted'*/}
+  '/mobile/test/req': {controller:'TestController', action:'req'/*, policy:'accessGranted'*/}
           
 };
  

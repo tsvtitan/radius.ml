@@ -1,64 +1,16 @@
 {
   "Lang": "ru-RU",
-  "Title": "Radius: Административная панель",
+  "Title": "Radius: Мобильный шлюз",
   "Version": "0.0.1",
   "Copyright": "© 2016 Radius",
   "Logo": "R",
-  "UrlHomePage": "/admin",
+  "UrlHomePage": "/mobile",
 
   "back": {
-    
-    "You are not permitted to perform this action": "Вам запрещено выполнять это действие",
-    "User is not found": "Пользователь не найден",
-    
-    "init": {
-      "Session needs to be cleared": "Сессия нуждается в очистке",
-      "Initialization error": "Ошибка инициализации"
-    },
-    
-    "auth": {
-      "User {login} is not found": "Пользователь {login} не найден",
-      "Session is not found": "Сессия не найдена",
-      "Logout error": "Ошибка выхода из системы",
-      "Login error": "Ошибка входа в систему",
-      "Code is invalid": "Неправильный код"
-    },
-    
-    "page": {
-      "tableTemplate": "tables/default.html"
-    }
     
   },
   
   "front": {
-    
-    "Could not subscribe on event": "Не могу подписаться на событие",
-    "Could not unsubscribe from event": "Не могу отписаться от события",
-    
-    "header": {
-    },
-    
-    "footer": {
-    },
-
-    "menu": {
-    },
-    
-    "login": {
-    },
-    
-    "home": {
-    },
-    
-    "[LOADING...]": "Загрузка...",
-    
-    "table": {
-      
-    },
-    
-    "tableCorrections": {
-    }
-    
     
   }
 }
