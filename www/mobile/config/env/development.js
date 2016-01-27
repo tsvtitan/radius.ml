@@ -54,7 +54,7 @@ module.exports = {
     disable: false,
     
     host: 'localhost',
-    scope: 'admin'
+    scope: 'mobile'
     
   }
   

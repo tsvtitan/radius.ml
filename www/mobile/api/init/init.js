@@ -28,7 +28,6 @@ module.exports = function() {
 
   utils.forEach(sails.models,function(model){
     model = log.extend(model,'models',model.globalId,null,true);
-    model = extendModel(utils,model);
   });
   global['Models'] = sails.models;
 
