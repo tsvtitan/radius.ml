@@ -15,11 +15,6 @@ var s,
         this.editNavigation();
         this.mailChimpAjax();
         this.keepSettings();
-
-        //Settings -> can be removed in your production code and change any on click actions into the keep settings function
-        this.settingOptions();
-        
-        $('#big-video-wrap').addClass('hide-video');
     },
 
     bindUiActions: function (){
@@ -66,12 +61,9 @@ var s,
         BV.init();
 
         if(Modernizr.touch){
-            BV.show("img/background.jpg");
+            BV.show("img/background.png");
         }else{
-            BV.show("video/background-video.mp4",{
-                ambient: true,
-                doLoop: true,
-                altSource: "video/background-video.ogv"
+            BV.show("img/background.png",{
             });
         }
     },
@@ -86,13 +78,13 @@ var s,
                     $(this).children().append("<i class='fa fa-home'></i>");
                 break;
                 case 2 :
-                    $(this).children().append("<i class='fa fa-dot-circle-o'></i>");
+                    $(this).children().append("<i class='fa fa-users'></i>");
                 break;
                 case 3 :
-                    $(this).children().append("<i class='fa fa-diamond'></i>");
+                    $(this).children().append("<i class='fa fa-rub'></i>");
                 break;
                 case 4 :
-                    $(this).children().append("<i class='fa fa-ellipsis-h'></i>");
+                    $(this).children().append("<i class='fa fa-envelope-o'></i>");
                 break;
                 case 5 :
                     $(this).children().append("<i class='fa fa-paper-plane'></i>");
@@ -112,37 +104,25 @@ var s,
             $('.slide-1-1').removeClass('hide').addClass('animated fadeInRight delay-3');
             $('.iphone-1').removeClass('hide').addClass('animated fadeInUp delay-3');
             $('.slide-1-2').removeClass('hide').addClass('animated fadeInDown delay-5');
-            $('.slide-1-3').removeClass('hide').addClass('animated fadeInDown delay-6');
+            $('.slide-1-3').removeClass('hide').addClass('animated fadeInDown delay-7');
+            $('.slide-1-4').removeClass('hide').addClass('animated fadeInDown delay-9');
             $('.slide-1-scroll').removeClass('hide').addClass('animated fadeInDown delay-12');
 
             $('.icon span').css("color", "#fff");
 
-        } else if ( this.isSlide(3)) {
-
-            $('.iphone-2').removeClass('hide').addClass('animated fadeInDown delay-1');
-            $('.slide-2-title').removeClass('hide').addClass('animated fadeIn delay-3');
-            $('.slide-2-1').removeClass('hide').addClass('animated fadeIn delay-4');
-            $('.slide-2-2').removeClass('hide').addClass('animated fadeInDown delay-5');
-            $('.slide-2-3').removeClass('hide').addClass('animated fadeInDown delay-6');
-            $('.slide-2-4').removeClass('hide').addClass('animated fadeInDown delay-9');
-            $('.slide-2-5').removeClass('hide').addClass('animated fadeInDown delay-10');
-            $('.slide-2-6').removeClass('hide').addClass('animated fadeInDown delay-11');
-            $('.slide-2-scroll').removeClass('hide').addClass('animated fadeInDown delay-15');
-
-            $('.icon span').css("color", "#fff");
-
-        } else if ( this.isSlide(4) ) {
+        } else if ( this.isSlide(3) ) {
 
             $('.slide-3-title').removeClass('hide').addClass('animated fadeInLeft delay-1');
             $('.slide-3-1').removeClass('hide').addClass('animated fadeInLeft delay-3');
             $('.iphone-3').removeClass('hide').addClass('animated fadeInUp delay-3');
             $('.slide-3-2').removeClass('hide').addClass('animated fadeInDown delay-5');
-            $('.slide-3-3').removeClass('hide').addClass('animated fadeInDown delay-6');
+            $('.slide-3-3').removeClass('hide').addClass('animated fadeInDown delay-7');
+            $('.slide-3-4').removeClass('hide').addClass('animated fadeInDown delay-9');
             $('.slide-3-scroll').removeClass('hide').addClass('animated fadeInDown delay-12');
 
             $('.icon span').css("color", "#333");
 
-        } else if ( this.isSlide(5) ) {
+        } else if ( this.isSlide(4) ) {
             $('.icon span').css("color", "#fff");
         }
     },
@@ -209,16 +189,16 @@ var s,
             contentType: "application/json; charset=utf-8",
             error       : function(err) {
                 console.log(" Could not connect to the registration server. Please try again later. ", err);
-                $message.text('There was an error submitting your email, please try again').removeClass('hidden').addClass(' error animated fadeInDown');
+                $message.text('Попробуйте еще раз, какая-то ошибка...').removeClass('hidden').addClass(' error animated fadeInDown');
             },
             success     : function(data) {
                 console.log("success");
                 if (data.result != "success") {
 
-                    $message.text('There was an error submitting your email, please try again').removeClass('hidden').addClass(' error animated fadeInDown');
+                    $message.text('Произошла ошибка, попробуйте еще раз').removeClass('hidden').addClass(' error animated fadeInDown');
 
                 } else {
-                    $message.html('Thank you. Your email was successfully submitted');
+                    $message.html('Спасибо! Адрес успешно подписан!');
                     $message.removeClass('hidden').addClass(' animated fadeInDown');
                 }
             }
