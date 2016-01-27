@@ -1,6 +1,0 @@
-// UserController
-
-module.exports = {
-	
-};
-

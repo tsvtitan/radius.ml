@@ -4,51 +4,8 @@ var util = require('util'),
     
     Utils = require('./modules/utils.js'),
     Log = require('./modules/log.js'),
-    Events = require('./modules/events.js'),
-    Jobs = require('./modules/jobs.js'),
-    Channels = require('./modules/channels.js');
+    Events = require('./modules/events.js');
     
-
-function extendModel(utils,model) {
-  
-  var log = model.log;
-  
-  model.change = function(user,params,files,result) {
-    
-    var keys = model.changeKeys;
-    
-    log.debug(params);
-    
-    if (utils.isArray(keys) && params) {
-      
-      var where = {};
-      
-      utils.forEach(keys,function(k){
-        
-        if (utils.isDefined(params[k])) {
-          where[k] = params[k];
-        }
-      });
-      
-      log.debug(where);
-      
-      if (!utils.isEmpty(where)) {
-        
-        model.update(where,params,function(err,updated){
-
-          if (err) result(err)
-          else if (updated) result(null,{reload:false})
-          else result('Record is not found');
-
-        });
-        
-      } else result('Where is empty');
-            
-    } else result('Change keys are not found');
-  }
-  
-  return model;
-}
 
 module.exports = function() {
 
@@ -80,14 +37,8 @@ module.exports = function() {
   });
   global['Controllers'] = sails.controllers;
   
-  global['Jobs'] = jobs = Jobs();
-  global['Channels'] = channels = Channels();
-  
   function processStop() {
     events.end();
-    jobs.stop(function() {
-      process.exit(0);
-    });
   }
   
   process.on('SIGTERM',processStop);
