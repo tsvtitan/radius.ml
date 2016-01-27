@@ -54,11 +54,6 @@ module.exports.policies = {
     '*': true
   },
 
-  CaptchaController: {
-    
-    '*': true
-  },
-  
   CookieController: {
     
     '*': true
@@ -69,44 +64,9 @@ module.exports.policies = {
     '*': true
   },
   
-  PageController: {
-    
-    '*': 'accessGranted'
-  },
-  
-  TableController: {
-    
-    '*': 'accessGranted'
-  },
-  
-  ChartController: {
-    
-    '*': 'accessGranted'
-  },
-  
-  FormController: {
-    
-    '*': 'accessGranted'
-  },
-  
-  FrameController: {
-    
-    '*': 'accessGranted'
-  },
-
-  MailerController: {
-    
-    '*': 'accessGranted'
-  },
-  
   TestController: {
     
     '*': true
-  },
-  
-  UsersController: {
-    
-    '*': 'accessGranted'
   }
   
 };

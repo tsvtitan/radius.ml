@@ -48,16 +48,6 @@ module.exports = {
     allRoutes: true
   },
   
-  jobs: {
-    
-    disabled: true,
-    
-    db: {
-      address: 'localhost:27017/admin',
-      collection: 'jobs'
-    }
-  },
-  
   events: {
     
     disable: false,
