@@ -19,6 +19,7 @@ module.exports = {
   port: process.env.PORT || 1338,
   environment: process.env.NODE_ENV || 'development',
   
+  
   connections: {
     
     workConnection: {
@@ -49,62 +50,13 @@ module.exports = {
     allRoutes: true
   },
   
-  jobs: {
-    
-    disabled: false,
-    
-    db: {
-      address: 'localhost:27017/work',
-      collection: 'jobs'
-    },
-    
-    mailer: {
-      
-      Outgoing: {
-        disabled: true,
-        interval: '30 seconds',
-        event: true
-      }
-      
-    }
-  },
-  
   events: {
     
     disable: false,
     
     host: 'localhost',
-    scope: 'admin'
+    scope: 'mobile'
     
-  },
-  
-  channels: {
-    
-    disable: false,
-    outgoingLimit: 5,
-    
-    GMailOutgoing: {
-      disabled: false
-    },
-    
-    MailgunOutgoing: {
-      disabled: false
-    },
-    
-    SendGridOutgoing: {
-      disabled: true
-    },
-    
-    ExchangeOutgoing: {
-      disabled: false
-    }
-  },
-  
-  mailerService: {
-    url: 'http://localhost:1337/admin/api/mailer',
-    auth: {
-      login: 'tsv'
-    }
   }
   
 };
