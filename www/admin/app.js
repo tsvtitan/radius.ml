@@ -48,7 +48,7 @@ process.chdir(__dirname);
       console.error('Could not find dependency: `rc`.');
       console.error('Your `.sailsrc` file(s) will be ignored.');
       console.error('To resolve this, run:');
-      console.error('npm install rc --save');
+      console.error('npm install rc --save'); 
       rc = function () { return {}; };
     }
   }
@@ -58,7 +58,7 @@ process.chdir(__dirname);
   //sails.lift(rc('sails'));
 
   // tsv
-  var grunt = (process.env.GRUNT===undefined)?true:(process.env.GRUNT.toLowerCase()==='true');
+  var grunt = (process.env.GRUNT===undefined)?false:(process.env.GRUNT.toLowerCase()==='true');
   if (grunt) {
     sails.lift(rc('sails'));
   } else {
