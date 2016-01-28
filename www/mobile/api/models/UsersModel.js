@@ -1,7 +1,5 @@
 // Users
 
-var bcrypt = require('bcrypt');    
-
 module.exports = {
   
   tableName: 'users',
@@ -41,33 +39,14 @@ module.exports = {
     }
   },
   
-  setPassHash: function(user,result) {
-    
-    var log = UsersModel.log;
-    
-    if (user.pass) {
-      bcrypt.genSalt(10, function(err,salt) {
-        bcrypt.hash(user.pass,salt,function(err,hash) {
-          if(err) {
-            log.error(err);
-            result(err);
-          } else {
-            user.pass = hash;
-            result(null,user);
-          }
-        });
-      });
-    } else result(null,user);
-  },
-  
   beforeCreate: function(user,result) {
     
-    this.setPassHash(user,result);
+    //this.setPassHash(user,result);
   },
   
   beforeUpdate: function(user,result) {
     
-    this.setPassHash(user,result);
+    //this.setPassHash(user,result);
   },
   
   isGranted: function (userOrId,url,params,result) {
