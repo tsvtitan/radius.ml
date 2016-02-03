@@ -25,7 +25,8 @@ module.exports = {
     workConnection: {
       adapter: 'sails-mongo',
       host: 'localhost',
-      database: 'admin'
+      port: 27017,
+      database: 'work'
     }
   },
   
@@ -36,7 +37,8 @@ module.exports = {
   
   session: {
     adapter: 'redis',
-    host: 'localhost'
+    host: 'localhost',
+    db: 1
   },
   
   sockets: {

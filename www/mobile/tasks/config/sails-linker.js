@@ -19,7 +19,7 @@ module.exports = function(grunt) {
 				startTag: '<!--SCRIPTS-->',
 				endTag: '<!--SCRIPTS END-->',
 				fileTmpl: '<script src="%s"></script>',
-				appRoot: '.tmp/public'
+				appRoot: '.tmp/public/mobile/'
 			},
 			files: {
 				'.tmp/public/**/*.html': require('../pipeline').jsFilesToInject,
@@ -33,7 +33,7 @@ module.exports = function(grunt) {
 				startTag: '<!--SCRIPTS-->',
 				endTag: '<!--SCRIPTS END-->',
 				fileTmpl: '<script src="%s"></script>',
-				appRoot: '.tmp/public',
+				appRoot: '.tmp/public/mobile/',
 				relative: true
 			},
 			files: {
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
 				startTag: '<!--SCRIPTS-->',
 				endTag: '<!--SCRIPTS END-->',
 				fileTmpl: '<script src="%s"></script>',
-				appRoot: '.tmp/public'
+				appRoot: '.tmp/public/mobile/'
 			},
 			files: {
 				'.tmp/public/**/*.html': ['.tmp/public/mobile/min/production.min.js'],
@@ -62,7 +62,7 @@ module.exports = function(grunt) {
 				startTag: '<!--SCRIPTS-->',
 				endTag: '<!--SCRIPTS END-->',
 				fileTmpl: '<script src="%s"></script>',
-				appRoot: '.tmp/public',
+				appRoot: '.tmp/public/mobile/',
 				relative: true
 			},
 			files: {
@@ -77,7 +77,7 @@ module.exports = function(grunt) {
 				startTag: '<!--STYLES-->',
 				endTag: '<!--STYLES END-->',
 				fileTmpl: '<link rel="stylesheet" href="%s">',
-				appRoot: '.tmp/public'
+				appRoot: '.tmp/public/mobile/'
 			},
 
 			files: {
@@ -92,7 +92,7 @@ module.exports = function(grunt) {
 				startTag: '<!--STYLES-->',
 				endTag: '<!--STYLES END-->',
 				fileTmpl: '<link rel="stylesheet" href="%s">',
-				appRoot: '.tmp/public',
+				appRoot: '.tmp/public/mobile/',
 				relative: true
 			},
 
@@ -108,7 +108,7 @@ module.exports = function(grunt) {
 				startTag: '<!--STYLES-->',
 				endTag: '<!--STYLES END-->',
 				fileTmpl: '<link rel="stylesheet" href="%s">',
-				appRoot: '.tmp/public'
+				appRoot: '.tmp/public/mobile/'
 			},
 			files: {
 				'.tmp/public/index.html': ['.tmp/public/mobile/min/production.min.css'],
@@ -122,7 +122,7 @@ module.exports = function(grunt) {
 				startTag: '<!--STYLES-->',
 				endTag: '<!--STYLES END-->',
 				fileTmpl: '<link rel="stylesheet" href="%s">',
-				appRoot: '.tmp/public',
+				appRoot: '.tmp/public/mobile/',
 				relative: true
 			},
 			files: {
@@ -138,7 +138,7 @@ module.exports = function(grunt) {
 				startTag: '<!--TEMPLATES-->',
 				endTag: '<!--TEMPLATES END-->',
 				fileTmpl: '<script type="text/javascript" src="%s"></script>',
-				appRoot: '.tmp/public'
+				appRoot: '.tmp/public/mobile/'
 			},
 			files: {
 				'.tmp/public/index.html': ['.tmp/public/mobile/templates/jst.js'],
@@ -152,7 +152,7 @@ module.exports = function(grunt) {
 				startTag: '// SCRIPTS',
 				endTag: '// SCRIPTS END',
 				fileTmpl: 'script(src="%s")',
-				appRoot: '.tmp/public'
+				appRoot: '.tmp/public/mobile/'
 			},
 			files: {
 				'views/**/*.jade': require('../pipeline').jsFilesToInject
@@ -164,7 +164,7 @@ module.exports = function(grunt) {
 				startTag: '// SCRIPTS',
 				endTag: '// SCRIPTS END',
 				fileTmpl: 'script(src="%s")',
-				appRoot: '.tmp/public',
+				appRoot: '.tmp/public/mobile/',
 				relative: true
 			},
 			files: {
@@ -177,7 +177,7 @@ module.exports = function(grunt) {
 				startTag: '// SCRIPTS',
 				endTag: '// SCRIPTS END',
 				fileTmpl: 'script(src="%s")',
-				appRoot: '.tmp/public'
+				appRoot: '.tmp/public/mobile/'
 			},
 			files: {
 				'views/**/*.jade': ['.tmp/public/mobile/min/production.min.js']
@@ -189,7 +189,7 @@ module.exports = function(grunt) {
 				startTag: '// SCRIPTS',
 				endTag: '// SCRIPTS END',
 				fileTmpl: 'script(src="%s")',
-				appRoot: '.tmp/public',
+				appRoot: '.tmp/public/mobile/',
 				relative: true
 			},
 			files: {
@@ -202,7 +202,7 @@ module.exports = function(grunt) {
 				startTag: '// STYLES',
 				endTag: '// STYLES END',
 				fileTmpl: 'link(rel="stylesheet", href="%s")',
-				appRoot: '.tmp/public'
+				appRoot: '.tmp/public/mobile/'
 			},
 
 			files: {
@@ -215,7 +215,7 @@ module.exports = function(grunt) {
 				startTag: '// STYLES',
 				endTag: '// STYLES END',
 				fileTmpl: 'link(rel="stylesheet", href="%s")',
-				appRoot: '.tmp/public',
+				appRoot: '.tmp/public/mobile/',
 				relative: true
 			},
 
@@ -229,7 +229,7 @@ module.exports = function(grunt) {
 				startTag: '// STYLES',
 				endTag: '// STYLES END',
 				fileTmpl: 'link(rel="stylesheet", href="%s")',
-				appRoot: '.tmp/public'
+				appRoot: '.tmp/public/mobile/'
 			},
 			files: {
 				'views/**/*.jade': ['.tmp/public/mobile/min/production.min.css']
@@ -241,7 +241,7 @@ module.exports = function(grunt) {
 				startTag: '// STYLES',
 				endTag: '// STYLES END',
 				fileTmpl: 'link(rel="stylesheet", href="%s")',
-				appRoot: '.tmp/public',
+				appRoot: '.tmp/public/mobile/',
 				relative: true
 			},
 			files: {
@@ -255,7 +255,7 @@ module.exports = function(grunt) {
 				startTag: '// TEMPLATES',
 				endTag: '// TEMPLATES END',
 				fileTmpl: 'script(type="text/javascript", src="%s")',
-				appRoot: '.tmp/public'
+				appRoot: '.tmp/public/mobile/'
 			},
 			files: {
 				'views/**/*.jade': ['.tmp/public/mobile/jst.js']
