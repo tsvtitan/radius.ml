@@ -1,5 +1,5 @@
-/www/mobile/.tmp/
-/www/admin/.tmp/
-/www/admin/nbproject/
-/www/mobile/nbproject/
-/www/landing/nbproject/
+#/www/mobile/.tmp/
+#/www/admin/.tmp/
+#/www/admin/nbproject/
+#/www/mobile/nbproject/
+#/www/landing/nbproject/
