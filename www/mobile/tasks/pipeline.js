@@ -14,6 +14,7 @@
 // (if you're using LESS with the built-in default config, you'll want
 //  to change `assets/styles/importer.less` instead.)
 var cssFilesToInject = [
+  'styles/ionic.css',
   'styles/**/*.css'
 ];
 
@@ -22,9 +23,23 @@ var cssFilesToInject = [
 // (uses Grunt-style wildcard/glob/splat expressions)
 var jsFilesToInject = [
 
-  // Load sails.io before everything else
-  //'js/dependencies/sails.io.js',
-
+  'js/dependencies/underscore.js',
+  'js/dependencies/_.escape.js',
+  'js/dependencies/sprintf.js',
+  
+  'js/dependencies/ionic.bundle.js',
+  
+  'js/angular/modules/*.js',
+  'js/angular/app.js',
+  'js/angular/providers/*.js',
+  'js/angular/constants/*.js',
+  'js/angular/configs/*.js',
+  'js/angular/services/*.js',
+  'js/angular/factories/*.js',
+  'js/angular/directives/*.js',
+  'js/angular/controllers/**/*.js',
+  'js/angular/ready.js',
+  
   // All of the rest of your client-side js files
   // will be injected here in no particular order.
   'js/**/*.js'
@@ -40,7 +55,9 @@ var jsFilesToInject = [
 // with the linker, no problem-- you'll just want to make sure the precompiled
 // templates get spit out to the same file.  Be sure and check out `tasks/README.md`
 // for information on customizing and installing new tasks.
-
+var templateFilesToInject = [
+  'templates/**/*.html'
+];
 
 // Prefix relative paths to source files so they point to the proper locations
 // (i.e. where the other Grunt tasks spit them out, or in some cases, where
@@ -50,4 +67,7 @@ module.exports.cssFilesToInject = cssFilesToInject.map(function(path) {
 });
 module.exports.jsFilesToInject = jsFilesToInject.map(function(path) {
   return '.tmp/public/mobile/' + path;
+});
+module.exports.templateFilesToInject = templateFilesToInject.map(function(path) {
+  return 'assets/' + path;
 });

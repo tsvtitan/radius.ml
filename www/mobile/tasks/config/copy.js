@@ -17,17 +17,19 @@ module.exports = function(grunt) {
 
 	grunt.config.set('copy', {
 		dev: {
-			files: [{
-				expand: true,
-				cwd: './assets',
-				src: ['**/*.!(coffee|less)'],
-				dest: '.tmp/public/admin'
-			}]
+			files: [
+        
+        // sails assets
+        {expand: true, cwd: './assets', src: ['**/*.!(coffee|less)'], dest: '.tmp/public/mobile'},
+        
+        // ionic assets
+        {expand: true, cwd: './assets', src: ['**/*.!(coffee|less|html)'], dest: 'ionic/www/mobile'}
+			]
 		},
 		build: {
 			files: [{
 				expand: true,
-				cwd: '.tmp/public/admin',
+				cwd: '.tmp/public/mobile',
 				src: ['**/*'],
 				dest: 'www'
 			}]

@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= dic('Title') %></title>
-    <!-- Viewport mobile tag for sensible mobile support -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <!--STYLES-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     
+    <title><%= dic('Title') %></title>
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/mobile/styles/ionic.css">
+    <link rel="stylesheet" href="/mobile/styles/importer.css">
     <!--STYLES END-->
+    
   </head>
-  <body class="skin-0"> 
+  <body data-ng-app="starter"> 
     <%- body %>
     <!--TEMPLATES-->
-    
+    <script type="text/javascript" src="/mobile/templates/jst.js"></script>
     <!--TEMPLATES END-->
+    <script src="cordova.js"></script>
     <!--SCRIPTS-->
-    
+    <script src="/mobile/js/dependencies/underscore.js"></script>
+    <script src="/mobile/js/dependencies/_.escape.js"></script>
+    <script src="/mobile/js/dependencies/sprintf.js"></script>
+    <script src="/mobile/js/dependencies/ionic.bundle.js"></script>
+    <script src="/mobile/js/angular/app.js"></script>
+    <script src="/mobile/js/angular/services/services.js"></script>
+    <script src="/mobile/js/angular/controllers/controllers.js"></script>
     <!--SCRIPTS END-->
   </body>
 </html>

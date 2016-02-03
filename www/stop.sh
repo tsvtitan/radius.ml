@@ -27,4 +27,4 @@ then
     kill -9 $(pgrep -f "grunt")
 fi
 
-echo "Done."
+echo "Stop done."
