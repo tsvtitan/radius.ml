@@ -58,9 +58,31 @@ process.chdir(__dirname);
   //sails.lift(rc('sails'));
 
   // tsv
+  
+  var locals = {};
+  
+  function renderToIonic() {
+    
+    sails.renderView('index',locals,function(err,html){
+      
+      if (err) sails.log.error(err); 
+      else {
+        
+        var fs = require('fs');
+        var file = 'ionic/www/index.html';
+        
+        fs.writeFile(file,html,'utf8',function(err) {
+          
+          if (err) sails.log.error(err);
+          else sails.log.debug('Render index view to ' + file + ' has done.');
+        });
+      }
+    });
+  }
+      
   var grunt = (process.env.GRUNT===undefined)?true:(process.env.GRUNT.toLowerCase()==='true');
   if (grunt) {
-    sails.lift(rc('sails'));
+    sails.lift(rc('sails'),renderToIonic);
   } else {
     sails.lift(rc('sails', {hooks:{grunt:false}}));
   }

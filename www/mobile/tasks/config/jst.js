@@ -32,19 +32,19 @@ module.exports = function(grunt) {
 			// default interpolation. If you want to parse templates with the default _.template behavior
 			// (i.e. using <div></div>), there's no need to overwrite `templateSettings.interpolate`.
       
-      options: {
-        prettify: true,
-        processName: function(filepath) {
-          var $l = 'assets/templates/'.length;
-          return filepath.substr($l);
-        },
-        amd: false
-      },
+          options: {
+            prettify: true,
+            processName: function(filepath) {
+              var $l = 'assets/templates/'.length;
+              return filepath.substr($l);
+            },
+            amd: false
+          },
 
-			files: {
-				'.tmp/public/mobile/templates/jst.js': require('../pipeline').templateFilesToInject,
-        'ionic/www/mobile/templates/jst.js': require('../pipeline').templateFilesToInject
-			}
+          files: {
+              '.tmp/public/mobile/templates/jst.js': require('../pipeline').templateFilesToInject,
+              'ionic/www/templates/jst.js': require('../pipeline').templateFilesToInject
+          }
 		}
 	});
 

@@ -23,7 +23,7 @@ module.exports = function(grunt) {
             {expand: true, cwd: './assets', src: ['**/*.!(coffee|less|html)'], dest: '.tmp/public/mobile'},
         
             // ionic assets
-            {expand: true, cwd: './assets', src: ['**/*.!(coffee|less|html)'], dest: 'ionic/www/mobile'}
+            {expand: true, cwd: './assets', src: ['**/*.!(coffee|less|html)'], dest: 'ionic/www'}
           ]
 		},
 		build: {

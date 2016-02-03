@@ -5,6 +5,6 @@ module.exports = function (grunt) {
 		'uglify',
 		'cssmin',
 		'linkAssetsProd',
-    'watch:prod'
+        'watch:prod'
 	]);
 };
