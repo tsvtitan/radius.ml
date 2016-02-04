@@ -1,3 +1,3 @@
 module.exports = function (grunt) {
-	grunt.registerTask('default', ['compileAssets', 'linkAssets',  'watch:dev']);
+	grunt.registerTask('default', ['compileAssets','clean:ionic','copy:ionicDev','linkAssets','watch:dev']);
 };

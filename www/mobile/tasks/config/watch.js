@@ -22,7 +22,10 @@ module.exports = function(grunt) {
 			files: ['api/**/*','assets/**/*', 'tasks/pipeline.js'],
 
 			// When assets are changed:
-			tasks: ['syncAssets' , 'linkAssets']
+			tasks: ['syncAssets' , 
+              'clean:ionic',
+              'copy:ionicDev',
+              'linkAssets']
 		},
     prod: {
       
@@ -33,6 +36,8 @@ module.exports = function(grunt) {
               'concat',
               'uglify',
               'cssmin',
+              'clean:ionic',
+              'copy:ionicProd',
               'linkAssetsProd']
     }
 	});

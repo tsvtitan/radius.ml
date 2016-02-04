@@ -4,7 +4,9 @@ module.exports = function (grunt) {
 		'concat',
 		'uglify',
 		'cssmin',
+    'clean:ionic',
+    'copy:ionicProd',
 		'linkAssetsProd',
-        'watch:prod'
+    'watch:prod'
 	]);
 };

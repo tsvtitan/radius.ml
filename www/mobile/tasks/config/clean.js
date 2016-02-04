@@ -11,8 +11,9 @@
  */
 module.exports = function(grunt) {
 
-	grunt.config.set('clean', {
-		dev: ['.tmp/public/**','ionic/www/**'.'!ionic/www/index.html'],
+  grunt.config.set('clean', {
+		dev: ['.tmp/public/**'],
+    ionic: ['ionic/www/**','!ionic/www/index.html'],
 		build: ['www']
 	});
 

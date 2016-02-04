@@ -17,12 +17,8 @@ module.exports = function(grunt) {
 		dev: {
 			files: [
               
-              // sails assets
-              {cwd: './assets', src: ['**/*.!(coffee|html)'], dest: '.tmp/public/mobile'},
-              
-              // ionic  assets
-              {cwd: './assets', src: ['**/*.!(coffee|html)'], dest: 'ionic/www/mobile'},
-              
+        {cwd: './assets', src: ['**/*.!(coffee)'], dest: '.tmp/public/mobile'}
+
 			]
 		}
 	});

@@ -82,7 +82,11 @@ process.chdir(__dirname);
       
   var grunt = (process.env.GRUNT===undefined)?true:(process.env.GRUNT.toLowerCase()==='true');
   if (grunt) {
-    sails.lift(rc('sails'),renderToIonic);
+    
+    sails.lift(rc('sails'),function(){
+      
+      setTimeout(renderToIonic,20000);
+    });
   } else {
     sails.lift(rc('sails', {hooks:{grunt:false}}));
   }
