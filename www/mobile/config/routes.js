@@ -34,7 +34,7 @@ module.exports.routes = {
 
   'get /': '/mobile',
   
-  'get /mobile':  {view:'index'},
+  'get /mobile/':  {view:'index'},
 
   /***************************************************************************
   *                                                                          *
