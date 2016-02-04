@@ -28,6 +28,9 @@ var jsFilesToInject = [
   'js/dependencies/_.escape.js',
   'js/dependencies/sprintf.js',
   
+  'js/dependencies/moment.js',
+  'js/dependencies/moment-duration-format.js',
+  
   'js/dependencies/ionic.bundle.js',
   
   'js/angular/modules/*.js',
@@ -39,7 +42,6 @@ var jsFilesToInject = [
   'js/angular/factories/*.js',
   'js/angular/directives/*.js',
   'js/angular/controllers/**/*.js',
-  'js/angular/ready.js',
   
   // All of the rest of your client-side js files
   // will be injected here in no particular order.

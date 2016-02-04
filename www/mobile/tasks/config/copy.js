@@ -16,18 +16,18 @@
 module.exports = function(grunt) {
 
 	grunt.config.set('copy', {
-		dev: {
-      files: [
+      dev: {
+        files: [
 
-        {expand: true, cwd: './assets', src: ['**/*.!(coffee|less)'], dest: '.tmp/public/mobile'}
-      ]
-		},
+          {expand: true, cwd: './assets', src: ['**/*.!(coffee|less)'], dest: '.tmp/public/mobile'}
+        ]
+	},
     ionicDev: {
       files: [
 
         {expand: true, cwd: './.tmp/public/mobile', 
             src: ['fonts/**',
-                  'img/**',
+                  'images/**',
                   'js/**',
                   'styles/**',
                   'templates/jst.js',
@@ -40,7 +40,7 @@ module.exports = function(grunt) {
 
         {expand: true, cwd: './.tmp/public/mobile', 
             src: ['fonts/**',
-                  'img/**',
+                  'images/**',
                   'min/**',
                   'templates/jst.js',
                   '!cordova.js'], 

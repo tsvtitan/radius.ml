@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+/*angular.module('starter.controllers', [])
 
 .controller('boot',['$scope','$timeout',function($scope,$timeout) {
   
@@ -32,4 +32,4 @@ angular.module('starter.controllers', [])
   $scope.settings = {
     enableFriends: true
   };
-}]);
+}]);*/
