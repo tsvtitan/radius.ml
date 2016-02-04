@@ -5,6 +5,7 @@ echo "Unmounting..."
 
 HOME=`dirname $0`
 
+sudo umount -f $HOME/node
 sudo umount -f $HOME/www
 
 echo "Mounting node source ..."
