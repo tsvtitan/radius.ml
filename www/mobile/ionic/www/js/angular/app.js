@@ -1,4 +1,4 @@
-
+1
 var app = angular.module('starter',['ionic','ngCordova','ab-base64']); 
                       
 app.run(['$ionicPlatform',function($ionicPlatform) {
