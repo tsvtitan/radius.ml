@@ -39,5 +39,4 @@ LC_NUMERIC="en_US.UTF-8"
 LC_TIME="en_US.UTF-8"
 LC_ALL=
 
-#/usr/local/bin/sshpass -p 'root' ssh root@radius.ml -p 50022 /www/start.sh $SCRIPT $DEBUG
 $(which sshpass) -p 'root' ssh root@radius.ml -p 50022 /www/start.sh $SCRIPT $DEBUG
