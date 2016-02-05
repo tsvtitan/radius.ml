@@ -1,10 +1,11 @@
 module.exports = function (grunt) {
 	grunt.registerTask('linkAssetsBuild', [
-		'sails-linker:devJsRelative',
+		'sails-linker:devScriptsRelative',
+    'sails-linker:devDependenciesRelative',
 		'sails-linker:devStylesRelative',
-		'sails-linker:devTpl',
-		'sails-linker:devJsRelativeJade',
+		'sails-linker:devTemplates',
+		'sails-linker:devScriptsRelativeJade',
 		'sails-linker:devStylesRelativeJade',
-		'sails-linker:devTplJade'
+		'sails-linker:devTemplatesJade'
 	]);
 };

@@ -14,7 +14,8 @@
 module.exports = function(grunt) {
 
 	grunt.config.set('sails-linker', {
-		devJs: {
+    
+		devScripts: {
 			options: {
 				startTag: '<!--SCRIPTS-->',
 				endTag: '<!--SCRIPTS END-->',
@@ -22,13 +23,13 @@ module.exports = function(grunt) {
 				appRoot: '.tmp/public/mobile/'
 			},
 			files: {
-				'.tmp/public/**/*.html': require('../pipeline').jsFilesToInject,
-				'views/**/*.html': require('../pipeline').jsFilesToInject,
-				'views/**/*.ejs': require('../pipeline').jsFilesToInject
+				'.tmp/public/**/*.html': require('../pipeline').scriptsToInject,
+				'views/**/*.html': require('../pipeline').scriptsToInject,
+				'views/**/*.ejs': require('../pipeline').scriptsToInject
 			}
 		},
 
-		devJsRelative: {
+		devScriptsRelative: {
 			options: {
 				startTag: '<!--SCRIPTS-->',
 				endTag: '<!--SCRIPTS END-->',
@@ -37,13 +38,42 @@ module.exports = function(grunt) {
 				relative: true
 			},
 			files: {
-				'.tmp/public/**/*.html': require('../pipeline').jsFilesToInject,
-				'views/**/*.html': require('../pipeline').jsFilesToInject,
-				'views/**/*.ejs': require('../pipeline').jsFilesToInject
+				'.tmp/public/**/*.html': require('../pipeline').scriptsToInject,
+				'views/**/*.html': require('../pipeline').scriptsToInject,
+				'views/**/*.ejs': require('../pipeline').scriptsToInject
 			}
 		},
 
-		prodJs: {
+		devDependencies: {
+			options: {
+				startTag: '<!--DEPENDENCIES-->',
+				endTag: '<!--DEPENDENCIES END-->',
+				fileTmpl: '<script src="%s"></script>',
+				appRoot: '.tmp/public/mobile/'
+			},
+			files: {
+				'.tmp/public/**/*.html': require('../pipeline').dependenciesToInject,
+				'views/**/*.html': require('../pipeline').dependenciesToInject,
+				'views/**/*.ejs': require('../pipeline').dependenciesToInject
+			}
+		},
+
+		devDependenciesRelative: {
+			options: {
+				startTag: '<!--DEPENDENCIES-->',
+				endTag: '<!--DEPENDENCIES END-->',
+				fileTmpl: '<script src="%s"></script>',
+				appRoot: '.tmp/public/mobile/',
+				relative: true
+			},
+			files: {
+				'.tmp/public/**/*.html': require('../pipeline').dependenciesToInject,
+				'views/**/*.html': require('../pipeline').dependenciesToInject,
+				'views/**/*.ejs': require('../pipeline').dependenciesToInject
+			}
+		},
+
+    prodScripts: {
 			options: {
 				startTag: '<!--SCRIPTS-->',
 				endTag: '<!--SCRIPTS END-->',
@@ -57,7 +87,7 @@ module.exports = function(grunt) {
 			}
 		},
 
-		prodJsRelative: {
+		prodScriptsRelative: {
 			options: {
 				startTag: '<!--SCRIPTS-->',
 				endTag: '<!--SCRIPTS END-->',
@@ -72,7 +102,36 @@ module.exports = function(grunt) {
 			}
 		},
 
-		devStyles: {
+    prodDependencies: {
+			options: {
+				startTag: '<!--DEPENDENCIES-->',
+				endTag: '<!--DEPENDENCIES END-->',
+				fileTmpl: '<script src="%s"></script>',
+				appRoot: '.tmp/public/mobile/'
+			},
+			files: {
+				'.tmp/public/**/*.html': ['.tmp/public/mobile/min/production.min.js'],
+				'views/**/*.html': ['.tmp/public/mobile/min/production.min.js'],
+				'views/**/*.ejs': ['.tmp/public/mobile/min/production.min.js']
+			}
+		},
+
+		prodDependenciesRelative: {
+			options: {
+				startTag: '<!--DEPENDENCIES-->',
+				endTag: '<!--DEPENDENCIES END-->',
+				fileTmpl: '<script src="%s"></script>',
+				appRoot: '.tmp/public/mobile/',
+				relative: true
+			},
+			files: {
+				'.tmp/public/**/*.html': ['.tmp/public/mobile/min/production.min.js'],
+				'views/**/*.html': ['.tmp/public/mobile/min/production.min.js'],
+				'views/**/*.ejs': ['.tmp/public/mobile/min/production.min.js']
+			}
+		},
+
+    devStyles: {
 			options: {
 				startTag: '<!--STYLES-->',
 				endTag: '<!--STYLES END-->',
@@ -81,9 +140,9 @@ module.exports = function(grunt) {
 			},
 
 			files: {
-				'.tmp/public/**/*.html': require('../pipeline').cssFilesToInject,
-				'views/**/*.html': require('../pipeline').cssFilesToInject,
-				'views/**/*.ejs': require('../pipeline').cssFilesToInject
+				'.tmp/public/**/*.html': require('../pipeline').stylesToInject,
+				'views/**/*.html': require('../pipeline').stylesToInject,
+				'views/**/*.ejs': require('../pipeline').stylesToInject
 			}
 		},
 
@@ -97,9 +156,9 @@ module.exports = function(grunt) {
 			},
 
 			files: {
-				'.tmp/public/**/*.html': require('../pipeline').cssFilesToInject,
-				'views/**/*.html': require('../pipeline').cssFilesToInject,
-				'views/**/*.ejs': require('../pipeline').cssFilesToInject
+				'.tmp/public/**/*.html': require('../pipeline').stylesToInject,
+				'views/**/*.html': require('../pipeline').stylesToInject,
+				'views/**/*.ejs': require('../pipeline').stylesToInject
 			}
 		},
 
@@ -133,7 +192,7 @@ module.exports = function(grunt) {
 		},
 
 		// Bring in JST template object
-		devTpl: {
+		devTemplates: {
 			options: {
 				startTag: '<!--TEMPLATES-->',
 				endTag: '<!--TEMPLATES END-->',
@@ -147,7 +206,7 @@ module.exports = function(grunt) {
 			}
 		},
 
-		devJsJade: {
+		devScriptsJade: {
 			options: {
 				startTag: '// SCRIPTS',
 				endTag: '// SCRIPTS END',
@@ -155,11 +214,11 @@ module.exports = function(grunt) {
 				appRoot: '.tmp/public/mobile/'
 			},
 			files: {
-				'views/**/*.jade': require('../pipeline').jsFilesToInject
+				'views/**/*.jade': require('../pipeline').scriptsToInject
 			}
 		},
 
-		devJsRelativeJade: {
+		devScriptsRelativeJade: {
 			options: {
 				startTag: '// SCRIPTS',
 				endTag: '// SCRIPTS END',
@@ -168,11 +227,11 @@ module.exports = function(grunt) {
 				relative: true
 			},
 			files: {
-				'views/**/*.jade': require('../pipeline').jsFilesToInject
+				'views/**/*.jade': require('../pipeline').scriptsToInject
 			}
 		},
 
-		prodJsJade: {
+		prodScriptsJade: {
 			options: {
 				startTag: '// SCRIPTS',
 				endTag: '// SCRIPTS END',
@@ -184,7 +243,7 @@ module.exports = function(grunt) {
 			}
 		},
 
-		prodJsRelativeJade: {
+		prodScriptsRelativeJade: {
 			options: {
 				startTag: '// SCRIPTS',
 				endTag: '// SCRIPTS END',
@@ -206,7 +265,7 @@ module.exports = function(grunt) {
 			},
 
 			files: {
-				'views/**/*.jade': require('../pipeline').cssFilesToInject
+				'views/**/*.jade': require('../pipeline').scriptsToInject
 			}
 		},
 
@@ -220,7 +279,7 @@ module.exports = function(grunt) {
 			},
 
 			files: {
-				'views/**/*.jade': require('../pipeline').cssFilesToInject
+				'views/**/*.jade': require('../pipeline').scriptsToInject
 			}
 		},
 
@@ -250,7 +309,7 @@ module.exports = function(grunt) {
 		},
 
 		// Bring in JST template object
-		devTplJade: {
+		devTemplatesJade: {
 			options: {
 				startTag: '// TEMPLATES',
 				endTag: '// TEMPLATES END',

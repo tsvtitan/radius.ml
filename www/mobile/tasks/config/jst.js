@@ -42,8 +42,8 @@ module.exports = function(grunt) {
           },
 
           files: {
-              '.tmp/public/mobile/templates/jst.js': require('../pipeline').templateFilesToInject,
-              'ionic/www/templates/jst.js': require('../pipeline').templateFilesToInject
+              '.tmp/public/mobile/templates/jst.js': require('../pipeline').templatesToInject,
+              'ionic/www/templates/jst.js': require('../pipeline').templatesToInject
           }
 		}
 	});
