@@ -12,6 +12,9 @@ RUN yum install -y mc net-tools wget git which
 RUN yum install -y openssh-server openssh-clients
 RUN systemctl enable sshd.service
 
+RUN yum install -y nginx
+RUN systemctl enable nginx
+
 RUN wget -O /etc/yum.repos.d/mongodb-org.repo https://repo.mongodb.org/yum/redhat/mongodb-org.repo
 RUN yum install -y mongodb-org
 RUN systemctl enable mongod
@@ -31,6 +34,6 @@ RUN echo "export TERM=xterm" >> ~/.bashrc
 
 RUN echo "root:root" | chpasswd
 
-EXPOSE 22 1337 6379 9292 27017
+EXPOSE 22 80 1337 6379 9292 27017
 
 CMD ["/sbin/init", "3"]
