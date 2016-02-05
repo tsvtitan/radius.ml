@@ -1,7 +1,7 @@
 {
-  "name": "ionictest",
-  "version": "1.1.1",
-  "description": "ionicTest: An Ionic project",
+  "name": "radius",
+  "version": "0.0.1",
+  "description": "Radius",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",
@@ -15,11 +15,13 @@
     "shelljs": "^0.3.0"
   },
   "cordovaPlugins": [
-    "cordova-plugin-device",
     "cordova-plugin-console",
-    "cordova-plugin-whitelist",
+    "cordova-plugin-device",
+    "cordova-plugin-flashlight",
     "cordova-plugin-splashscreen",
     "cordova-plugin-statusbar",
+    "cordova-plugin-vibration",
+    "cordova-plugin-whitelist",
     "ionic-plugin-keyboard"
   ],
   "cordovaPlatforms": [

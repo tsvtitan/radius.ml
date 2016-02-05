@@ -1,7 +1,7 @@
 
-app.controller('boot',['$scope','$element',
+app.controller('boot',['$scope','$element','$interval','$cordovaFlashlight','$cordovaVibration',
                        'Init','Dictionary','Alert','Const', 
-                       function($scope,$element,
+                       function($scope,$element,$interval,$cordovaFlashlight,$cordovaVibration,
                                 Init,Dictionary,Alert,Const) {
   
   $scope.dic = Dictionary.dic($element);
@@ -10,6 +10,9 @@ app.controller('boot',['$scope','$element',
   Init.get(function(d){
     
     $scope.visible = true;
+    
+    $cordovaVibration.vibrate(1000);
+    $cordovaFlashlight.switchOn();
     
     if (d.error) Alert.error(d.error);
     else {
@@ -24,6 +27,23 @@ app.controller('boot',['$scope','$element',
 
       $scope.reload();*/
     }
+    
+    /*$cordovaFlashlight.available().then(function(exists) {
+      
+      if (exists) {
+        
+        Alert.info('found');
+        
+        $interval(function(){
+          $cordovaFlashlight.toggle();
+        },1000);
+    
+      } else Alert.error('not  found');
+      
+    },function() {
+      Alert.error('unavailable');
+    });*/
+    
   });
   
 }]);
