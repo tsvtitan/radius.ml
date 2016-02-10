@@ -1,4 +1,4 @@
-var root = '/mobile';
+var root = 'http://radius.ml:51338/mobile';
 
 var api = root.concat('/api');
 
@@ -13,7 +13,7 @@ app.constant('Urls',{
   ],
   
   root: root,
-  init: api.concat('/init2'),
+  init: api.concat('/init'),
   
   authLogin: api.concat('/login'),
   authLogout: api.concat('/logout'),
