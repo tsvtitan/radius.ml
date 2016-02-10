@@ -85,7 +85,7 @@ process.chdir(__dirname);
     
     sails.lift(rc('sails'),function(){
       
-      setTimeout(renderToIonic,20000);
+      setTimeout(renderToIonic,10000);
     });
   } else {
     sails.lift(rc('sails', {hooks:{grunt:false}}));
