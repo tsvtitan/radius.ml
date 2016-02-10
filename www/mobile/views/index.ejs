@@ -1,15 +1,10 @@
 <div data-ng-controller="boot">
 
-  <div class="splash" data-ng-hide="visible">
+  <div class="spinner" data-ng-show="spinner.visible">
     <div></div>
   </div>
 
-  <div class="controller" data-ng-show="visible" data-ng-cloak="">
-
-    <ion-nav-bar class="bar-stable">
-      <ion-nav-back-button>
-      </ion-nav-back-button>
-    </ion-nav-bar>
+  <div class="view" data-ng-show="!spinner.visible" data-ng-cloak="">
 
     <ion-nav-view></ion-nav-view>
 

@@ -83,7 +83,7 @@ module.exports = {
                   res.jsonSuccess(data);
                 else
                   res.jsonError('User is not found',null,data);
-              },0);
+              },1000);
 
             } else {
               

@@ -1,21 +1,23 @@
 
-app.controller('boot',['$scope','$element','$interval','$cordovaFlashlight','$cordovaVibration',
-                       'Init','Dictionary','Alert','Const', 
-                       function($scope,$element,$interval,$cordovaFlashlight,$cordovaVibration,
-                                Init,Dictionary,Alert,Const) {
+app.controller('boot',['$scope','$element','$interval',
+                       'Spinner','Dictionary','Alert','Const','Splash','Log', 
+                       function($scope,$element,$interval,
+                                Spinner,Dictionary,Alert,Const,Splash,Log) {
   
   $scope.dic = Dictionary.dic($element);
-  $scope.visible = false;
-
-  Init.get(function(d){
+  $scope.spinner = Spinner;
+  
+ /* Init.get(function(d){
     
     $scope.visible = true;
+    //Splash.hide();
     
-    $cordovaVibration.vibrate(1000);
-    $cordovaFlashlight.switchOn();
-    
-    if (d.error) Alert.error(d.error);
-    else {
+/*    if (d.error) {
+      Alert.error(d.error,function(){
+       // Splash.hide();
+  
+      });
+    } else {
       
       Dictionary.init(d.dictionary);
       //Auth.set(d.auth);
@@ -25,8 +27,8 @@ app.controller('boot',['$scope','$element','$interval','$cordovaFlashlight','$co
       /*Auth.ready = (Auth.user);
       if (Auth.ready) Auth.emitLogin();
 
-      $scope.reload();*/
-    }
+      $scope.reload();
+    }*/
     
     /*$cordovaFlashlight.available().then(function(exists) {
       
@@ -42,8 +44,8 @@ app.controller('boot',['$scope','$element','$interval','$cordovaFlashlight','$co
       
     },function() {
       Alert.error('unavailable');
-    });*/
+    });
     
-  });
+  });*/
   
 }]);

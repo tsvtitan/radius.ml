@@ -14,7 +14,7 @@
 // (if you're using LESS with the built-in default config, you'll want
 //  to change `assets/styles/importer.less` instead.)
 var stylesToInject = [
-  'styles/splash.css',
+  'styles/boot.css',
   'styles/ionic.css',
   'styles/**/*.css'
 ];
