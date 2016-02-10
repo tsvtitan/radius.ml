@@ -24,7 +24,7 @@ app.constant('Const',{
   
   timeoutHide: 1000,
   timeoutAlert: 5000,
-  timeoutError: 5000,
+  timeoutError: 10000,
   timeoutInfo: 3000,
   timeoutSuccess: 2000,
   timeoutWarning: 2000,

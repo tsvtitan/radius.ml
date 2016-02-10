@@ -35,8 +35,8 @@ app.service('Log',['Utils',function(Utils) {
   }
   
   this.exception = function(e) {
-    if (e && typeof(e) === 'object') {
-      //logType('exception',e.)
+    if (e && typeof(e) === 'object' && e.message) {
+      logType('exception',e.message);
     }
   }
   

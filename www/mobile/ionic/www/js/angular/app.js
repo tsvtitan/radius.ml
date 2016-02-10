@@ -1,9 +1,14 @@
 
 var app = angular.module('starter',['ionic','ngCordova','ab-base64']); 
                       
-app.run(['$ionicPlatform',function($ionicPlatform) {
+app.run(['$ionicPlatform',
+         'Init','Dictionary','Splash','Alert','Spinner',
+         function($ionicPlatform,
+                  Init,Dictionary,Splash,Alert,Spinner) {
   
   $ionicPlatform.ready(function() {
+    
+    
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
@@ -14,7 +19,29 @@ app.run(['$ionicPlatform',function($ionicPlatform) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+    
+    Splash.hide();
+    
+    Init.get(function(d){
+      
+      if (d.error) Alert.error(d.error,function(){
+        Spinner.show();
+      });
+      else {
+        
+        Dictionary.init(d.dictionary);
+        //Auth.set(d.auth);
+        //Auth.ready = (Auth.user);
+        //if (Auth.ready) Auth.emitLogin();
+      }
+      
+    });
+    
   });
+  
+
+  
+  
 }]);
 
 

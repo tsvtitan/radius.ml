@@ -26,6 +26,8 @@ app.service('Alert',['$ionicPopup','$timeout','Utils','Dictionary','Const',
   
   this.error = function(message,values,options) {
     
+    options = (Utils.isFunction(values) && !Utils.isObject(options))?{onTap:values}:options;
+    
     showAlert(Dictionary.get(message,values),
               Dictionary.get(Const.alertError),
               options,'button-assertive',Const.timeoutError);  
@@ -33,6 +35,7 @@ app.service('Alert',['$ionicPopup','$timeout','Utils','Dictionary','Const',
           
   this.info = function(message,values,options) {
     
+    options = (Utils.isFunction(values) && !Utils.isObject(options))?{onTap:values}:options;
     showAlert(Dictionary.get(message,values),
               Dictionary.get(Const.alertInfo),
               options,'button-positive',Const.timeoutInfo);
@@ -40,6 +43,7 @@ app.service('Alert',['$ionicPopup','$timeout','Utils','Dictionary','Const',
   
   this.warning = function(message,values,options) {
     
+    options = (Utils.isFunction(values) && !Utils.isObject(options))?{onTap:values}:options;
     showAlert(Dictionary.get(message,values),
               Dictionary.get(Const.alertWarning),
               options,'button-energized',Const.timeoutWarning);  
@@ -48,6 +52,7 @@ app.service('Alert',['$ionicPopup','$timeout','Utils','Dictionary','Const',
   
   this.success = function(message,values,options) {
     
+    options = (Utils.isFunction(values) && !Utils.isObject(options))?{onTap:values}:options;
     showAlert(Dictionary.get(message,values),
               Dictionary.get(Const.alertSuccess),
               options,'button-balanced',Const.timeoutSuccess);  

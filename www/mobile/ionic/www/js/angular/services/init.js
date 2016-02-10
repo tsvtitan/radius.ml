@@ -1,17 +1,22 @@
 
-app.service('Init',['$http','$window','Urls','Dictionary','Payload','Utils',
-                    function($http,$window,Urls,Dictionary,Payload,Utils) {
+app.service('Init',['$http','$window','Urls','Dictionary','Payload','Utils','Spinner',
+                    function($http,$window,Urls,Dictionary,Payload,Utils,Spinner) {
     
   var inits = [];
   
   this.get = function(result) {
+    
+    Spinner.show();
+    
     $http.post(Urls.init,Payload.get(),{cache:true})
          .success(function(d){
+                    Spinner.hide();
                     if (d.reload) {
                       $window.location.reload();
                     } else result(d);
                   })
          .error(function(d){ 
+           Spinner.hide();
            result({error:Dictionary.connectionFailed(d)}); 
         });
   }
