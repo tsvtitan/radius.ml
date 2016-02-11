@@ -8,7 +8,10 @@ app.controller('boot',['$scope','$element','$interval',
   $scope.spinner = Spinner;
   
   $scope.test = function() {
-    Alert.info('1231223');  
+    Alert.info('1231223',function(){
+      Log.debug('test');
+      //Splash.toggle();
+    }); 
   }
   
  /* Init.get(function(d){

@@ -75,5 +75,5 @@ module.exports.log = {
 
   level: 'silly',
   colors: false,
-  custom: tryCustomLogger(false)
+  custom: tryCustomLogger(true)
 };
