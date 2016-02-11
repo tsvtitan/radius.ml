@@ -4,10 +4,12 @@
     <div></div>
   </div>
 
-  <div class="view" data-ng-show="!spinner.visible" data-ng-cloak="">
+  <div class="view" data-ng-hide="spinner.visible" data-ng-cloak="">
 
-    <ion-nav-view></ion-nav-view>
-
+    <!--ion-nav-view></ion-nav-view-->
+    
+    <button data-ng-click="test()">Hello</button>
+      
   </div>
 
 </div>

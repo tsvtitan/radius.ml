@@ -6,8 +6,9 @@ app.run(['$ionicPlatform',
          function($ionicPlatform,
                   Init,Dictionary,Splash,Alert,Spinner) {
   
+  Spinner.visible = true;
+  
   $ionicPlatform.ready(function() {
-    
     
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -25,7 +26,7 @@ app.run(['$ionicPlatform',
     Init.get(function(d){
       
       if (d.error) Alert.error(d.error,function(){
-        Spinner.show();
+        //Spinner.show();
       });
       else {
         

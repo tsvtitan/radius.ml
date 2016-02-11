@@ -7,6 +7,10 @@ app.controller('boot',['$scope','$element','$interval',
   $scope.dic = Dictionary.dic($element);
   $scope.spinner = Spinner;
   
+  $scope.test = function() {
+    Alert.info('1231223');  
+  }
+  
  /* Init.get(function(d){
     
     $scope.visible = true;
