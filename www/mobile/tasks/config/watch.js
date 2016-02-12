@@ -23,7 +23,7 @@ module.exports = function(grunt) {
 
 			// When assets are changed:
 			tasks: ['syncAssets' , 
-                    'clean:ionic',
+                    //'clean:ionic',
                     'copy:ionicDev',
                     'linkAssets']
 		},
@@ -36,7 +36,7 @@ module.exports = function(grunt) {
                     'concat',
                     'uglify',
                     'cssmin',
-                    'clean:ionic',
+                    //'clean:ionic',
                     'copy:ionicProd',
                     'linkAssetsProd']
     }
