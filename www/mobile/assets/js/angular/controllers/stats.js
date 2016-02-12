@@ -15,7 +15,7 @@ app.controller('stats',['$scope','$element','$timeout','$state',
     
     Spinner.hide();
     //$state.go('profile');
-  },2000);
+  },1000);
                            
                            
 }]);

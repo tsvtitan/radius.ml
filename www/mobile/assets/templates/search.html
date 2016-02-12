@@ -1,75 +1,78 @@
-<ion-view data-ng-controller="search" title="Проверка">
-  <ion-content overflow-scroll="true" padding="false" class="has-header background">
-      <ion-list>
-          <ion-item class="item-thumbnail-left">
-              <img src="images/s40DaHVcTVGha2oIV7MV_mainnails.jpg">
-              <h2>Убраться в картире</h2>
-              <p>Помыть пол, протереть
-                  <br>пыль, почистить плиту...
-                  <br>Плачу 1000 руб.</p>
-          </ion-item>
-      </ion-list>
-      <div class="spacer" style="width: 283px; height: 5px;"></div>
-      <ion-list>
-          <ion-item class="item-thumbnail-left">
-              <img src="images/tU1UhyZTxau2EPt2sjU0_windows-store.png">
-              <h2>Установить Windows</h2>
-              <p>Помогите установить
-                  <br>windows на ноутбук...
-                  <br>Плачу 600 руб.</p>
-          </ion-item>
-      </ion-list>
-      <div class="spacer" style="width: 283px; height: 4px;"></div>
-      <ion-list>
-          <ion-item class="item-thumbnail-left">
-              <img src="images/sGeQNweIRJ2h0vupIZWz_courier.jpg">
-              <h2>Отвезти документы</h2>
-              <p>Необходимо доставить
-                  <br>пакет с документами до
-                  <br>метро Автозаводская...
-                  <br>Плачу 700 руб.</p>
-          </ion-item>
-      </ion-list>
-      <div class="spacer" style="width: 283px; height: 4px;"></div>
-      <ion-list>
-          <ion-item class="item-thumbnail-left">
-              <img src="images/s40DaHVcTVGha2oIV7MV_mainnails.jpg">
-              <h2>Собрать мебель</h2>
-              <p>Нужно собрать шкаф,
-                  <br>комод и две тумбочки...
-                  <br>Плачу 1500 руб.</p>
-          </ion-item>
-      </ion-list>
-      <div class="spacer" style="width: 283px; height: 5px;"></div>
-      <ion-list>
-          <ion-item class="item-thumbnail-left">
-              <img src="images/sGeQNweIRJ2h0vupIZWz_courier.jpg">
-              <h2>Погулять с собакой</h2>
-              <p>Погулять с собакой
-                  <br>1-1,5 часа...
-                  <br>Плачу 250 руб.</p>
-          </ion-item>
-      </ion-list>
-      <div class="spacer" style="width: 283px; height: 5px;"></div>
-      <ion-list>
-          <ion-item class="item-thumbnail-left">
-              <img src="images/s40DaHVcTVGha2oIV7MV_mainnails.jpg">
-              <h2>Маникюр</h2>
-              <p>Сделайте маникюр...
-                  <br>Плачу 1500 руб.</p>
-          </ion-item>
-      </ion-list>
-      <div class="spacer" style="width: 283px; height: 5px;"></div>
-      <ion-list>
-          <ion-item class="item-thumbnail-left">
-              <img src="images/tU1UhyZTxau2EPt2sjU0_windows-store.png">
-              <h2>Сварить борщ</h2>
-              <p>Сварите борщ.
-                  <br>Продукты мои...
-                  <br>Плачу 300 руб.</p>
-          </ion-item>
-      </ion-list>
-      <div class="spacer" style="width: 283px; height: 6px;"></div>
-      <ion-list></ion-list>
-  </ion-content>
-</ion-view>
+<div data-ng-controller="search">
+  <ion-view view-title="{{dic('Поиск')}}">
+    <!--ion-nav-title></ion-nav-title-->
+    <ion-content overflow-scroll="true" padding="false" class="has-header background">
+        <ion-list>
+            <ion-item class="item-thumbnail-left" data-ng-click="details()">
+                <img src="images/s40DaHVcTVGha2oIV7MV_mainnails.jpg">
+                <h2>Убраться в картире</h2>
+                <p>Помыть пол, протереть
+                    <br>пыль, почистить плиту...
+                    <br>Плачу 1000 руб.</p>
+            </ion-item>
+        </ion-list>
+        <div class="spacer" style="width: 283px; height: 5px;"></div>
+        <ion-list>
+            <ion-item class="item-thumbnail-left" data-ng-click="details()">
+                <img src="images/tU1UhyZTxau2EPt2sjU0_windows-store.png">
+                <h2>Установить Windows</h2>
+                <p>Помогите установить
+                    <br>windows на ноутбук...
+                    <br>Плачу 600 руб.</p>
+            </ion-item>
+        </ion-list>
+        <div class="spacer" style="width: 283px; height: 4px;"></div>
+        <ion-list>
+            <ion-item class="item-thumbnail-left" data-ng-click="details()">
+                <img src="images/sGeQNweIRJ2h0vupIZWz_courier.jpg">
+                <h2>Отвезти документы</h2>
+                <p>Необходимо доставить
+                    <br>пакет с документами до
+                    <br>метро Автозаводская...
+                    <br>Плачу 700 руб.</p>
+            </ion-item>
+        </ion-list>
+        <div class="spacer" style="width: 283px; height: 4px;"></div>
+        <ion-list>
+            <ion-item class="item-thumbnail-left" data-ng-click="details()">
+                <img src="images/s40DaHVcTVGha2oIV7MV_mainnails.jpg">
+                <h2>Собрать мебель</h2>
+                <p>Нужно собрать шкаф,
+                    <br>комод и две тумбочки...
+                    <br>Плачу 1500 руб.</p>
+            </ion-item>
+        </ion-list>
+        <div class="spacer" style="width: 283px; height: 5px;"></div>
+        <ion-list>
+            <ion-item class="item-thumbnail-left" data-ng-click="details()">
+                <img src="images/sGeQNweIRJ2h0vupIZWz_courier.jpg">
+                <h2>Погулять с собакой</h2>
+                <p>Погулять с собакой
+                    <br>1-1,5 часа...
+                    <br>Плачу 250 руб.</p>
+            </ion-item>
+        </ion-list>
+        <div class="spacer" style="width: 283px; height: 5px;"></div>
+        <ion-list>
+            <ion-item class="item-thumbnail-left" data-ng-click="details()">
+                <img src="images/s40DaHVcTVGha2oIV7MV_mainnails.jpg">
+                <h2>Маникюр</h2>
+                <p>Сделайте маникюр...
+                    <br>Плачу 1500 руб.</p>
+            </ion-item>
+        </ion-list>
+        <div class="spacer" style="width: 283px; height: 5px;"></div>
+        <ion-list>
+            <ion-item class="item-thumbnail-left" data-ng-click="details()">
+                <img src="images/tU1UhyZTxau2EPt2sjU0_windows-store.png">
+                <h2>Сварить борщ</h2>
+                <p>Сварите борщ.
+                    <br>Продукты мои...
+                    <br>Плачу 300 руб.</p>
+            </ion-item>
+        </ion-list>
+        <div class="spacer" style="width: 283px; height: 6px;"></div>
+        <ion-list></ion-list>
+    </ion-content>
+  </ion-view>
+</div>
