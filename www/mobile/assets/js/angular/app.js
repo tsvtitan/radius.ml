@@ -25,7 +25,9 @@ app.run(['$ionicPlatform',
     
     Init.get(function(d){
       
-      if (d.error) Alert.error(d.error,function(){
+      Dictionary.init(d.dictionary);
+      
+      /*if (d.error) Alert.error(d.error,function(){
         //Spinner.show();
       });
       else {
@@ -34,7 +36,7 @@ app.run(['$ionicPlatform',
         //Auth.set(d.auth);
         //Auth.ready = (Auth.user);
         //if (Auth.ready) Auth.emitLogin();
-      }
+      }*/
       
     });
     

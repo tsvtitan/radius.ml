@@ -1,0 +1,38 @@
+<ion-view data-ng-controller="publication" title="Публикация">
+    <ion-content overflow-scroll="true" padding="true" class="has-header background">
+        <form class="list">
+            <label class="item item-input">
+                <span class="input-label">Заголовок:</span>
+                <input type="text" placeholder="">
+            </label>
+            <div class="spacer" style="width: 283px; height: 5px;"></div>
+            <label class="item item-input">
+                <span class="input-label">Текст объявления:</span><textarea placeholder=""> </textarea>
+            </label>
+            <div class="spacer" style="width: 283px; height: 5px;"></div>
+            <label class="item item-input">
+                <span class="input-label">Цена:</span>
+                <input type="number" placeholder="">
+            </label>
+            <div class="button-bar">
+                <button class="button button-stable button-block ">М</button>
+                <button class="button button-stable button-block ">Ж</button>
+            </div>
+            <ion-item class="range range-positive">Возраст
+                <input type="range" value="25" min="12" max="80">
+            </ion-item>
+            <div class="spacer" style="width: 283px; height: 5px;"></div>
+            <label class="item item-input">
+                <span class="input-label">Время публикации:</span>
+                <input type="number" placeholder="">
+            </label>
+            <div class="spacer" style="width: 283px; height: 4px;"></div>
+            <label class="item item-input">
+                <span class="input-label">Радиус:</span>
+                <input type="number" placeholder="">
+            </label>
+            <button class="button button-stable button-block  icon-left ion-android-pin">Мое местоположение</button>
+            <button class="button button-stable button-block ">Опубликовать</button>
+        </form>
+    </ion-content>
+</ion-view>

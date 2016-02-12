@@ -18,6 +18,15 @@ app.constant('Urls',{
   authLogin: api.concat('/login'),
   authLogout: api.concat('/logout'),
   
+  deal: '/deal',
+  details: '/details',
+  filter: '/filter',
+  history: '/history',
+  profile: '/profile',
+  publication: '/publication',
+  registration: '/registration',
+  search: '/search',
+  stats: '/stats'
   
 });
 

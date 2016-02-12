@@ -1,11 +1,12 @@
 
 app.controller('boot',['$scope','$element','$interval',
-                       'Spinner','Dictionary','Alert','Const','Splash','Log', 
+                       'Dictionary','Alert','Const','Spinner','Navbar','Log', 
                        function($scope,$element,$interval,
-                                Spinner,Dictionary,Alert,Const,Splash,Log) {
+                                Dictionary,Alert,Const,Spinner,Navbar,Log) {
   
   $scope.dic = Dictionary.dic($element);
   $scope.spinner = Spinner;
+  $scope.navbar = Navbar;
   
   $scope.test = function() {
     Alert.info('1231223',function(){

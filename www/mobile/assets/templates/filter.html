@@ -1,0 +1,26 @@
+<ion-view data-ng-controller="filter" title="Фильтр">
+    <ion-content overflow-scroll="true" padding="true" class="has-header background">
+        <form class="list">
+            <button class="button button-stable button-block  icon-left ion-android-pin">Мое местоположение</button>
+            <ion-item class="range range-balanced">Радиус
+                <input type="range" value="5" min="0" max="10">
+            </ion-item>
+            <div class="spacer" style="width: 283px; height: 10px;"></div>
+            <label class="item item-input">
+                <span class="input-label">Цена</span>
+                <input type="number" placeholder="От             До">
+            </label>
+            <div class="button-bar">
+                <button class="button button-positive button-block  icon-left ion-male">Муж</button>
+                <button class="button button-stable button-block  icon-right ion-female">Жен</button>
+            </div>
+            <ion-list>
+                <ion-item>Сортировка</ion-item>
+                <ion-checkbox>По удаленности</ion-checkbox>
+                <ion-checkbox>По стоимости</ion-checkbox>
+                <ion-checkbox>По дате публикации</ion-checkbox>
+            </ion-list>
+        </form>
+        <form class="list"></form>
+    </ion-content>
+</ion-view>

@@ -14,6 +14,9 @@
  * or any other Grunt tasks you like.)
  */
 /* Custom styles */
+.background {
+  background: url(/images/background.jpg) no-repeat center;
+}
 /*
 .alert-container {
   display:table;
