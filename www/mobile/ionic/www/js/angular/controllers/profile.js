@@ -1,18 +1,18 @@
 
-app.controller('profile',['$scope','$element','$timeout','$state',
-                          'Dictionary','Alert','Const','Log','Spinner','Navbar', 
-                          function($scope,$element,$timeout,$state,
-                                   Dictionary,Alert,Const,Log,Spinner,Navbar) {
+app.controller('profile',['$scope','$element','$timeout',
+                          'Dictionary','Loading',
+                          function($scope,$element,$timeout,
+                                   Dictionary,Loading) {
    
   $scope.dic = Dictionary.dic($element);                                 
-  
-  Spinner.show();
+
+  Loading.show($scope);
   
   $timeout(function(){
     
-    Spinner.hide();
+    Loading.hide();
+   // Spinner.hide();
     //$state.go('profile');
-  },1000);
-                           
-                           
+  },3000);
+  
 }]);

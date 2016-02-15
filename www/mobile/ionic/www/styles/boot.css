@@ -15,17 +15,19 @@
 .spinner {
   display:block;
   position:absolute; top:0; left:0; width:100%; height:100%;
-  background-color: #eeeeee;
+  background-color: #d89847;
+  /*opacity: 0.6;
+  filter: alpha(opacity=60);*/
 }
 
 .spinner div {
 
   border-radius: 50px;
   border-style: solid;
-  border-bottom-color: #d89847;
-  border-top-color: #d89847;
-  border-left-color: #eeeeee;
-  border-right-color: #eeeeee;
+  border-bottom-color: white;
+  border-top-color: white;
+  border-left-color: #d89847;
+  border-right-color: #d89847;
   animation: rotate360 1.4s linear infinite;
   -webkit-animation: rotate360 1.4s linear infinite;
   border-width: 4px;
