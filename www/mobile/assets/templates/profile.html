@@ -1,5 +1,6 @@
-<ion-view data-ng-controller="profile" title="Профиль">
-    <ion-content overflow-scroll="true" padding="true" class="has-header background">
+<div data-ng-controller="profile"> 
+  <ion-view view-title="{{dic('Профиль')}}">
+    <ion-content overflow-scroll="true" padding="true" class="has-header background" data-ng-hide="loading.visible">
         <ion-list>
             <ion-item class="item-thumbnail-left">
                 <img src="images/s40DaHVcTVGha2oIV7MV_mainnails.jpg">
@@ -9,23 +10,16 @@
                 <p></p>
             </ion-item>
         </ion-list>
-        <div class="spacer" style="width: 283px; height: 6px;"></div>
         <ion-list>
-            <ion-item>Пол: Мужчина</ion-item>
+            <ion-item>Возраст: 39 лет</ion-item>
+            <ion-item>Тел: +7 (987) 654-32-10</ion-item>
+            <ion-item>E-mail: sashka@borodach.me</ion-item>
         </ion-list>
-        <div class="spacer" style="width: 283px; height: 5px;"></div>
-        <ion-list>
-            <ion-item>Возраст: 35 лет</ion-item>
-        </ion-list>
-        <div class="spacer" style="width: 283px; height: 5px;"></div>
-        <ion-list>
-            <ion-item>Тел: +7 (985) 566-09-88</ion-item>
-        </ion-list>
-        <div class="spacer" style="width: 283px; height: 4px;"></div>
-        <ion-list>
-            <ion-item>E-mail: sashka@borodach.ru</ion-item>
-        </ion-list>
-        <div class="spacer" style="width: 283px; height: 94px;"></div>
-        <button class="button button-positive button-block ">Сохранить</button>
+        <div class="spacer" style="width: 300px; height: 103px;"></div>
+        <div class="button-bar">
+            <button class="button button-stable button-block ">Сохранить</button>
+            <button class="button button-stable button-block ">Изменить</button>
+        </div>
     </ion-content>
-</ion-view>
+  </ion-view>
+</div>

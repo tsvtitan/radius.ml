@@ -1,0 +1,16 @@
+<div data-ng-controller="home">
+  <ion-tabs class="tabs-icon-top tabs-color-active-positive">
+    <ion-tab title="{{dic('Поиск')}}" icon="ion-ios-location-outline" href="#/home/search">
+      <ion-nav-view name="home-search"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="{{dic('Избранное')}}" icon="ion-ios-star-outline" href="#/home/favorites">
+      <ion-nav-view name="home-favorites"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="{{dic('Добавить')}}" icon="ion-android-add" href="#/home/add">
+      <ion-nav-view name="home-add"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="{{dic('Профиль')}}" icon="ion-ios-person-outline" href="#/home/profile">
+      <ion-nav-view name="home-profile"></ion-nav-view>
+    </ion-tab>
+  </ion-tabs>
+</div>  

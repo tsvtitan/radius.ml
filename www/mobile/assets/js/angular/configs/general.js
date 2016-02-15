@@ -1,6 +1,8 @@
 
-app.config(['$provide','$sceDelegateProvider',/*'laddaProvider',*/'Const','Urls',
-            function($provide,$sceDelegateProvider,laddaProvider,Const,Urls) {
+app.config(['$provide','$sceDelegateProvider',
+            'Const','Urls',
+            function($provide,$sceDelegateProvider,
+                     Const,Urls) {
     
   $provide.decorator('$templateCache',['$delegate',function($delegate) {
     var originalGet = $delegate.get;
@@ -23,12 +25,6 @@ app.config(['$provide','$sceDelegateProvider',/*'laddaProvider',*/'Const','Urls'
   }]);
 
   //$sceDelegateProvider.resourceUrlWhitelist(Urls.whiteList);
-
-  /*laddaProvider.setOption({
-    style: 'expand-left',
-    spinnerColor: '#ccc',
-    spinnerSize: '24'
-  });*/
   
   return this;
 }]);

@@ -13,20 +13,35 @@ app.constant('Urls',{
   ],
   
   root: root,
-  init: api.concat('/init'),
   
-  authLogin: api.concat('/login'),
-  authLogout: api.concat('/logout'),
+  api: {
+    init: api.concat('/init'),
+    search: api.concat('/search'),
+    favorites: api.concat('/favorites')
+  },
   
-  deal: '/deal',
-  details: '/details',
-  filter: '/filter',
-  history: '/history',
-  profile: '/profile',
-  publication: '/publication',
-  registration: '/registration',
-  search: '/search',
-  stats: '/stats'
+  local: {
+    home: '/home',
+    search: '/search',
+    favorites: '/favorites',
+    add: '/add',
+    profile: '/profile',
+    deal: '/deal',
+    details: '/details',
+    filter: '/filter',
+    history: '/history',
+    profile: '/profile',
+    publication: '/publication',
+    registration: '/registration',
+    stats: '/stats'
+  },
+  
+  data: {
+    search: 'data/search.json',
+    favorites: 'data/favorites.json',
+    details: 'data/details.json'
+  }
+         
   
 });
 

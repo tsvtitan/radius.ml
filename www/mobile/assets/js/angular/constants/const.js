@@ -4,6 +4,7 @@ app.constant('Const',{
   checkFields: 'Проверьте поля',
   connectionFailed: 'Соединение разорвано',
   pageNotAvailable: 'Страница не доступна',
+  loading: 'Загрузка...',
   
   cancel: 'Отмена',
   
@@ -29,6 +30,6 @@ app.constant('Const',{
   timeoutSuccess: 2000,
   timeoutWarning: 2000,
   
-  limitAlerts: 3
+  delaySuccess: 1000
 })
    

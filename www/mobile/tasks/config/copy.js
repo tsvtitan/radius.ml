@@ -26,7 +26,8 @@ module.exports = function(grunt) {
       files: [
 
         {expand: true, cwd: './.tmp/public/mobile', 
-            src: ['fonts/**',
+            src: ['data/**',
+                  'fonts/**',
                   'images/**',
                   'js/**',
                   'styles/**',

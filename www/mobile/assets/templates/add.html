@@ -1,0 +1,53 @@
+<div data-ng-controller="add">
+  <ion-view view-title="{{dic('Добавить')}}">
+    <ion-content overflow-scroll="true" padding="true" class="has-header background" data-ng-hide="loading.visible">
+        <div class="list card">
+            <div class="item item-divider">Мне нужно:</div>
+            <div class="item item-body">
+                <form class="list">
+                    <label class="item item-input">
+                        <input type="text" placeholder="Сделать уборку квартиры">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                        </span><textarea placeholder="Детально опишите что необходимо сделать"> </textarea>
+                    </label>
+                </form>
+            </div>
+        </div>
+        <div class="list card">
+            <div class="item item-divider">Когда нужно:</div>
+            <div class="item item-body">
+                <div class="button-bar">
+                    <button class="button button-stable button-block  icon ion-ios-clock-outline"></button>
+                    <button class="button button-stable button-block  icon ion-ios-calendar-outline"></button>
+                </div>
+            </div>
+        </div>
+        <div class="list card">
+            <div class="item item-divider">Где нужно</div>
+            <div class="item item-body">
+                <img src="img/6mK56yOfQhqjvrKEUZsM_xfMTsijWSGOXXyMaNgrg_Screen Shot 2015-12-30 at 17.58.43.png" width="100%" height="auto" style="width: 100%; height: auto;">
+            </div>
+        </div>
+        <div class="list card">
+            <div class="item item-divider">Оплата</div>
+            <div class="item item-body">
+                <form class="list">
+                    <ion-toggle toggle-class="toggle-positive">Пусть предложат</ion-toggle>
+                    <ion-item class="range range-positive">
+                        <input type="range" value="800" min="50" max="3000">
+                    </ion-item>
+                </form>
+            </div>
+        </div>
+        <a href="#/navi/aroundme" class="button button-positive button-block ">Опубликовать</a>
+        <form class="list"></form>
+        <form class="list"></form>
+    </ion-content>
+  </ion-view>
+</div>  

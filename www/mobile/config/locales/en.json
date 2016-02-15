@@ -11,8 +11,26 @@
   },
   
   "front": {
+    "home": {
+      "Поиск": "Jobs around",
+      "Избранное": "Favorites",
+      "Добавить": "Add",
+      "Профиль": "Profile"
+    },
     "search": {
-      "Поиск": "Search"
+      "Поиск": "Jobs around"
+    },
+    "details": {
+      "Детали": "Details"
+    },
+    "favorites": {
+      "Избранное": "Favorites"
+    },
+    "add": {
+      "Добавить": "Add"
+    },
+    "profile": {
+      "Профиль": "Profile"
     }
   }
 }

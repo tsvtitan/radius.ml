@@ -1,27 +1,41 @@
 
-app.controller('search',['$scope','$element','$timeout','$state',
-                         'Dictionary','Alert','Const','Log','Spinner','Navbar','States', 
-                         function($scope,$element,$timeout,$state,
-                                  Dictionary,Alert,Const,Log,Spinner,Navbar,States) {
+app.controller('search',['$scope','$element','$state',
+                         'Dictionary','Alert','Loading','States','Search', 
+                         function($scope,$element,$state,
+                                  Dictionary,Alert,Loading,States,Search) {
    
   $scope.dic = Dictionary.dic($element);                                 
-  
-  $scope.title = 'Поиск';
-  
-  //Navbar.show();
-  Spinner.show();
-  
-  $timeout(function(){
-    
-    Spinner.hide();
-    //$state.go('profile');
-  },1000);
-  
+  $scope.data = [];
   
   $scope.details = function() {
     $state.go(States.details);
   }
-                           
-                           
+  
+  $scope.favorites = function() {
+    $state.go(States.favorites);
+  }  
+
+  function load() {
+    
+    Loading.show();
+
+    Search.get(function(d){
+
+      Loading.hide();
+
+      if (d.error) Alert.error(d.error);
+      else {
+        $scope.data = d.data;
+      }
+    });
+  }
+  
+  $scope.reload = function() {
+    load();
+  };
+  
+
+  load();
+
 }]);
                                   
