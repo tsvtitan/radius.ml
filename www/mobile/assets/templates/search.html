@@ -1,19 +1,26 @@
 <div data-ng-controller="search">
+  
   <ion-view view-title="{{dic('Поиск')}}">
-    <ion-content overflow-scroll="true" padding="true" class="has-header background" 
-                 on-swipe-down="reload()" on-swipe-left="favorites()"
+    
+    <ion-content padding="true" overflow-scroll="false"
+                 has-bouncing="true"
+                 class="has-header"
                  data-ng-hide="loading.visible">
-        <ion-list can-swipe="true">
-          <div data-ng-repeat="d in data" data-ng-click="details(d)">
-            <ion-item class="item-thumbnail-left">
-              <img data-ng-src="{{d.image}}">
-              <h2>{{d.title}}</h2>
-              <p>{{d.desc}}</p>
-              <p>{{dic('Плачу')}} {{d.cost}} {{dic('руб.')}}</p>
-            </ion-item>
-            <div class="spacer" style="width: 100%; height: 8px;"></div>
-          </div>  
-        </ion-list>
+      
+      <ion-refresher pulling-icon="ion-arrow-down-b" on-refresh="refresh()"></ion-refresher>
+      
+      <ion-list>
+        <ion-item class="item-thumbnail-left" collection-repeat="d in search.data" 
+                  item-height="100" item-width="95%"
+                  data-ng-click="details(d)">
+          <img data-ng-src="{{d.image}}">
+          <h2>{{d.title}}</h2>
+          <p>{{d.desc}}</p>
+          <p>{{dic('Плачу')}} {{d.cost}} {{dic('руб.')}}</p>
+        </ion-item>
+        <!--div class="spacer" style="width: 100%; height: 8px;"></div-->
+        
+      </ion-list>
     </ion-content>
   </ion-view>
 </div>

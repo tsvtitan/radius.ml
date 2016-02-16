@@ -76,11 +76,15 @@ app.config(['$stateProvider','$urlRouterProvider',
     templateUrl: 'registration.html'
   });              
               
-     
   $stateProvider.state(States.stats,{
     url: Urls.local.stats,
     templateUrl: 'stats.html'
-  });         
+  });
+  
+  $stateProvider.state(States.test,{
+    url: Urls.local.test,
+    templateUrl: 'test.html'
+  }); 
           
   $urlRouterProvider.otherwise('/home/search');        
 

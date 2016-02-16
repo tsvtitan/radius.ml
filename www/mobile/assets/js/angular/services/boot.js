@@ -1,8 +1,8 @@
 
-app.service('Spinner',['Utils',
+app.service('Boot',['Utils',
                     function(Utils) {
     
-  this.visible = false;
+  this.visible = true;
   
   this.show = function() {
     this.visible = true;

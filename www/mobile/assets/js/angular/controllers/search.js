@@ -1,11 +1,12 @@
 
-app.controller('search',['$scope','$element','$state',
-                         'Dictionary','Alert','Loading','States','Search', 
-                         function($scope,$element,$state,
-                                  Dictionary,Alert,Loading,States,Search) {
+app.controller('search',['$scope','$element','$state','$timeout',
+                         'Dictionary','Alert','Refresher','States','Search','Log','Loading', 
+                         function($scope,$element,$state,$timeout,
+                                  Dictionary,Alert,Refresher,States,Search,Log,Loading) {
    
   $scope.dic = Dictionary.dic($element);                                 
-  $scope.data = [];
+  $scope.search = Search;
+  $scope.total = 50;
   
   $scope.details = function() {
     $state.go(States.details);
@@ -15,27 +16,22 @@ app.controller('search',['$scope','$element','$state',
     $state.go(States.favorites);
   }  
 
-  function load() {
+  $scope.refresh = function() {
     
-    Loading.show();
-
-    Search.get(function(d){
-
-      Loading.hide();
-
-      if (d.error) Alert.error(d.error);
-      else {
-        $scope.data = d.data;
-      }
+    Search.getData({},function(d){
+        
+      if (d.error) Log.error(d.error);
+      
+      $scope.total = 10;
+      Search.setData(d.data);
+      Refresher.hide();
     });
-  }
-  
-  $scope.reload = function() {
-    load();
   };
   
+  $scope.more = function() {
+    $scope.total += 0;
+  }
 
-  load();
 
 }]);
                                   

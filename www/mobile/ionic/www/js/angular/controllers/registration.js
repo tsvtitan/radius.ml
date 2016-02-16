@@ -1,18 +1,10 @@
 
 app.controller('registration',['$scope','$element','$timeout','$state',
-                               'Dictionary','Alert','Const','Log','Spinner','Navbar', 
+                               'Dictionary','Alert','Const','Log','Navbar', 
                                function($scope,$element,$timeout,$state,
-                                        Dictionary,Alert,Const,Log,Spinner,Navbar) {
+                                        Dictionary,Alert,Const,Log,Navbar) {
 
   $scope.dic = Dictionary.dic($element);                                 
   
-  Spinner.show();
-  
-  $timeout(function(){
-    
-    Spinner.hide();
-    //$state.go('profile');
-  },1000);
-                           
-                           
+                
 }]);

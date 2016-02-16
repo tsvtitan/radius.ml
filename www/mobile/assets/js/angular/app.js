@@ -2,13 +2,11 @@
 var app = angular.module('radius',['ionic','ngCordova','ab-base64']); 
                       
 app.run(['$ionicPlatform',
-         'Init','Dictionary','Splash','Alert','Spinner','Navbar',
+         'Init','Dictionary','Splash','Alert','Boot','Navbar','Search','Log','Profile',
          function($ionicPlatform,
-                  Init,Dictionary,Splash,Alert,Spinner,Navbar) {
-  
+                  Init,Dictionary,Splash,Alert,Boot,Navbar,Search,Log,Profile) {
   
   Navbar.show();
-  Spinner.show();
   
   $ionicPlatform.ready(function() {
     
@@ -25,21 +23,19 @@ app.run(['$ionicPlatform',
     
     Splash.hide();
     
-    Init.get(function(d){
+    Init.getData(function(d){
       
       Dictionary.init(d.dictionary);
+      Profile.set(d.profile);
       
-      Spinner.hide();
-      /*if (d.error) Alert.error(d.error,function(){
-        //Spinner.show();
-      });
-      else {
+      if (d.error) Log.error(d.error);
+      
+      Search.getData(d.search,function(d){
         
-        Dictionary.init(d.dictionary);
-        //Auth.set(d.auth);
-        //Auth.ready = (Auth.user);
-        //if (Auth.ready) Auth.emitLogin();
-      }*/
+        if (d.error) Log.error(d.error);
+        Search.setData(d.data);
+        Boot.hide();
+      });
       
     });
     

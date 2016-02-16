@@ -1,20 +1,22 @@
 
-app.service('Init',['$http','$window','Urls','Dictionary','Payload','Utils','Alert',
-                    function($http,$window,Urls,Dictionary,Payload,Utils,Alert) {
+app.service('Init',['$http',
+                    'Urls','Payload','Utils','Alert','Data',
+                    function($http,
+                             Urls,Payload,Utils,Alert,Data) {
     
   var inits = [];
   
-  this.get = function(result) {
+  this.getData = function(result) {
     
-    $http.post(Urls.api.init,Payload.get(),{cache:false})
+    $http.post(Urls.api.init,Payload.get({},false))
          .success(function(d){
                     if (d.reload) {
                       Alert.debug('Reload needed');
                     } else result(d);
                   })
          .error(function(d){ 
-           result({error:Dictionary.connectionFailed(d)}); 
-        });
+           Data.load(d,Urls.data.init,result);
+         });
   }
   
   this.once = function(name,callback) {

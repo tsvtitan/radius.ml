@@ -30,6 +30,7 @@ app.constant('Const',{
   timeoutSuccess: 2000,
   timeoutWarning: 2000,
   
-  delaySuccess: 1000
+  dataDelaySuccess: 500,
+  dataDelayError: 1000
 })
    

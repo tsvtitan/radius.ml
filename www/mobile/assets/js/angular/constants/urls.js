@@ -1,4 +1,5 @@
-var root = 'http://radius.ml:51338/mobile';
+//var root = 'http://radius.ml:51338/mobile';
+var root = 'http://radius.ml/mobile';
 
 var api = root.concat('/api');
 
@@ -30,13 +31,14 @@ app.constant('Urls',{
     details: '/details',
     filter: '/filter',
     history: '/history',
-    profile: '/profile',
     publication: '/publication',
     registration: '/registration',
-    stats: '/stats'
+    stats: '/stats',
+    test: '/test'
   },
   
   data: {
+    init: 'data/init.json',
     search: 'data/search.json',
     favorites: 'data/favorites.json',
     details: 'data/details.json'

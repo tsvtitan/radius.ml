@@ -12,7 +12,7 @@
   to { -webkit-transform: rotate(360deg); }
 }
 
-.spinner {
+.boot {
   display:block;
   position:absolute; top:0; left:0; width:100%; height:100%;
   background-color: #d89847;
@@ -20,7 +20,7 @@
   filter: alpha(opacity=60);*/
 }
 
-.spinner div {
+.boot div {
 
   border-radius: 50px;
   border-style: solid;

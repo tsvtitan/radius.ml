@@ -1,21 +1,23 @@
 
-app.service('Payload',['$window','Utils',
-                      function($window,Utils) {
+app.service('Payload',['$window','Utils','Profile',
+                      function($window,Utils,Profile) {
   
   
   this.size = function() {
     return {width:$window.innerWidth,height:$window.innerHeight};
   }
   
-  this.get = function(obj) {
+  this.get = function(obj,includeUser) {
     
-    var obj1 = {
+    var o = {
       payload: {
         size: this.size()
       }
     }
     
-    return Utils.extend(obj1,obj); 
+    if (includeUser) o.payload.user = Profile.getUser();
+    
+    return Utils.extend(o,obj); 
   }
   
 }]);

@@ -1,7 +1,7 @@
 
-app.config(['$provide','$sceDelegateProvider',
+app.config(['$provide','$sceDelegateProvider','$httpProvider',
             'Const','Urls',
-            function($provide,$sceDelegateProvider,
+            function($provide,$sceDelegateProvider,$httpProvider,
                      Const,Urls) {
     
   $provide.decorator('$templateCache',['$delegate',function($delegate) {
@@ -25,6 +25,9 @@ app.config(['$provide','$sceDelegateProvider',
   }]);
 
   //$sceDelegateProvider.resourceUrlWhitelist(Urls.whiteList);
+  
+  $httpProvider.defaults.cache = false;
+  $httpProvider.defaults.timeout = 5000;
   
   return this;
 }]);

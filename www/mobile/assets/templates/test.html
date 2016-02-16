@@ -1,0 +1,16 @@
+<div data-ng-controller="test">
+  <ion-view view-title="{{dic('Поиск')}}">
+    <ion-content 
+                 data-ng-hide="loading.visible">
+        <ion-list>
+          <ion-item class="item-thumbnail-left" data-ng-repeat="d in data" data-ng-click="details(d)">
+            <img data-ng-src="{{d.image}}">
+            <h2>{{d.title}}</h2>
+            <p>{{d.desc}}</p>
+            <p>{{dic('Плачу')}} {{d.cost}} {{dic('руб.')}}</p>
+            <p>{{d.id}}</p>
+          </ion-item>
+        </ion-list>
+    </ion-content>
+  </ion-view>
+</div>

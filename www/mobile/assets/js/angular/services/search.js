@@ -1,14 +1,24 @@
 
-app.service('Search',['$http','Urls','Payload','Data',
-                      function($http,Urls,Payload,Data) {
+app.service('Search',['$http','Urls','Payload','Data','Utils',
+                      function($http,Urls,Payload,Data,Utils) {
+  
+  this.data = [];
+  this.conditions = {};
+  
+  this.getData = function(conditions,result) {
     
-  this.get = function(result) {
+    this.conditions = conditions || {};
     
-    $http.post(Urls.api.search,Payload.get(),{cache:false})
+    $http.post(Urls.api.search,Payload.get(this.conditions))
          .success(function(d){result(d);})
          .error(function(d){
-           Data.load(Urls.data.search,result);
+           Data.load(d,Urls.data.search,result);
          }); 
+  }
+  
+  this.setData = function(data) {
+    
+    this.data = Utils.isArray(data)?data:[];
   }
   
   

@@ -1,0 +1,39 @@
+{
+  "error": false,
+  "profile": {
+    "user": false,
+    "captcha": false
+  },
+  "search": {
+    "string": ""
+  },
+  "dictionary": {
+    "Lang": "en-EN",
+    "Title": "Radius: Mobile",
+    "Version": "0.0.1",
+    "Logo": "R",
+    "Copyright": "© 2016 Radius",
+    "UrlHomePage": "/mobile",
+    "home": {
+      "Поиск": "Jobs around",
+      "Избранное": "Favorites",
+      "Добавить": "Add",
+      "Профиль": "Profile"
+    },
+    "search": {
+      "Поиск": "Jobs around"
+    },
+    "details": {
+      "Детали": "Details"
+    },
+    "favorites": {
+      "Избранное": "Favorites"
+    },
+    "add": {
+      "Добавить": "Add"
+    },
+    "profile": {
+      "Профиль": "Profile"
+    }
+  }
+}

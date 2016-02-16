@@ -12,7 +12,7 @@ app.constant('States',{
   profile: 'profile',
   publication: 'publication',
   registration: 'registration',
-  search: 'search',
-  stats: 'stats'
+  stats: 'stats',
+  test: 'test'
   
 });

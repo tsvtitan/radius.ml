@@ -1,11 +1,11 @@
 
 app.controller('boot',['$scope','$element','$interval',
-                       'Dictionary','Alert','Const','Spinner','Navbar','Log','Loading', 
+                       'Dictionary','Alert','Const','Boot','Navbar','Log','Loading', 
                        function($scope,$element,$interval,
-                                Dictionary,Alert,Const,Spinner,Navbar,Log,Loading) {
+                                Dictionary,Alert,Const,Boot,Navbar,Log,Loading) {
   
   $scope.dic = Dictionary.dic($element);
-  $scope.spinner = Spinner;
+  $scope.boot = Boot;
   $scope.navbar = Navbar;
   $scope.loading = Loading;
   
