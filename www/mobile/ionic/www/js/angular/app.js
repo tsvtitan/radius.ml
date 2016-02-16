@@ -30,12 +30,15 @@ app.run(['$ionicPlatform',
       
       if (d.error) Log.error(d.error);
       
-      Search.getData(d.search,function(d){
+      Boot.hide();
+      Boot.ready();
+      /*Search.get(d.search,function(d){
         
         if (d.error) Log.error(d.error);
-        Search.setData(d.data);
+        Search.set(d);
         Boot.hide();
-      });
+        Boot.ready();
+      });*/
       
     });
     

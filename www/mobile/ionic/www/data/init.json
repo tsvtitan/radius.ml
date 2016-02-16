@@ -5,6 +5,7 @@
     "captcha": false
   },
   "search": {
+    "limit": 20,
     "string": ""
   },
   "dictionary": {

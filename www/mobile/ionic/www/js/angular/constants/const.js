@@ -18,10 +18,7 @@ app.constant('Const',{
   
   countFileSelected: '{count} file(s) selected',
   
-  //eventInit: 'init',
-  eventLogin: 'login',
-  eventLogout: 'logout',
-  eventReload: 'reload',
+  eventReady: 'radius.ready',
   
   timeoutHide: 1000,
   timeoutAlert: 5000,

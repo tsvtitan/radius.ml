@@ -1,6 +1,6 @@
 
-app.factory('Refresher',['$rootScope','$timeout',
-                         function($rootScope,$timeout) {
+app.factory('Refresher',['$rootScope',
+                         function($rootScope) {
     
   var factory = {
     
