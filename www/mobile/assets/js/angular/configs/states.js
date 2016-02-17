@@ -1,13 +1,23 @@
 
 app.config(['$stateProvider','$urlRouterProvider',
-            'States','Urls',
+            'States','Urls','Const',
             function($stateProvider,$urlRouterProvider,
-                     States,Urls) {
+                     States,Urls,Const) {
   
   
   $stateProvider.state(States.home, {
     url: Urls.local.home,
-    templateUrl: 'home.html'
+    templateUrl: 'home.html',
+    resolve: {
+      Ready: (['$q','$rootScope',function($q,$rootScope) {
+        
+        var deferred = $q.defer();
+        $rootScope.$on(Const.eventReady,function(){
+          deferred.resolve(true);
+        });
+        return deferred.promise;
+      }])
+    }
   });
   
   $stateProvider.state('home.search', {

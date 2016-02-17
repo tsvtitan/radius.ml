@@ -4,26 +4,34 @@
     
     <ion-content padding="true" overflow-scroll="false"
                  has-bouncing="true"
-                 class="has-header"
-                 data-ng-hide="loading.visible">
+                 on-swipe-left="favorites()"
+                 class="has-header background">
       
-      <ion-refresher pulling-icon="ion-arrow-down-b" on-refresh="refresh()"></ion-refresher>
+      <!--div data-ng-include="'loader.html'" data-ng-init="visible=ready"></div-->
+      <!--div class="loader" data-ng-hide="ready">
+        <ion-spinner></ion-spinner>
+      </div-->
+      
+      <ion-refresher on-refresh="refresh()"></ion-refresher>
       
       <ion-list>
-        <ion-item class="item-thumbnail-left" collection-repeat="d in data" 
-                  item-height="100" item-width="96%"
-                  data-ng-click="details(d)">
-          <img data-ng-src="{{d.image}}">
-          <h2>{{d.title}}</h2>
-          <p>{{d.desc}}</p>
-          <p>{{dic('Плачу')}} {{d.cost}} {{dic('руб.')}}</p>
-          <p>{{d.id}}</p>
-        </ion-item>
-        <!--div class="spacer" style="width: 100%; height: 8px;"></div-->
+        
+        <div collection-repeat="d in service.data">
+          <ion-item class="animated fadeIn item-thumbnail-left"
+                    item-height="100" item-width="96%"
+                    data-ng-click="details(d)">
+            <img data-ng-src="{{d.image}}">
+            <h2>{{d.title}}</h2>
+            <p>{{d.desc}}</p>
+            <p>{{dic('Плачу')}} {{d.cost}} {{dic('руб.')}}</p>
+            <p>{{d.id}}</p>
+          </ion-item>
+          <div class="spacer" style="width: 100%; height: 8px;"></div>
+        </div>
         
       </ion-list>
       
-      <ion-infinite-scroll data-ng-if="canMore()" on-infinite="more()" immediate-check="false" distance="1%"></ion-infinite-scroll>
+      <ion-infinite-scroll data-ng-if="canMore()" on-infinite="more()" distance="1%"></ion-infinite-scroll>
       
     </ion-content>
   </ion-view>

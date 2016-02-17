@@ -15,7 +15,7 @@ app.service('Init',['$http',
                     } else result(d);
                   })
          .error(function(d){ 
-           Data.load(d,Urls.data.init,result);
+           Data.load(d,Urls.data.init,result,3000);
          });
   }
   

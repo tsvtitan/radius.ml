@@ -14,27 +14,27 @@ app.service('Search',['$http','Urls','Payload','Data','Utils',
   this.get = function(conditions,result) {
     
     var self = this;
-    self.conditions = conditions || {};
+    self.conditions = Utils.extend(self.conditions,conditions || {});
     
     $http.post(Urls.api.search,Payload.get(self.conditions))
          .success(function(d){
-           self.first = true;
            result(d);
          })
          .error(function(d){
            Data.load(d,Urls.data.search,function(d){
-             self.first = true;
              if (Utils.isArray(d.data)) {
                var from = self.getFrom();
                d.data = d.data.slice(from,from+self.getLimit());
              }
              result(d);
-           });
+           },1000);
          }); 
   }
   
-  this.set = function(d) {
+  this.set = function(d,clear) {
     
+    if (clear) this.clear();
+    this.conditions.limit = Utils.isInteger(d.limit)?d.limit:this.conditions.limit;
     this.total = Utils.isInteger(d.total)?d.total:0;
     if (Utils.isArray(d.data)) {
       this.data = (Utils.isArray(d.data))?this.data.concat(d.data.slice(0,this.getLimit())):this.data;
@@ -42,7 +42,7 @@ app.service('Search',['$http','Urls','Payload','Data','Utils',
   }
   
   this.getLimit = function() {
-    return Utils.isInteger(this.conditions.limit)?this.conditions.limit:20;
+    return Utils.isInteger(this.conditions.limit)?this.conditions.limit:10;
   }
   
   this.getFrom = function() {

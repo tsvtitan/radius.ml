@@ -1,7 +1,7 @@
 
 app.factory('Boot',['$rootScope','Const',
                     function($rootScope,Const) {
-    
+  
   var factory = {
     
     visible: true,

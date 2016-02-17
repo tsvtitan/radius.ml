@@ -39,4 +39,4 @@ LC_NUMERIC="en_US.UTF-8"
 LC_TIME="en_US.UTF-8"
 LC_ALL=
 
-$(which ionic) run android -c -s -l --address radius.ml --device
+$(which ionic) run android -c -s -l  --device

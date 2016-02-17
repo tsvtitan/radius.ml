@@ -7,7 +7,7 @@ app.service('Splash',['$cordovaSplashscreen','$timeout','Log',
     
     try {
       $timeout(function(){
-        $cordovaSplashscreen.show();
+        if ($cordovaSplashscreen) $cordovaSplashscreen.show();
         visible = true;
       },100);
     } catch(e) {
@@ -19,7 +19,7 @@ app.service('Splash',['$cordovaSplashscreen','$timeout','Log',
     
     try {
       $timeout(function(){
-        $cordovaSplashscreen.hide();
+        if ($cordovaSplashscreen) $cordovaSplashscreen.hide();
         visible = false;
       },100);
     } catch(e) {

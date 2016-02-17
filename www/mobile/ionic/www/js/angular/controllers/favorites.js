@@ -1,26 +1,53 @@
 
 app.controller('favorites',['$scope','$element','$state',
-                            'Dictionary','Alert','Loading','States','Favorites', 
+                            'Dictionary','Alert','Log','States','Const',
+                            'Refresher','InfiniteScroll','Favorites', 
                             function($scope,$element,$state,
-                                     Dictionary,Alert,Loading,States,Favorites) {
+                                     Dictionary,Alert,Log,States,Const,
+                                     Refresher,InfiniteScroll,Favorites) {
 
   $scope.dic = Dictionary.dic($element);
-  $scope.data = [];
+  $scope.service = Favorites;
   
   $scope.details = function() {
-    $state.go(States.details);
+    //$state.go(States.details);
   }
   
-  Loading.show($scope);
+  $scope.search = function() {
+    $state.go(States.search);
+  }
 
-  Favorites.get(function(d){
+  $scope.canMore = function() {
+    
+    var count = Favorites.getCount();
+    var total = Favorites.getTotal();
+    return (count>0 && count<total);
+  }
+  
+  $scope.more = function(clear) {
+    
+    Favorites.get({from:(clear)?0:Favorites.getCount(),count:Favorites.getLimit()},function(d){
 
-    Loading.hide();
-
-    if (d.error) Alert.error(d.error);
-    else {
-      $scope.data = d.data;
+      if (d.error) Log.error(d.error);
+      
+      Favorites.set(d,clear);
+      
+      Refresher.hide();
+      InfiniteScroll.hide();
+    });
+  }
+  
+  $scope.refresh = function() {
+    
+    $scope.more(true);
+  };
+  
+  /*$scope.$on('$stateChangeSuccess',function(event,toState){
+    
+    if (toState.name==States.favorites) {
+      if (!$scope.ready) $scope.refresh();
     }
-  });
-
+  });*/
+  
+  
 }]);

@@ -1,17 +1,13 @@
 
 app.controller('search',['$scope','$element','$state','$timeout',
-                         'Dictionary','Alert','Refresher','States','Search',
-                         'Log','Boot','InfiniteScroll','Const',
+                         'Dictionary','Alert','Log','States','Const',
+                         'Refresher','InfiniteScroll','Search',
                          function($scope,$element,$state,$timeout,
-                                  Dictionary,Alert,Refresher,States,Search,
-                                  Log,Boot,InfiniteScroll,Const) {
+                                  Dictionary,Alert,Log,States,Const,
+                                  Refresher,InfiniteScroll,Search) {
    
   $scope.dic = Dictionary.dic($element);                                 
-  $scope.search = Search;
-  $scope.from = 0;
-  $scope.ready = false;
-  $scope.first = true;
-  $scope.data = [];
+  $scope.service = Search;
   
   $scope.details = function() {
     //$state.go(States.details);
@@ -21,50 +17,30 @@ app.controller('search',['$scope','$element','$state','$timeout',
     $state.go(States.favorites);
   }
   
-  $scope.refresh = function() {
-    
-    Search.get({from:0,count:Search.getLimit()},function(d){
-
-      if (d.error) Log.error(d.error);
-
-      Search.clear();
-      Search.set(d);
-      $scope.data = Search.getData();
-      
-      Refresher.hide();
-      InfiniteScroll.hide();
-      
-      
-    });
-  };
-  
-  $scope.$on(Const.eventReady,function(){
-    
-    //$scope.refresh();
-    $scope.ready = true;
-  });
-  
   $scope.canMore = function() {
     
     var count = Search.getCount();
     var total = Search.getTotal();
-    return $scope.ready && (count>0 && count<total);
+    return (count>0 && count<total);
   }
   
-  $scope.more = function() {
+  $scope.more = function(clear) {
     
-    Search.get({from:Search.getCount(),count:Search.getLimit()},function(d){
+    Search.get({from:(clear)?0:Search.getCount(),count:Search.getLimit()},function(d){
 
       if (d.error) Log.error(d.error);
-
-      Search.set(d);
-      $scope.data = Search.getData();
+      
+      Search.set(d,clear);
       
       Refresher.hide();
       InfiniteScroll.hide();
-     
     });
   }
-
+  
+  $scope.refresh = function() {
+    
+    $scope.more(true);
+  };
+  
 }]);
                                   

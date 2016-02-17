@@ -1,11 +1,14 @@
 
 var app = angular.module('radius',['ionic','ngCordova','ab-base64']); 
                       
-app.run(['$ionicPlatform',
-         'Init','Dictionary','Splash','Alert','Boot','Navbar','Search','Log','Profile',
-         function($ionicPlatform,
-                  Init,Dictionary,Splash,Alert,Boot,Navbar,Search,Log,Profile) {
+app.run(['$ionicPlatform','$timeout',
+         'Init','Dictionary','Splash','Alert','Boot','Navbar','Log',
+         'Search','Profile','Favorites',
+         function($ionicPlatform,$timeout,
+                  Init,Dictionary,Splash,Alert,Boot,Navbar,Log,
+                  Search,Profile,Favorites) {
   
+  Boot.show();
   Navbar.show();
   
   $ionicPlatform.ready(function() {
@@ -26,20 +29,17 @@ app.run(['$ionicPlatform',
     Init.getData(function(d){
       
       Dictionary.init(d.dictionary);
+      
+      if (d.error) Log.error(d.error);
+      
       Profile.set(d.profile);
+      Search.set(d.search,true);
+      Favorites.set(d.favorites,true);
       
       if (d.error) Log.error(d.error);
       
       Boot.hide();
       Boot.ready();
-      /*Search.get(d.search,function(d){
-        
-        if (d.error) Log.error(d.error);
-        Search.set(d);
-        Boot.hide();
-        Boot.ready();
-      });*/
-      
     });
     
   });
