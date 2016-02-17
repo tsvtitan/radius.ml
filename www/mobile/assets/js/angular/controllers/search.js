@@ -9,8 +9,8 @@ app.controller('search',['$scope','$element','$state','$timeout',
   $scope.dic = Dictionary.dic($element);                                 
   $scope.service = Search;
   
-  $scope.details = function() {
-    //$state.go(States.details);
+  $scope.details = function(d) {
+    $state.go(States.details,{item:d});
   }
   
   $scope.favorites = function() {

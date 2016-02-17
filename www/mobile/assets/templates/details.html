@@ -1,15 +1,22 @@
 <div data-ng-controller="details">  
+  
   <ion-view view-title="{{dic('Детали')}}">
-    <ion-content overflow-scroll="true" padding="true" scroll="false" class="has-header background">
-        <ion-list>
-            <ion-item class="item-thumbnail-left">
-                <img src="images/s40DaHVcTVGha2oIV7MV_mainnails.jpg">
-                <h2>Перетащить шкаф</h2>
-                <p>Помогите перетащить
-                    <br>шкаф, Большой, весит
-                    <br>около 30 кг.</p>
-            </ion-item>
-        </ion-list>
+    
+    <ion-content overflow-scroll="false" 
+                 padding="true" scroll="false" 
+                 class="has-header">
+      
+      <ion-list>
+        <ion-item class="item-thumbnail-left">
+          <img src="{{item.image}}">
+          <h2>Перетащить шкаф</h2>
+          <p>Помогите перетащить
+              <br>шкаф, Большой, весит
+              <br>около 30 кг.</p>
+        </ion-item>
+      </ion-list>
+      
+      
         <div class="spacer" style="width: 283px; height: 0px;"></div>
         <div class="button-bar"></div>
         <ion-list>

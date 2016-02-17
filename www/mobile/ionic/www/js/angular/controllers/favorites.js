@@ -42,12 +42,4 @@ app.controller('favorites',['$scope','$element','$state',
     $scope.more(true);
   };
   
-  /*$scope.$on('$stateChangeSuccess',function(event,toState){
-    
-    if (toState.name==States.favorites) {
-      if (!$scope.ready) $scope.refresh();
-    }
-  });*/
-  
-  
 }]);

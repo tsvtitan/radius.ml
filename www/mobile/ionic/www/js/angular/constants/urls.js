@@ -25,10 +25,12 @@ app.constant('Urls',{
     home: '/home',
     search: '/search',
     favorites: '/favorites',
+    details: '/details',
+    
     add: '/add',
     profile: '/profile',
     deal: '/deal',
-    details: '/details',
+    
     filter: '/filter',
     history: '/history',
     publication: '/publication',

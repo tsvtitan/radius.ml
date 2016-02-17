@@ -5,8 +5,11 @@ app.constant('States',{
   search: 'home.search',
   favorites: 'home.favorites',
   
-  deal: 'deal',
+  
   details: 'details',
+  
+  deal: 'deal',
+  
   filter: 'filter',
   history: 'history',
   profile: 'profile',

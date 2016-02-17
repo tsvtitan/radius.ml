@@ -1,18 +1,10 @@
 
-app.controller('details',['$scope','$element','$timeout','$state',
-                          'Dictionary','Loading', 
-                          function($scope,$element,$timeout,$state,
-                                   Dictionary,Loading) {
+app.controller('details',['$scope','$element','$stateParams',
+                          'Dictionary','States', 
+                          function($scope,$element,$stateParams,
+                                   Dictionary,States) {
 
   $scope.dic = Dictionary.dic($element);                                 
+  $scope.item = $stateParams.item;
   
-  Loading.show($scope);
-  
-  $timeout(function(){
-    
-    Loading.hide();
-    //$state.go('profile');
-  },1000);
-                           
-                           
 }]);

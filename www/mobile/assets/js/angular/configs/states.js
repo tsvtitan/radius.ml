@@ -29,11 +29,6 @@ app.config(['$stateProvider','$urlRouterProvider',
     }
   });
 
-  $stateProvider.state(States.details,{
-    url: Urls.local.details,
-    templateUrl: 'details.html'
-  }); 
-  
   $stateProvider.state('home.favorites', {
     url: Urls.local.favorites,
     views: {
@@ -42,6 +37,12 @@ app.config(['$stateProvider','$urlRouterProvider',
       }
     }
   });
+  
+  $stateProvider.state('details',{
+    url: Urls.local.details,
+    templateUrl: 'details.html',
+    params: {item:null}
+  }); 
   
   $stateProvider.state('home.add', {
     url: Urls.local.add,
