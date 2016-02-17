@@ -1,5 +1,5 @@
 
-var app = angular.module('radius',['ionic','ngCordova','ab-base64']); 
+var app = angular.module('radius',['ionic','ngCordova','ab-base64','ionicLazyLoad']); 
                       
 app.run(['$ionicPlatform','$timeout',
          'Init','Dictionary','Splash','Alert','Boot','Navbar','Log',

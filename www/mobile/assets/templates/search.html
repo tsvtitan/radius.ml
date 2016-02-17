@@ -5,7 +5,7 @@
     <ion-content padding="true" overflow-scroll="false"
                  has-bouncing="true"
                  on-swipe-left="favorites()"
-                 class="has-header background">
+                 class="has-header">
       
       <!--div data-ng-include="'loader.html'" data-ng-init="visible=ready"></div-->
       <!--div class="loader" data-ng-hide="ready">
@@ -20,7 +20,8 @@
           <ion-item class="animated fadeIn item-thumbnail-left"
                     item-height="100" item-width="96%"
                     data-ng-click="details(d)">
-            <img data-ng-src="{{d.image}}">
+            <!--img image-lazy-src="{{d.image}}" image-lazy-loader="android"-->
+            <img src="{{d.image}}">
             <h2>{{d.title}}</h2>
             <p>{{d.desc}}</p>
             <p>{{dic('Плачу')}} {{d.cost}} {{dic('руб.')}}</p>
