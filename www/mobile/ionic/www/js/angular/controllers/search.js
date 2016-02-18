@@ -1,17 +1,15 @@
 
 app.controller('search',['$scope','$element','$state','$timeout',
                          'Dictionary','Alert','Log','States','Const',
-                         'Refresher','InfiniteScroll','Search',
+                         'Refresher','InfiniteScroll','Search','Loader',
                          function($scope,$element,$state,$timeout,
                                   Dictionary,Alert,Log,States,Const,
-                                  Refresher,InfiniteScroll,Search) {
+                                  Refresher,InfiniteScroll,Search,Loader) {
    
   $scope.dic = Dictionary.dic($element);                                 
   $scope.service = Search;
-  
-  $scope.details = function(d) {
-    $state.go(States.details,{item:d});
-  }
+  $scope.loader = Loader;
+  $scope.string = Search.getString();
   
   $scope.favorites = function() {
     $state.go(States.favorites);
@@ -26,7 +24,13 @@ app.controller('search',['$scope','$element','$state','$timeout',
   
   $scope.more = function(clear) {
     
-    Search.get({from:(clear)?0:Search.getCount(),count:Search.getLimit()},function(d){
+    var conditions = {
+      string: $scope.string,
+      from: (clear)?0:Search.getCount(),
+      count: Search.getLimit()
+    }
+    
+    Search.get(conditions,function(d){
 
       if (d.error) Log.error(d.error);
       
@@ -34,13 +38,24 @@ app.controller('search',['$scope','$element','$state','$timeout',
       
       Refresher.hide();
       InfiniteScroll.hide();
+      Loader.hide();
     });
   }
   
   $scope.refresh = function() {
     
     $scope.more(true);
-  };
+  }
+  
+  $scope.clear = function() {
+    $scope.string = '';
+  }
+  
+  $scope.search = function() {
+    Loader.show();
+    $scope.refresh();
+  }
+  
   
 }]);
                                   

@@ -1,18 +1,18 @@
 app.controller('test',['$scope','$element','$state',
-                       'Dictionary','Alert','Loading','States','Search', 
+                       'Dictionary','Alert','Loader','States','Search', 
                        function($scope,$element,$state,
-                                 Dictionary,Alert,Loading,States,Search) {
+                                 Dictionary,Alert,Loader,States,Search) {
    
   $scope.dic = Dictionary.dic($element);                                 
   $scope.data = [];
   
   function load() {
     
-    Loading.show();
+    Loader.show();
 
     Search.get(function(d){
 
-      Loading.hide();
+      Loader.hide();
 
       if (d.error) Alert.error(d.error);
       else {

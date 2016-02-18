@@ -1,16 +1,16 @@
 
 app.controller('profile',['$scope','$element','$timeout',
-                          'Dictionary','Loading',
+                          'Dictionary','Loader',
                           function($scope,$element,$timeout,
-                                   Dictionary,Loading) {
+                                   Dictionary,Loader) {
    
   $scope.dic = Dictionary.dic($element);                                 
 
-  Loading.show($scope);
+  Loader.show($scope);
   
   $timeout(function(){
     
-    Loading.hide();
+    Loader.hide();
    // Spinner.hide();
     //$state.go('profile');
   },3000);

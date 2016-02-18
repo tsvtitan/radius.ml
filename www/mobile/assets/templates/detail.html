@@ -12,50 +12,42 @@
     
     <ion-content padding="true" overflow-scroll="false" 
                  has-bouncing="true"
-                 class="has-header">
+                 class="has-header" lazy-scroll>
       
       <ion-refresher on-refresh="refresh()"></ion-refresher>
       
       <ion-list>
         <div data-ng-show="job">
+          
           <ion-item>
             <img src="{{job.image}}" data-ng-click="showImage()">
             <h2>{{job.title}}</h2>
             <p>{{job.desc}}</p>
             <p>{{job.id}}</p>
           </ion-item>
+          
+          <ion-item class="item-divider">{{dic('Цена')}}: {{job.cost}} {{dic('руб.')}}</ion-item>
+            <ion-item class="item-divider">До конца публикации: 1:42 мин</ion-item>
+            <ion-item class="item-divider">Адрес: Мытищи, Олимпийский
+            <br>пр-кт 13/2
+          </ion-item>
+           
+          <form class="list">
+            <ion-item class="item-divider">Нужен: Мужчина</ion-item>
+            <ion-item class="item-divider">Возраст: Не важно</ion-item>
+            <div class="button-bar">
+                <button class="button button-balanced button-block button-small">Откликнуться по
+                    <br>текущей цене:
+                    <br>450 руб</button>
+                <button class="button button-assertive button-block button-small">Предложить свою
+                    <br>цену:
+                    <br>400 руб</button>
+            </div>
+          </form>
+           
         </div>  
       </ion-list>
 
-        <!--    
-          <div class="spacer" style="width: 283px; height: 0px;"></div>
-          <div class="button-bar"></div>
-          <ion-list>
-              <ion-list></ion-list>
-              <ion-item class="item-divider">Цена: 500 руб</ion-item>
-              <ion-item class="item-divider">До конца публикации: 1:42 мин</ion-item>
-              <ion-item class="item-divider">Адрес: Мытищи, Олимпийский
-                  <br>пр-кт 13/2</ion-item>
-          </ion-list>
-          <div class="spacer" style="width: 283px; height: 3px;"></div>
-          <ion-list></ion-list>
-          <form class="list">
-              <ion-item class="item-divider">Нужен: Мужчина</ion-item>
-              <ion-item class="item-divider">Возраст: Не важно</ion-item>
-              <div class="button-bar">
-                  <button class="button button-balanced button-block button-small">Откликнуться по
-                      <br>текущей цене:
-                      <br>450 руб</button>
-                  <button class="button button-assertive button-block button-small">Предложить свою
-                      <br>цену:
-                      <br>400 руб</button>
-              </div>
-          </form>
-      </div-->    
-      
-
-      
-                
     </ion-content>
   </ion-view>
   

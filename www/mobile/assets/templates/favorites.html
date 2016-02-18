@@ -9,9 +9,8 @@
       <ion-refresher on-refresh="refresh()"></ion-refresher>
       
       <ion-list>
-        <div collection-repeat="job in service.data">
+        <div collection-repeat="job in service.data" item-height="120" item-width="96%">
           <ion-item class="animated fadeIn item-thumbnail-left"
-                    item-height="80" item-width="96%"
                     type="item-text-wrap" href="#/home/favorites/{{job.id}}">
             
             <img data-ng-src="{{job.image}}">

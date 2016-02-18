@@ -38,10 +38,24 @@ app.config(['$stateProvider','$urlRouterProvider',
     }
   });
   
-  $stateProvider.state('details',{
-    url: Urls.local.details,
-    templateUrl: 'details.html',
-    params: {item:null}
+  $stateProvider.state('home.search-detail',{
+    url: Urls.local.searchDetail,
+    views: {
+      'home-search': {
+        templateUrl: 'detail.html'
+      }
+    },
+    params: {id:null}
+  });
+  
+  $stateProvider.state('home.favorites-detail',{
+    url: Urls.local.favoritesDetail,
+    views: {
+      'home-favorites': {
+        templateUrl: 'detail.html'
+      }
+    },
+    params: {id:null}
   }); 
   
   $stateProvider.state('home.add', {

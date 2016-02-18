@@ -130,7 +130,7 @@ app.service('Utils',['base64',
   }
   
   this.isObject = function(obj){
-    return _.isObject(obj);
+    return _.isObject(obj) && !_.isArray(obj);
   }
   
   this.isString = function(obj){

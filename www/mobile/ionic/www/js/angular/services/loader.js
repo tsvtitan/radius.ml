@@ -1,14 +1,14 @@
 
-app.service('Loading',['$ionicLoading','Dictionary','Const',
-                       function($ionicLoading,Dictionary,Const) {
+app.service('Loader',['$ionicLoading',
+                      function($ionicLoading) {
     
   this.visible = false;
   
   this.show = function(scope) {
     
     $ionicLoading.show({
-      noBackdrop: false,
-      template: Dictionary.get(Const.loading),
+      noBackdrop: true,
+      templateUrl: 'loader.html',
       scope: scope
     });
     this.visible = true;

@@ -35,6 +35,7 @@ app.service('Search',['$http','Urls','Payload','Data','Utils',
     
     if (clear) this.clear();
     this.conditions.limit = Utils.isInteger(d.limit)?d.limit:this.conditions.limit;
+    this.conditions.string = Utils.isString(d.string)?d.string:this.conditions.string;
     this.total = Utils.isInteger(d.total)?d.total:0;
     if (Utils.isArray(d.data)) {
       this.data = (Utils.isArray(d.data))?this.data.concat(d.data.slice(0,this.getLimit())):this.data;
@@ -47,6 +48,10 @@ app.service('Search',['$http','Urls','Payload','Data','Utils',
   
   this.getFrom = function() {
     return Utils.isInteger(this.conditions.from)?this.conditions.from:0;
+  }
+  
+  this.getString = function() {
+    return Utils.isString(this.conditions.string)?this.conditions.string:'';
   }
   
   this.getCount = function() {
