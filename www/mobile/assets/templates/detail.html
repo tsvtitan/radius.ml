@@ -3,16 +3,16 @@
   <script id="detail-image.html" type="text/ng-template">
     <div class="modal image-modal transparent" data-ng-click="hideImage()">
       <ion-pane class="transparent">
-        <img ng-src="{{job.image}}" class="fullscreen-image"/>
+        <img data-ng-src="{{job.image}}" class="fullscreen-image"/>
       </ion-pane>
     </div>
   </script>
   
   <ion-view view-title="{{dic('Детали')}}">
     
-    <ion-content padding="true" overflow-scroll="false" 
+    <ion-content padding="true" overflow-scroll="true" 
                  has-bouncing="true"
-                 class="has-header" lazy-scroll>
+                 class="has-header">
       
       <ion-refresher on-refresh="refresh()"></ion-refresher>
       
@@ -27,10 +27,8 @@
           </ion-item>
           
           <ion-item class="item-divider">{{dic('Цена')}}: {{job.cost}} {{dic('руб.')}}</ion-item>
-            <ion-item class="item-divider">До конца публикации: 1:42 мин</ion-item>
-            <ion-item class="item-divider">Адрес: Мытищи, Олимпийский
-            <br>пр-кт 13/2
-          </ion-item>
+          <ion-item class="item-divider">До конца публикации: 1:42 мин</ion-item>
+          <ion-item class="item-divider">Адрес: Мытищи, Олимпийский<br>пр-кт 13/2</ion-item>
            
           <form class="list">
             <ion-item class="item-divider">Нужен: Мужчина</ion-item>

@@ -19,7 +19,8 @@ app.constant('Urls',{
     init: api.concat('/init'),
     search: api.concat('/search'),
     favorites: api.concat('/favorites'),
-    detail: api.concat('/detail')
+    detail: api.concat('/detail'),
+    profile: api.concat('/profile')
   },
   
   local: {
@@ -45,7 +46,8 @@ app.constant('Urls',{
     init: 'data/init.json',
     search: 'data/search.json',
     favorites: 'data/favorites.json',
-    detail: 'data/detail.json'
+    details: 'data/details.json',
+    profiles: 'data/profiles.json',
   }
          
   

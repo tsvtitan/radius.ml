@@ -1,7 +1,16 @@
 {
   "error": false,
   "profile": {
-    "user": false,
+    "user": {
+      "id": "2",
+      "image": "http://i.huffpost.com/gen/964776/images/o-CATS-KILL-BILLIONS-facebook.jpg",
+      "email": "borodash@mail.ru",
+      "phone": "+79123456789",
+      "name": "Александр",
+      "surname": "Бородач",
+      "patronymic": "Родионович",
+      "birthdate": "1976-01-01T00:00:00"
+    },
     "captcha": false
   },
   "search": {

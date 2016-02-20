@@ -1,5 +1,5 @@
 
-app.service('Detail',['$http','Urls','Payload','Data','Utils','Search','Favorites',
+app.service('Profile',['$http','Urls','Payload','Data','Utils','Search','Favorites',
                       function($http,Urls,Payload,Data,Utils,Search,Favorites) {
   
   this.conditions = {};
@@ -15,7 +15,7 @@ app.service('Detail',['$http','Urls','Payload','Data','Utils','Search','Favorite
          })
          .error(function(d){
            
-           Data.load(d,Urls.data.details,function(d){
+           Data.load(d,Urls.data.detail,function(d){
              
              var temp = false;
              var where = {id:self.conditions.id};
@@ -33,5 +33,4 @@ app.service('Detail',['$http','Urls','Payload','Data','Utils','Search','Favorite
          }); 
   }
   
-}]);  
-  
+}]); 

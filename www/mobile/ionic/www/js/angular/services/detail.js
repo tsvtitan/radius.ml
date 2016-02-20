@@ -15,7 +15,7 @@ app.service('Detail',['$http','Urls','Payload','Data','Utils','Search','Favorite
          })
          .error(function(d){
            
-           Data.load(d,Urls.data.detail,function(d){
+           Data.load(d,Urls.data.details,function(d){
              
              var temp = false;
              var where = {id:self.conditions.id};

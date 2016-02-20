@@ -1,25 +1,49 @@
 <div data-ng-controller="profile"> 
+  
+  <script id="profile-image.html" type="text/ng-template">
+    <div class="modal image-modal transparent" data-ng-click="hideImage()">
+      <ion-pane class="transparent">
+        <img data-ng-src="{{user.image}}" class="fullscreen-image"/>
+      </ion-pane>
+    </div>
+  </script>
+  
   <ion-view view-title="{{dic('Профиль')}}">
-    <ion-content overflow-scroll="true" padding="true" class="has-header background" data-ng-hide="loading.visible">
-        <ion-list>
-            <ion-item class="item-thumbnail-left">
-                <img src="images/s40DaHVcTVGha2oIV7MV_mainnails.jpg">
-                <h2>Александр
-                    <br>Родионович
-                    <br>Бородач</h2>
-                <p></p>
-            </ion-item>
-        </ion-list>
-        <ion-list>
-            <ion-item>Возраст: 39 лет</ion-item>
-            <ion-item>Тел: +7 (987) 654-32-10</ion-item>
-            <ion-item>E-mail: sashka@borodach.me</ion-item>
-        </ion-list>
-        <div class="spacer" style="width: 300px; height: 103px;"></div>
-        <div class="button-bar">
+    
+    <ion-content padding="true" overflow-scroll="true"
+                 class="has-header">
+      
+      <ion-refresher on-refresh="refresh()"></ion-refresher>
+      
+      <ion-list>
+        
+        <div data-ng-hide="user">
+          <h1>Регистрация</h1>
+        </div>
+        
+        <div data-ng-show="user">
+          
+          <ion-item class="item-avatar-left">
+              <img src="{{user.image}}" data-ng-click="showImage()">
+              <h2>{{user.name}}</h2>
+              <p>{{user.surname}}</p>
+              <p>{{user.patronymic}}</p>
+          </ion-item>
+          
+          <ion-item class="item-divider">Возраст: 39 лет</ion-item>
+          <ion-item class="item-divider">{{dic('Тел')}}: {{user.phone}}</ion-item>
+          <ion-item class="item-divider">{{dic('E-mail')}}: {{user.email}}</ion-item>
+          
+          <div class="button-bar">
             <button class="button button-stable button-block ">Сохранить</button>
             <button class="button button-stable button-block ">Изменить</button>
-        </div>
+          </div>
+          
+        </div>  
+        
+      </ion-list>
+      
     </ion-content>
+    
   </ion-view>
 </div>

@@ -1,18 +1,43 @@
 
 app.controller('profile',['$scope','$element','$timeout',
-                          'Dictionary','Loader',
+                          '$ionicModal',
+                          'Dictionary','Loader','Profile','Refresher','Log',
                           function($scope,$element,$timeout,
-                                   Dictionary,Loader) {
+                                   $ionicModal,
+                                   Dictionary,Loader,Profile,Refresher,Log) {
    
-  $scope.dic = Dictionary.dic($element);                                 
-
-  Loader.show($scope);
+  $scope.dic = Dictionary.dic($element);   
+  $scope.user = Profile.getUser();
   
-  $timeout(function(){
+  $ionicModal.fromTemplateUrl('profile-image.html',{
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
     
-    Loader.hide();
-   // Spinner.hide();
-    //$state.go('profile');
-  },3000);
+  $scope.showImage = function() {
+    $scope.modal.show();
+  }
+  
+  $scope.hideImage = function() {
+    $scope.modal.hide();
+  }
+  
+  $scope.$on('$destroy', function() {
+    $scope.modal.remove();
+  });
+  
+  $scope.refresh = function() {
+    
+    Profile.get(function(d){
+    
+      if (d.error) Log.error(d.error);
+      
+      Profile.set(d);
+      $scope.user = Profile.getUser();
+      Refresher.hide();
+    });
+  }
   
 }]);

@@ -1,0 +1,12 @@
+{
+  "user": {
+    "id": "1",
+    "image": "images/s40DaHVcTVGha2oIV7MV_mainnails.jpg",
+    "email": "borodash@mail.ru",
+    "phone": "+79123456789",
+    "name": "Александр",
+    "surname": "Бородач",
+    "patronymic": "Родионович",
+    "birthdate": "1976-01-01T00:00:00"
+  }
+}

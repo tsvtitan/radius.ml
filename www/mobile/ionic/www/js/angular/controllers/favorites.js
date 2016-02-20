@@ -9,10 +9,6 @@ app.controller('favorites',['$scope','$element','$state',
   $scope.dic = Dictionary.dic($element);
   $scope.service = Favorites;
   
-  $scope.details = function() {
-    //$state.go(States.details);
-  }
-  
   $scope.search = function() {
     $state.go(States.search);
   }

@@ -53,7 +53,7 @@ app.controller('search',['$scope','$element','$state','$timeout',
   }
   
   $scope.search = function() {
-    Loader.show();
+    Loader.show($scope);
     $ionicScrollDelegate.scrollTop();
     $scope.refresh(function(){
       Loader.hide();

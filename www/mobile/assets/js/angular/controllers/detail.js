@@ -1,10 +1,10 @@
 
 app.controller('detail',['$scope','$element','$stateParams',
                          '$ionicModal',
-                         'Dictionary','Detail','Log','Refresher','Loader',
+                         'Dictionary','Detail','Log','Refresher','Loader','Utils',
                          function($scope,$element,$stateParams,
                                   $ionicModal, 
-                                  Dictionary,Detail,Log,Refresher,Loader) {
+                                  Dictionary,Detail,Log,Refresher,Loader,Utils) {
 
   $scope.dic = Dictionary.dic($element);                                 
   $scope.job = false;
@@ -28,7 +28,7 @@ app.controller('detail',['$scope','$element','$stateParams',
     $scope.modal.remove();
   });
 
-  $scope.refresh = function() {
+  $scope.refresh = function(result) {
     
     Detail.get($stateParams,function(d){
     
@@ -36,11 +36,14 @@ app.controller('detail',['$scope','$element','$stateParams',
 
       $scope.job = d.data;
       Refresher.hide();
-      Loader.hide();
+      
+      if (Utils.isFunction(result)) result();
     });
   }
   
   Loader.show($scope);
-  $scope.refresh();
+  $scope.refresh(function(){
+    Loader.hide();
+  });
   
 }]);
