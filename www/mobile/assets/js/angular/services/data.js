@@ -7,6 +7,7 @@ app.service('Data',['$http','$timeout','Const','Dictionary',
     function success(d) {
       
       $timeout(function(){
+        
         result(d);
       },(delay)?delay:Const.dataDelaySuccess);
     }

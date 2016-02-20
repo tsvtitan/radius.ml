@@ -125,6 +125,10 @@ app.service('Utils',['base64',
     return arr;
   }
   
+  this.unique = function(arr) {
+    return _.unique(arr);
+  }
+  
   this.isArray = function(obj){
     return _.isArray(obj);
   }
@@ -148,7 +152,17 @@ app.service('Utils',['base64',
   this.isEmpty = function(obj) {
 
     if (_.isString(obj)) {
-      return obj.trim()==='';
+      
+      return obj.trim()=='';
+      
+    } else if (_.isArray(obj)) {
+      
+      return obj.length===0;
+      
+    } else if (_.isObject(obj)) {
+      
+      return _.isEmpty(obj);
+      
     } else return !(obj);
   },
   
@@ -179,6 +193,10 @@ app.service('Utils',['base64',
     return (bytes/Math.pow(1024, e)).toFixed(2)+' '+' KMGTP'.charAt(e)+'B';
   },
   
+  this.where = function (arr,obj) {
+    return _.where(arr,obj);
+  },
+          
   this.findWhere = function (arr,obj) {
     return _.findWhere(arr,obj);
   },

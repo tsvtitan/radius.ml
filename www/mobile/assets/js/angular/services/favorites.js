@@ -1,6 +1,6 @@
 
-app.service('Favorites',['$http','Urls','Payload','Data','Utils',
-                         function($http,Urls,Payload,Data,Utils) {
+app.service('Favorites',['$http','Urls','Payload','Data','Utils','Cache',
+                         function($http,Urls,Payload,Data,Utils,Cache) {
     
   this.total = 0;
   this.data = [];
@@ -31,14 +31,24 @@ app.service('Favorites',['$http','Urls','Payload','Data','Utils',
          }); 
   }
   
-  this.set = function(d,clear) {
+  this.set = function(d,clear,result) {
     
     if (clear) this.clear();
     this.conditions.limit = Utils.isInteger(d.limit)?d.limit:this.conditions.limit;
     this.total = Utils.isInteger(d.total)?d.total:0;
     if (Utils.isArray(d.data)) {
-      this.data = (Utils.isArray(d.data))?this.data.concat(d.data.slice(0,this.getLimit())):this.data;
-    }
+      
+      var data = d.data.slice(0,this.getLimit());
+      var self = this;
+      
+      Cache.images(data,'image',function(){
+        
+        self.data = self.data.concat(data);
+        if (Utils.isFunction(result)) result();
+      });
+      
+      
+    } else if (Utils.isFunction(result)) result();
   }
   
   this.getLimit = function() {

@@ -1,9 +1,11 @@
 
 app.controller('search',['$scope','$element','$state','$timeout',
-                         'Dictionary','Alert','Log','States','Const',
+                         '$ionicScrollDelegate','$ionicFilterBar',   
+                         'Dictionary','Alert','Log','States','Const','Utils',
                          'Refresher','InfiniteScroll','Search','Loader',
                          function($scope,$element,$state,$timeout,
-                                  Dictionary,Alert,Log,States,Const,
+                                  $ionicScrollDelegate,$ionicFilterBar,
+                                  Dictionary,Alert,Log,States,Const,Utils,
                                   Refresher,InfiniteScroll,Search,Loader) {
    
   $scope.dic = Dictionary.dic($element);                                 
@@ -22,7 +24,7 @@ app.controller('search',['$scope','$element','$state','$timeout',
     return (count>0 && count<total);
   }
   
-  $scope.more = function(clear) {
+  $scope.more = function(clear,result) {
     
     var conditions = {
       string: $scope.string,
@@ -34,28 +36,60 @@ app.controller('search',['$scope','$element','$state','$timeout',
 
       if (d.error) Log.error(d.error);
       
-      Search.set(d,clear);
+      Search.set(d,clear,function(){
+        
+        Refresher.hide();
+        InfiniteScroll.hide();
       
-      Refresher.hide();
-      InfiniteScroll.hide();
-      Loader.hide();
+        if (Utils.isFunction(result)) result();
+      });
+      
     });
   }
   
-  $scope.refresh = function() {
+  $scope.refresh = function(result) {
     
-    $scope.more(true);
-  }
-  
-  $scope.clear = function() {
-    $scope.string = '';
+    $scope.more(true,result);
   }
   
   $scope.search = function() {
     Loader.show();
-    $scope.refresh();
+    $ionicScrollDelegate.scrollTop();
+    $scope.refresh(function(){
+      Loader.hide();
+    });
   }
   
+  $scope.clear = function() {
+    $scope.string = '';
+    $scope.search();
+  }
+  
+  
+  $scope.showFilterBar = function () {
+    
+    var filterBarInstance = $ionicFilterBar.show({
+      
+      items: [],
+      debounce: true,
+      delay: 750,
+      filterText: $scope.string,
+      cancelText: Dictionary.get(Const.hide),
+      placeholder: Dictionary.get(Const.searchString),
+      
+      update: function (filteredItems,string) {
+        
+        if (Utils.isDefined(string)) {
+          
+          if ($scope.string!==string) {
+            $scope.string = string;
+            $scope.search();
+          }
+        }
+      }
+    });
+  }
+
   
 }]);
                                   

@@ -1,5 +1,6 @@
 
-var app = angular.module('radius',['ionic','ngCordova','ab-base64','ionicLazyLoad']); 
+var app = angular.module('radius',['ionic','ngCordova','ab-base64','ionicLazyLoad',
+                                   'ionic.ion.imageCacheFactory','jett.ionic.filter.bar']); 
                       
 app.run(['$ionicPlatform','$timeout',
          'Init','Dictionary','Splash','Alert','Boot','Navbar','Log',
@@ -33,13 +34,14 @@ app.run(['$ionicPlatform','$timeout',
       if (d.error) Log.error(d.error);
       
       Profile.set(d.profile);
-      Search.set(d.search,true);
-      Favorites.set(d.favorites,true);
+      Search.set(d.search,true,function(){
+        
+        Favorites.set(d.favorites,true);
       
-      if (d.error) Log.error(d.error);
+        Boot.hide();
+        Boot.ready();
+      });
       
-      Boot.hide();
-      Boot.ready();
     });
     
   });

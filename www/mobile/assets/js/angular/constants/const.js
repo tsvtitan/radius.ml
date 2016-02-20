@@ -7,6 +7,9 @@ app.constant('Const',{
   loading: 'Загрузка...',
   
   cancel: 'Отмена',
+  hide: 'Скрыть',
+  
+  searchString: 'Строка поиска',
   
   alertError: 'Ошибка',
   alertInfo: 'Информация',

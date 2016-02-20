@@ -30,10 +30,12 @@ app.controller('favorites',['$scope','$element','$state',
 
       if (d.error) Log.error(d.error);
       
-      Favorites.set(d,clear);
+      Favorites.set(d,clear,function(){
       
-      Refresher.hide();
-      InfiniteScroll.hide();
+        Refresher.hide();
+        InfiniteScroll.hide();
+      });
+      
     });
   }
   

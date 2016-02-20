@@ -14,6 +14,7 @@ app.service('Detail',['$http','Urls','Payload','Data','Utils','Search','Favorite
            result(d);
          })
          .error(function(d){
+           
            Data.load(d,Urls.data.detail,function(d){
              
              var temp = false;
