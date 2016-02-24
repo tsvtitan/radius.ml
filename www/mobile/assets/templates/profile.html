@@ -10,7 +10,7 @@
   
   <ion-view view-title="{{dic('Профиль')}}">
     
-    <ion-content padding="true" overflow-scroll="true"
+    <ion-content padding="true" overflow-scroll="false"
                  class="has-header">
       
       <ion-refresher on-refresh="refresh()"></ion-refresher>
@@ -23,22 +23,23 @@
         
         <div data-ng-show="user">
           
-          <ion-item class="item-avatar-left">
-              <img src="{{user.image}}" data-ng-click="showImage()">
-              <h2>{{user.name}}</h2>
-              <p>{{user.surname}}</p>
-              <p>{{user.patronymic}}</p>
-          </ion-item>
-          
-          <ion-item class="item-divider">Возраст: 39 лет</ion-item>
-          <ion-item class="item-divider">{{dic('Тел')}}: {{user.phone}}</ion-item>
-          <ion-item class="item-divider">{{dic('E-mail')}}: {{user.email}}</ion-item>
-          
-          <div class="button-bar">
-            <button class="button button-stable button-block ">Сохранить</button>
-            <button class="button button-stable button-block ">Изменить</button>
+          <div class="animated fadeIn">
+            <ion-item class="item-avatar-left">
+                <img src="{{user.image}}" data-ng-click="showImage()">
+                <h2>{{user.name}}</h2>
+                <p>{{user.surname}}</p>
+                <p>{{user.patronymic}}</p>
+            </ion-item>
+
+            <ion-item class="item-divider">Возраст: 39 лет</ion-item>
+            <ion-item class="item-divider">{{dic('Тел')}}: {{user.phone}}</ion-item>
+            <ion-item class="item-divider">{{dic('E-mail')}}: {{user.email}}</ion-item>
+
+            <div class="button-bar">
+              <button class="button button-stable button-block ">Сохранить</button>
+              <button class="button button-stable button-block ">Изменить</button>
+            </div>
           </div>
-          
         </div>  
         
       </ion-list>

@@ -4,10 +4,10 @@ var app = angular.module('radius',['ionic','ngCordova','ab-base64','ionicLazyLoa
                       
 app.run(['$ionicPlatform','$timeout',
          'Init','Dictionary','Splash','Alert','Boot','Navbar','Log',
-         'Search','Profile','Favorites',
+         'Search','Profile','Favorites','Network','Preferences',
          function($ionicPlatform,$timeout,
                   Init,Dictionary,Splash,Alert,Boot,Navbar,Log,
-                  Search,Profile,Favorites) {
+                  Search,Profile,Favorites,Network,Preferences) {
   
   Boot.show();
   Navbar.show();
@@ -26,6 +26,20 @@ app.run(['$ionicPlatform','$timeout',
     }
     
     Splash.hide();
+    
+    /*Preferences.read('HelloKey',function(value){
+      
+      if (!value) {
+        Preferences.write('HelloKey',{id:1,name:'test',value:1.999},function(){
+
+          Preferences.read('HelloKey',function(value){
+
+            Log.debug(value);
+          });
+        });
+      }
+    });*/
+    
     
     Init.getData(function(d){
       

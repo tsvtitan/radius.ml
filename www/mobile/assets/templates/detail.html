@@ -8,9 +8,9 @@
     </div>
   </script>
   
-  <ion-view view-title="{{dic('Детали')}}">
+  <ion-view view-title="{{ job?job.title:dic('Детали')}}">
     
-    <ion-content padding="true" overflow-scroll="true" 
+    <ion-content padding="true" overflow-scroll="false" 
                  has-bouncing="true"
                  class="has-header">
       
@@ -19,29 +19,31 @@
       <ion-list>
         <div data-ng-show="job">
           
-          <ion-item>
-            <img src="{{job.image}}" data-ng-click="showImage()">
-            <h2>{{job.title}}</h2>
-            <p>{{job.desc}}</p>
-            <p>{{job.id}}</p>
-          </ion-item>
-          
-          <ion-item class="item-divider">{{dic('Цена')}}: {{job.cost}} {{dic('руб.')}}</ion-item>
-          <ion-item class="item-divider">До конца публикации: 1:42 мин</ion-item>
-          <ion-item class="item-divider">Адрес: Мытищи, Олимпийский<br>пр-кт 13/2</ion-item>
-           
-          <form class="list">
-            <ion-item class="item-divider">Нужен: Мужчина</ion-item>
-            <ion-item class="item-divider">Возраст: Не важно</ion-item>
-            <div class="button-bar">
-                <button class="button button-balanced button-block button-small">Откликнуться по
-                    <br>текущей цене:
-                    <br>450 руб</button>
-                <button class="button button-assertive button-block button-small">Предложить свою
-                    <br>цену:
-                    <br>400 руб</button>
-            </div>
-          </form>
+          <div class="animated fadeIn">
+            <ion-item>
+              <img src="{{job.image}}" data-ng-click="showImage()">
+              <h2>{{job.title}}</h2>
+              <p>{{job.desc}}</p>
+              <p>{{job.id}}</p>
+            </ion-item>
+
+            <ion-item class="item-divider">{{dic('Цена')}}: {{job.cost}} {{dic('руб.')}}</ion-item>
+            <ion-item class="item-divider">До конца публикации: 1:42 мин</ion-item>
+            <ion-item class="item-divider">Адрес: Мытищи, Олимпийский<br>пр-кт 13/2</ion-item>
+
+            <form class="list">
+              <ion-item class="item-divider">Нужен: Мужчина</ion-item>
+              <ion-item class="item-divider">Возраст: Не важно</ion-item>
+              <div class="button-bar">
+                  <button class="button button-balanced button-block button-small">Откликнуться по
+                      <br>текущей цене:
+                      <br>450 руб</button>
+                  <button class="button button-assertive button-block button-small">Предложить свою
+                      <br>цену:
+                      <br>400 руб</button>
+              </div>
+            </form>
+          </div>
            
         </div>  
       </ion-list>

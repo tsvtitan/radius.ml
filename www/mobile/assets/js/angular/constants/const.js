@@ -31,6 +31,13 @@ app.constant('Const',{
   timeoutWarning: 2000,
   
   dataDelaySuccess: 500,
-  dataDelayError: 1000
+  dataDelayError: 1000,
+  
+  deviceId: '1234567890',
+  location: {
+    latitude: 55.752951,
+    longitude: 37.622858
+  },
+  locationTimeout: 30000
 })
    

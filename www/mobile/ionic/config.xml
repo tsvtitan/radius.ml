@@ -8,7 +8,14 @@
       Your Name Here
     </author>
   <content src="index.html"/>
+  <plugin name="cordova-plugin-whitelist" spec="1"/>
   <access origin="*"/>
+  <allow-intent href="http://*/*"/>
+  <allow-intent href="https://*/*"/>
+  <allow-intent href="tel:*"/>
+  <allow-intent href="sms:*"/>
+  <allow-intent href="mailto:*"/>
+  <allow-intent href="geo:*"/>
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>
@@ -49,6 +56,8 @@
     <splash height="960" src="resources/ios/splash/Default@2x~iphone.png" width="640"/>
     <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320"/>
     <preference name="KeyboardDisplayRequiresUserAction" value="false"/>
+    <allow-intent href="itms:*"/>
+    <allow-intent href="itms-apps:*"/>
   </platform>
   <platform name="android">
     <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png"/>
@@ -69,5 +78,6 @@
     <splash density="port-xhdpi" src="resources/android/splash/drawable-port-xhdpi-screen.png"/>
     <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png"/>
     <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png"/>
+    <allow-intent href="market:*"/>
   </platform>
 </widget>

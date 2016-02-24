@@ -1,7 +1,9 @@
 
 app.config(['$provide','$sceDelegateProvider','$httpProvider',
+            '$ionicConfigProvider',
             'Const','Urls',
             function($provide,$sceDelegateProvider,$httpProvider,
+                     $ionicConfigProvider,
                      Const,Urls) {
     
   $provide.decorator('$templateCache',['$delegate',function($delegate) {
@@ -28,6 +30,8 @@ app.config(['$provide','$sceDelegateProvider','$httpProvider',
   
   $httpProvider.defaults.cache = false;
   $httpProvider.defaults.timeout = 5000;
+  
+  $ionicConfigProvider.tabs.position('bottom');
   
   return this;
 }]);
