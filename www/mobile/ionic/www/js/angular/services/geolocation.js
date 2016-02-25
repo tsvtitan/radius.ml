@@ -1,17 +1,19 @@
 
 app.service('Geolocation',['$cordovaGeolocation','Utils','Const','Log','Alert',
                            function($cordovaGeolocation,Utils,Const,Log,Alert) {
-  this.location = {};
+                             
+  this.location = Const.location;
   
-  this.get = function(result) {
+  this.get = function(options,result) {
     
     var self = this;
     
     if ($cordovaGeolocation) {
       
-      var options = {
+      options = options || {
         timeout: Const.locationTimeout, 
-        enableHighAccuracy: true
+        enableHighAccuracy: true,
+        maximumAge: 0
       };
       
       $cordovaGeolocation.getCurrentPosition(options)

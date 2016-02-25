@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+    <!--meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'"-->
+    <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src  'self' 'unsafe-inline' *">
+    
     
     <title></title>
     
@@ -34,6 +36,7 @@
     <script src="js/angular/modules/ionic.filter.bar.js"></script>
     <script src="js/angular/modules/ionic.ion.imagecachefactory.js"></script>
     <script src="js/angular/modules/ng-cordova.js"></script>
+    <script src="js/angular/modules/ng-map.js"></script>
     <!--DEPENDENCIES END-->
     <script src="cordova.js"></script>
     <!--SCRIPTS-->
@@ -75,6 +78,7 @@
     <script src="js/angular/controllers/filter.js"></script>
     <script src="js/angular/controllers/history.js"></script>
     <script src="js/angular/controllers/home.js"></script>
+    <script src="js/angular/controllers/map.js"></script>
     <script src="js/angular/controllers/profile.js"></script>
     <script src="js/angular/controllers/publication.js"></script>
     <script src="js/angular/controllers/registration.js"></script>
@@ -82,5 +86,7 @@
     <script src="js/angular/controllers/stats.js"></script>
     <script src="js/angular/controllers/test.js"></script>
     <!--SCRIPTS END-->
+    <!--script src="https://maps-api-ssl.google.com/maps/api/js?libraries=places"></script-->
+    <script src="http://maps.google.com/maps/api/js"></script>
   </body>
 </html>

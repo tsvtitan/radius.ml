@@ -20,7 +20,7 @@ app.config(['$stateProvider','$urlRouterProvider',
     }
   });
   
-  $stateProvider.state('home.search', {
+  $stateProvider.state(States.search, {
     url: Urls.local.search,
     views: {
       'home-search': {
@@ -29,7 +29,7 @@ app.config(['$stateProvider','$urlRouterProvider',
     }
   });
 
-  $stateProvider.state('home.favorites', {
+  $stateProvider.state(States.favorites, {
     url: Urls.local.favorites,
     views: {
       'home-favorites': {
@@ -38,7 +38,7 @@ app.config(['$stateProvider','$urlRouterProvider',
     }
   });
   
-  $stateProvider.state('home.search-detail',{
+  $stateProvider.state(States.searchDetail,{
     url: Urls.local.searchDetail,
     views: {
       'home-search': {
@@ -48,7 +48,7 @@ app.config(['$stateProvider','$urlRouterProvider',
     params: {id:null}
   });
   
-  $stateProvider.state('home.favorites-detail',{
+  $stateProvider.state(States.favoritesDetail,{
     url: Urls.local.favoritesDetail,
     views: {
       'home-favorites': {
@@ -57,6 +57,26 @@ app.config(['$stateProvider','$urlRouterProvider',
     },
     params: {id:null}
   }); 
+  
+  $stateProvider.state(States.searchDetailMap,{
+    url: Urls.local.searchDetailMap,
+    views: {
+      'home-search': {
+        templateUrl: 'map.html'
+      }
+    },
+    params: {job:null}
+  });
+  
+  $stateProvider.state(States.favoritesDetailMap,{
+    url: Urls.local.favoritesDetailMap,
+    views: {
+      'home-favorites': {
+        templateUrl: 'map.html'
+      }
+    },
+    params: {job:null}
+  });
   
   $stateProvider.state('home.add', {
     url: Urls.local.add,
@@ -112,6 +132,7 @@ app.config(['$stateProvider','$urlRouterProvider',
   }); 
           
   $urlRouterProvider.otherwise('/home/search');        
+  //$urlRouterProvider.otherwise('/test');        
 
   return this;
 }]);

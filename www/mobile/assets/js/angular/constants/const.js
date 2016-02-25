@@ -22,6 +22,9 @@ app.constant('Const',{
   countFileSelected: '{count} file(s) selected',
   
   eventReady: 'radius.ready',
+  eventDestroy: '$destroy',
+  eventBeforeEnter: '$ionicView.beforeEnter',
+  eventMapInitialized: 'mapInitialized',
   
   timeoutHide: 1000,
   timeoutAlert: 5000,

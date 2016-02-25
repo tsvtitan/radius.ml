@@ -1,10 +1,10 @@
 
-app.controller('detail',['$scope','$element','$stateParams',
+app.controller('detail',['$scope','$element','$stateParams','$state',
                          '$ionicModal',
-                         'Dictionary','Detail','Log','Refresher','Loader','Utils',
-                         function($scope,$element,$stateParams,
+                         'Dictionary','Detail','Log','Refresher','Loader','Utils','Const','Log','States',
+                         function($scope,$element,$stateParams,$state,
                                   $ionicModal, 
-                                  Dictionary,Detail,Log,Refresher,Loader,Utils) {
+                                  Dictionary,Detail,Log,Refresher,Loader,Utils,Const,Log,States) {
 
   $scope.dic = Dictionary.dic($element);                                 
   $scope.job = false;
@@ -24,7 +24,7 @@ app.controller('detail',['$scope','$element','$stateParams',
     $scope.modal.hide();
   }
   
-  $scope.$on('$destroy', function() {
+  $scope.$on(Const.eventDestroy,function() {
     $scope.modal.remove();
   });
 
@@ -41,9 +41,30 @@ app.controller('detail',['$scope','$element','$stateParams',
     });
   }
   
-  Loader.show($scope);
-  $scope.refresh(function(){
-    Loader.hide();
+  $scope.map = function() {
+    
+    if ($scope.job) {
+      
+      var state = $state.is(States.searchDetail)?States.searchDetailMap:States.favoritesDetailMap;
+      var params = {
+        job: $scope.job 
+      };
+
+      $state.go(state,params);
+    }
+  }
+  
+  $scope.$on(Const.eventBeforeEnter,function() {
+    
+    if (!$scope.job) {
+      Loader.show($scope);
+
+      $scope.refresh(function(){
+        Loader.hide();
+      });
+    }
   });
+  
+  
   
 }]);

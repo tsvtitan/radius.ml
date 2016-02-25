@@ -28,7 +28,9 @@ app.constant('Urls',{
     search: '/search',
     favorites: '/favorites',
     searchDetail: '/search/:id',
+    searchDetailMap: '/search/:id/map',
     favoritesDetail: '/favorites/:id',
+    favoritesDetailMap: '/favorites/:id/map',
     
     add: '/add',
     profile: '/profile',

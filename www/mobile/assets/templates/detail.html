@@ -8,7 +8,7 @@
     </div>
   </script>
   
-  <ion-view view-title="{{ job?job.title:dic('Детали')}}">
+  <ion-view view-title="{{job?job.title:dic('Детали')}}" cache-view="true">
     
     <ion-content padding="true" overflow-scroll="false" 
                  has-bouncing="true"
@@ -29,7 +29,10 @@
 
             <ion-item class="item-divider">{{dic('Цена')}}: {{job.cost}} {{dic('руб.')}}</ion-item>
             <ion-item class="item-divider">До конца публикации: 1:42 мин</ion-item>
-            <ion-item class="item-divider">Адрес: Мытищи, Олимпийский<br>пр-кт 13/2</ion-item>
+            <ion-item class="item-divider">Адрес: Мытищи, Олимпийский пр-кт 13/2</ion-item>
+            <ion-item class="item-divider" data-ng-if="job.lat && job.lon">  
+              <a class="button button-icon icon ion-navigate" href="" data-ng-click="map()">{{dic('на карте')}}</a>
+            </ion-item>
 
             <form class="list">
               <ion-item class="item-divider">Нужен: Мужчина</ion-item>

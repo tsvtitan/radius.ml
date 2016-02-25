@@ -1,16 +1,10 @@
 <div data-ng-controller="test">
-  <ion-view view-title="{{dic('Поиск')}}">
-    <ion-content 
-                 data-ng-hide="loading.visible">
-        <ion-list>
-          <ion-item class="item-thumbnail-left" data-ng-repeat="d in data" data-ng-click="details(d)">
-            <img data-ng-src="{{d.image}}">
-            <h2>{{d.title}}</h2>
-            <p>{{d.desc}}</p>
-            <p>{{dic('Плачу')}} {{d.cost}} {{dic('руб.')}}</p>
-            <p>{{d.id}}</p>
-          </ion-item>
-        </ion-list>
+  <ion-view view-title="{{dic('Тест')}}">
+    <ion-content>
+      <div id="map" data-tap-disabled="true"></div>
     </ion-content>
-  </ion-view>
+    <ion-footer-bar class="bar">
+      <a data-ng-click="findMe()" class="button button-icon icon ion-navigate">{{'Найти меня'}}</a>
+    </ion-footer-bar>
+  </ion-view> 
 </div>

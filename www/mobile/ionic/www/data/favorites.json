@@ -2,7 +2,7 @@
   "limit": 6, 
   "total": 28,
   "data": [
-    {"id":"40","title":"Убраться в квартире","desc":"Помыть пол, протереть","cost":"500","image": "images/sGeQNweIRJ2h0vupIZWz_courier.jpg"},
+    {"id":"40","title":"Убраться в квартире","desc":"Помыть пол, протереть","cost":"500","image": "images/sGeQNweIRJ2h0vupIZWz_courier.jpg","lat":55.735563,"lon":37.453704},
     {"id":"41","title":"Убраться в квартире","desc":"Помыть пол, протереть","cost":"500","image": "images/s40DaHVcTVGha2oIV7MV_mainnails.jpg"},
     {"id":"42","title":"Убраться в квартире","desc":"Помыть пол, протереть","cost":"500","image": "images/sGeQNweIRJ2h0vupIZWz_courier.jpg"},
     {"id":"43","title":"Убраться в квартире","desc":"Помыть пол, протереть","cost":"500","image": "images/tU1UhyZTxau2EPt2sjU0_windows-store.png"},

@@ -2,7 +2,7 @@
   "limit": 10,
   "total": 100,
   "data": [
-    {"id":"1","title":"Убраться в квартире","desc":"Помыть пол, протереть","cost":"500","image": "http://i.huffpost.com/gen/964776/images/o-CATS-KILL-BILLIONS-facebook.jpg"},
+    {"id":"1","title":"Убраться в квартире","desc":"Помыть пол, протереть","cost":"500","image": "http://i.huffpost.com/gen/964776/images/o-CATS-KILL-BILLIONS-facebook.jpg","lat":55.735563,"lon":37.453704},
     {"id":"2","title":"Установить Windows","desc":"Помогите установить Windows на ноутбук","cost":"600","image": "images/tU1UhyZTxau2EPt2sjU0_windows-store.png"},
     {"id":"3","title":"Убраться в квартире","desc":"Помыть пол, протереть","cost":"500","image": "images/tU1UhyZTxau2EPt2sjU0_windows-store.png"},
     {"id":"4","title":"Убраться в квартире","desc":"Помыть пол, протереть","cost":"500","image": "images/s40DaHVcTVGha2oIV7MV_mainnails.jpg"},

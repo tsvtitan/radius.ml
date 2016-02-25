@@ -8,6 +8,7 @@ app.factory('Profile',['$rootScope','$http',
     
     user: false,
     captcha: false,
+    changeLocation: false,
     
     get: function(result) {
             
@@ -40,15 +41,18 @@ app.factory('Profile',['$rootScope','$http',
       if (Utils.isObject(profile)) {
         this.user = profile.user;
         this.captcha = profile.captcha;
+        this.changeLocation = profile.changeLocation;
       } else {
         this.user = false;
         this.captcha = false;
+        this.changeLocation = false;
       }
     },
     
     getUser: function(){
       return this.user;
     }
+    
   }
   
   return factory;

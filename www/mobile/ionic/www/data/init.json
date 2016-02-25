@@ -11,14 +11,15 @@
       "patronymic": "Родионович",
       "birthdate": "1976-01-01T00:00:00"
     },
-    "captcha": false
+    "captcha": false,
+    "changeLocation": false
   },
   "search": {
     "limit": 5,
     "string": "",
     "total":100,
     "data": [
-      {"id":"1","title":"Убраться в квартире","desc":"Помыть пол, протереть","cost":"500","image": "http://i.huffpost.com/gen/964776/images/o-CATS-KILL-BILLIONS-facebook.jpg"},
+      {"id":"1","title":"Убраться в квартире","desc":"Помыть пол, протереть","cost":"500","image": "http://i.huffpost.com/gen/964776/images/o-CATS-KILL-BILLIONS-facebook.jpg","lat":55.735563, "lon":37.453704},
       {"id":"2","title":"Установить Windows","desc":"Помогите установить Windows на ноутбук","cost":"600","image": "images/tU1UhyZTxau2EPt2sjU0_windows-store.png"},
       {"id":"3","title":"Убраться в квартире","desc":"Помыть пол, протереть","cost":"500","image": "images/sGeQNweIRJ2h0vupIZWz_courier.jpg"},
       {"id":"4","title":"Убраться в квартире","desc":"Помыть пол, протереть","cost":"500","image": "images/s40DaHVcTVGha2oIV7MV_mainnails.jpg"},
@@ -35,7 +36,7 @@
     "limit": 6,
     "total": 28,
     "data": [
-      {"id":"40","title":"Убраться в квартире","desc":"Помыть пол, протереть","cost":"500","image": "images/sGeQNweIRJ2h0vupIZWz_courier.jpg"},
+      {"id":"40","title":"Убраться в квартире","desc":"Помыть пол, протереть","cost":"500","image": "images/sGeQNweIRJ2h0vupIZWz_courier.jpg","lat":55.735563, "lon":37.453704},
       {"id":"41","title":"Убраться в квартире","desc":"Помыть пол, протереть","cost":"500","image": "images/s40DaHVcTVGha2oIV7MV_mainnails.jpg"},
       {"id":"42","title":"Убраться в квартире","desc":"Помыть пол, протереть","cost":"500","image": "images/sGeQNweIRJ2h0vupIZWz_courier.jpg"},
       {"id":"43","title":"Убраться в квартире","desc":"Помыть пол, протереть","cost":"500","image": "images/tU1UhyZTxau2EPt2sjU0_windows-store.png"},
