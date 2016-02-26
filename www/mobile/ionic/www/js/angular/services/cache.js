@@ -1,12 +1,12 @@
 
-app.service('Cache',['$ImageCacheFactory','Utils',
-                    function($ImageCacheFactory,Utils) {
+app.service('Cache',['$q','CacheImages','Utils','Log',
+                    function($q,CacheImages,Utils,Log) {
     
-  this.images = function(data,where,result) {
+  this.images = function(data,where,fallback,result) {
     
-    if (Utils.isArray(data)) {
+    /*if (Utils.isArray(data)) {
       
-      var images = [];
+      var promises = [];
       var whereIsArray = Utils.isArray(where);
       var whereIsString = Utils.isString(where);
       
@@ -17,21 +17,59 @@ app.service('Cache',['$ImageCacheFactory','Utils',
           for (var key in where) {
             
             var image = Utils.isObject(obj)?obj[where[key]]:obj;
-            if (Utils.isString(image)) images.push(image);
+            if (Utils.isString(image)) {
+              var deferred = $q.defer();
+              var p = CacheImages.checkCacheStatus(image).then(function(){
+                deferred.resolve();
+              }).catch(function(error){
+                deferred.resolve(error);
+              });
+              promises.push(deferred.promise);
+            }
           }
           
         } else if (whereIsString) {
           
           var image = Utils.isObject(obj)?obj[where]:obj;
-          if (Utils.isString(image)) images.push(image);
+          if (Utils.isString(image)) {
+            var deferred = $q.defer();
+            var p = CacheImages.checkCacheStatus(image).then(function(){
+              deferred.resolve();
+            }).catch(function(error){
+              deferred.resolve(error);
+            });
+            promises.push(deferred.promise);
+          }
         }
       });
       
-      images = Utils.unique(images);
-      
-      $ImageCacheFactory.Cache(images).then(result);
+      $q.all(promises).then(function(fails){
         
-    } else result();
+        fails = Utils.compact(fails);
+        
+        Utils.isArray(fails) && Utils.forEach(data,function(obj){
+          
+          if (whereIsArray) {
+          
+            for (var key in where) {
+
+              var image = Utils.isObject(obj)?obj[where[key]]:obj;
+              if (fails.indexOf(image)!=-1)
+                obj[where[key]] = (fallback)?fallback:image;
+            }
+
+          } else if (whereIsString) {
+
+            var image = Utils.isObject(obj)?obj[where]:obj;
+            if (fails.indexOf(image)!=-1) 
+              obj[where] = (fallback)?fallback:image;
+          }
+        });
+        
+        result(data);
+      });
+              
+    } else */result(data);
   }
   
   

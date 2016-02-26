@@ -21,7 +21,7 @@
           
           <div class="animated fadeIn">
             <ion-item>
-              <img src="{{job.image}}" data-ng-click="showImage()">
+              <img data-ng-src="{{job.image}}" fallback-src="images/detail.png" data-ng-click="showImage()">
               <h2>{{job.title}}</h2>
               <p>{{job.desc}}</p>
               <p>{{job.id}}</p>

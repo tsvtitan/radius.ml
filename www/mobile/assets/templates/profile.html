@@ -25,7 +25,7 @@
           
           <div class="animated fadeIn">
             <ion-item class="item-avatar-left">
-                <img src="{{user.image}}" data-ng-click="showImage()">
+                <img src="{{user.image}}" fallback-src="images/profile.png" data-ng-click="showImage()">
                 <h2>{{user.name}}</h2>
                 <p>{{user.surname}}</p>
                 <p>{{user.patronymic}}</p>

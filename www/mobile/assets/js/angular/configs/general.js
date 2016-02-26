@@ -32,6 +32,6 @@ app.config(['$provide','$sceDelegateProvider','$httpProvider',
   $httpProvider.defaults.timeout = 5000;
   
   $ionicConfigProvider.tabs.position('bottom');
-  
+
   return this;
 }]);

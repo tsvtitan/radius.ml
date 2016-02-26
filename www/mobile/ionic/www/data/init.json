@@ -3,47 +3,53 @@
   "profile": {
     "user": {
       "id": "2",
-      "image": "http://i.huffpost.com/gen/964776/images/o-CATS-KILL-BILLIONS-facebook.jpg",
-      "email": "borodash@mail.ru",
+      "image": "http://psyholove.ru/upload/content/5595028716c32.jpg",
+      "email": "email@mail.ru",
       "phone": "+79123456789",
       "name": "Александр",
-      "surname": "Бородач",
-      "patronymic": "Родионович",
+      "surname": "Сергеев",
+      "patronymic": "Викторович",
       "birthdate": "1976-01-01T00:00:00"
     },
     "captcha": false,
     "changeLocation": false
+  },
+  "location": {
+    "latitude": 55.752951,
+    "longitude": 37.622858
   },
   "search": {
     "limit": 5,
     "string": "",
     "total":100,
     "data": [
-      {"id":"1","title":"Убраться в квартире","desc":"Помыть пол, протереть","cost":"500","image": "http://i.huffpost.com/gen/964776/images/o-CATS-KILL-BILLIONS-facebook.jpg","lat":55.735563, "lon":37.453704},
-      {"id":"2","title":"Установить Windows","desc":"Помогите установить Windows на ноутбук","cost":"600","image": "images/tU1UhyZTxau2EPt2sjU0_windows-store.png"},
-      {"id":"3","title":"Убраться в квартире","desc":"Помыть пол, протереть","cost":"500","image": "images/sGeQNweIRJ2h0vupIZWz_courier.jpg"},
-      {"id":"4","title":"Убраться в квартире","desc":"Помыть пол, протереть","cost":"500","image": "images/s40DaHVcTVGha2oIV7MV_mainnails.jpg"},
-      {"id":"5","title":"Убраться в квартире","desc":"Помыть пол, протереть","cost":"500","image": "images/tU1UhyZTxau2EPt2sjU0_windows-store.png"},
-      {"id":"6","title":"Убраться в квартире","desc":"Помыть пол, протереть","cost":"500","image": "http://i.huffpost.com/gen/964776/images/o-CATS-KILL-BILLIONS-facebook.jpg"},
-      {"id":"7","title":"Убраться в квартире","desc":"Помыть пол, протереть","cost":"500","image": "images/s40DaHVcTVGha2oIV7MV_mainnails.jpg"},
-      {"id":"8","title":"Установить Windows","desc":"Помогите переустановить Windows на ноутбук","cost":"600","image": "images/tU1UhyZTxau2EPt2sjU0_windows-store.png"},
-      {"id":"9","title":"Убраться в квартире","desc":"Помыть пол, протереть","cost":"500","image": "images/sGeQNweIRJ2h0vupIZWz_courier.jpg"},
-      {"id":"10","title":"Убраться в квартире","desc":"Помыть пол, протереть","cost":"500","image": "images/s40DaHVcTVGha2oIV7MV_mainnails.jpg"},
-      {"id":"11","title":"Убраться в квартире","desc":"Помыть пол, протереть","cost":"500","image": "http://bestanimations.com/Holidays/Fireworks/fireworks/fireworks-animated-gif-23.gif"}
+      {"id":"1","title":"Влажная уборка в квартире","desc":"Помыть пол, протереть пыль, пропылесосить","cost":"743","image": "images/search001.jpg","lat":55.77432254, "lon":37.887815},
+      {"id":"2","title":"Вынести мусор","desc":"Вынести строительный мусор, оставшийся после ремонта","cost":"300","image": "images/search002.jpg","lat":55.7205311, "lon":37.78803605},
+      {"id":"3","title":"Прикурить автомобиль","desc":"Машина всю зиму простояла во дворе - надо прикурить","cost":"350","image": "images/search003.jpg","lat":55.73960106, "lon":37.3895289},
+      {"id":"4","title":"Удалить вирус","desc":"виндовс просит присылать смс","cost":"930","image": "images/search004.png","lat":55.71021708, "lon":37.66234712},
+      {"id":"5","title":"Починить кран","desc":"В ванной течет кран, материалы ваши","cost":"1000","image": "images/search005.jpg","lat":55.77572364, "lon":37.83589944},
+      {"id":"6","title":"Помыть посуду","desc":"У ребенка день рождения - оформить квартиру вашими материалами","cost":"1500","image": "http://placekitten.com/156/156sdfsfsdf","lat":55.63248365, "lon":37.46354343},
+      {"id":"7","title":"Погладить белье","desc":"накопилось мног белья: постельное, рубашки, юбки, брюки","cost":"1000","image": "http://placekitten.com/157/157","lat":55.73626253, "lon":37.79284956},
+      {"id":"8","title":"Установить Windows","desc":"Помогите переустановить Windows на ноутбук","cost":"600","image": "http://placekitten.com/158/158","lat":55.86844656, "lon":37.44277553},
+      {"id":"9","title":"Убраться в квартире","desc":"Помыть пол, протеретьпыль, помыть посуду","cost":"1500","image": "http://placekitten.com/159/159","lat":55.80479793, "lon":37.74252526},
+      {"id":"10","title":"Помыть окна","desc":"4 окна. Грязные после зимы, помогите вымать","cost":"800","image": "http://placekitten.com/160/160","lat":55.64942529, "lon":37.84230422},
+      {"id":"11","title":"Поклеить обои","desc":"Поклеить обои поверх имеющихся. Рзмер комнаты 15 метров","cost":"2500","image": "http://placekitten.com/161/161","lat":55.67431529, "lon":37.36650673}
     ]
   },
   "favorites": {
     "limit": 6,
-    "total": 28,
+    "total": 33,
     "data": [
-      {"id":"40","title":"Убраться в квартире","desc":"Помыть пол, протереть","cost":"500","image": "images/sGeQNweIRJ2h0vupIZWz_courier.jpg","lat":55.735563, "lon":37.453704},
-      {"id":"41","title":"Убраться в квартире","desc":"Помыть пол, протереть","cost":"500","image": "images/s40DaHVcTVGha2oIV7MV_mainnails.jpg"},
-      {"id":"42","title":"Убраться в квартире","desc":"Помыть пол, протереть","cost":"500","image": "images/sGeQNweIRJ2h0vupIZWz_courier.jpg"},
-      {"id":"43","title":"Убраться в квартире","desc":"Помыть пол, протереть","cost":"500","image": "images/tU1UhyZTxau2EPt2sjU0_windows-store.png"},
-      {"id":"44","title":"Установить Windows","desc":"Помогите установить Windows на ноутбук","cost":"600","image": "images/tU1UhyZTxau2EPt2sjU0_windows-store.png"},
-      {"id":"45","title":"Убраться в квартире","desc":"Помыть пол, протереть","cost":"500","image": "images/sGeQNweIRJ2h0vupIZWz_courier.jpg"},
-      {"id":"46","title":"Убраться в квартире","desc":"Помыть пол, протереть","cost":"500","image": "images/s40DaHVcTVGha2oIV7MV_mainnails.jpg"},
-      {"id":"47","title":"Убраться в квартире","desc":"Помыть пол, протереть","cost":"500","image": "images/sGeQNweIRJ2h0vupIZWz_courier.jpg"}
+      {"id":"1","title":"Влажная уборка в квартире","desc":"Помыть пол, протереть пыль, пропылесосить","cost":"743","image": "images/search001.jpg","lat":55.77432254, "lon":37.887815},
+      {"id":"2","title":"Вынести мусор","desc":"Вынести строительный мусор, оставшийся после ремонта","cost":"300","image": "images/search002.jpg","lat":55.7205311, "lon":37.78803605},
+      {"id":"3","title":"Прикурить автомобиль","desc":"Машина всю зиму простояла во дворе - надо прикурить","cost":"350","image": "images/search003.jpg","lat":55.73960106, "lon":37.3895289},
+      {"id":"4","title":"Удалить вирус","desc":"виндовс просит присылать смс","cost":"930","image": "images/search004.png","lat":55.71021708, "lon":37.66234712},
+      {"id":"5","title":"Починить кран","desc":"В ванной течет кран, материалы ваши","cost":"1000","image": "images/search005.jpg","lat":55.77572364, "lon":37.83589944},
+      {"id":"40","title":"Помочь с перестановкой в квартире","desc":"Переставить писнино в детскую, в спальне передвинуть тяжелую кровать в другой угол","cost":"1000","image": "http://placekitten.com/190/190","lat":55.6520714, "lon":37.8767138},
+      {"id":"41","title":"Перепрошить телефон","desc":"прошивка старая. надо обновить","cost":"500","image": "http://placekitten.com/191/191","lat":55.82399561, "lon":37.3681012},
+      {"id":"42","title":"Почистить аквариум","desc":"Аквариум 1 метр на 1,5. ниразу ранее не чистили в течении 2 месяцев","cost":"500","image": "http://placekitten.com/192/192","lat":55.73504948, "lon":37.43618885},
+      {"id":"43","title":"Стрищку хачу","desc":"Мого волос слишком","cost":"50","image": "http://placekitten.com/193/193","lat":55.89735444, "lon":37.42650379},
+      {"id":"44","title":"Перебрать овощи","desc":"Перед зимой накупили впрок. Осталось более половины. Надо разобрать","cost":"600","image": "http://placekitten.com/194/194","lat":55.69266095, "lon":37.8288604}
     ]
   },
   "dictionary": {

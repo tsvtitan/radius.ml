@@ -7,7 +7,7 @@
               data-ng-click="showFilterBar()"></button>
     </ion-nav-buttons>    
     
-    <ion-content padding="true" overflow-scroll="true"
+    <ion-content padding="true" overflow-scroll="false"
                  has-bouncing="true"
                  class="has-header">
       
@@ -15,11 +15,14 @@
       
       <ion-list>
         
-        <div collection-repeat="job in service.data" item-height="120" item-width="95%" data-ng-hide="loader.visible">
+        <div data-ng-repeat="job in service.data" item-height="120" item-width="95%" data-ng-hide="loader.visible">
           <ion-item class="animated fadeIn item-thumbnail-left"
                     type="item-text-wrap" href="#/home/search/{{job.id}}">
             
-            <img src="{{job.image}}">
+            <!--img data-ng-src="{{job.image}}" src="images/search.png"/>-->
+            <img src="{{job.image}}" fallback-src="images/search.png"/>
+            <!--img image-lazy-src="{{job.image}}" image-lazy-loader="lines" 
+                 lazy-scroll-resize="true" fallback-src="images/search.png" /-->
             <h2>{{job.title}}</h2>
             <p>{{job.desc}}</p>
             <p>{{dic('Плачу')}} {{job.cost}} {{dic('руб.')}}</p>

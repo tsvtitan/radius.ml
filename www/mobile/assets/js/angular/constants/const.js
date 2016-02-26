@@ -41,6 +41,11 @@ app.constant('Const',{
     latitude: 55.752951,
     longitude: 37.622858
   },
-  locationTimeout: 30000
+  locationTimeout: 30000,
+  
+  searchFallback: 'images/search.png',
+  favoritesFallback: 'images/favorites.png',
+  detailFallback: 'images/detail.png',
+  profileFallback: 'images/profile.png'
 })
    

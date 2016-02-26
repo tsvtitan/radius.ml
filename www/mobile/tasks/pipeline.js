@@ -28,6 +28,8 @@ var dependenciesToInject = [
   'js/dependencies/moment.js',
   'js/dependencies/moment-duration-format.js',
   
+  'js/dependencies/imgcache.js',
+  
   'js/dependencies/ionic.bundle.js',
   
   'js/angular/modules/*.js'

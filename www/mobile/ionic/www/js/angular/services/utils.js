@@ -200,6 +200,10 @@ app.service('Utils',['base64',
   this.findWhere = function (arr,obj) {
     return _.findWhere(arr,obj);
   },
+          
+  this.compact = function(arr) {
+    return _.compact(arr);
+  }
   
   this.isFiles = function (obj) {
     

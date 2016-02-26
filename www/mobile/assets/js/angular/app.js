@@ -1,5 +1,6 @@
 
 var app = angular.module('radius',['ionic','ngCordova','ab-base64','ionicLazyLoad','ngMap',
+                                   'dcbImgFallback','ngImgCache','ionicLazyLoadCache',/*'angularImgFallback',*/
                                    'ionic.ion.imageCacheFactory','jett.ionic.filter.bar']); 
                       
 app.run(['$ionicPlatform','$timeout',
