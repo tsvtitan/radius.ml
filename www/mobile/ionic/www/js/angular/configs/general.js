@@ -29,7 +29,7 @@ app.config(['$provide','$sceDelegateProvider','$httpProvider',
   //$sceDelegateProvider.resourceUrlWhitelist(Urls.whiteList);
   
   $httpProvider.defaults.cache = false;
-  $httpProvider.defaults.timeout = 5000;
+  $httpProvider.defaults.timeout = 1000;
   
   $ionicConfigProvider.tabs.position('bottom');
 

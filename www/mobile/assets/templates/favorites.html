@@ -2,18 +2,18 @@
   
   <ion-view view-title="{{dic('Избранное')}}">
     
-    <ion-content padding="true" overflow-scroll="true" 
+    <ion-content padding="true" overflow-scroll="false" 
                  has-bouncing="true"
                  class="has-header">
       
       <ion-refresher on-refresh="refresh()"></ion-refresher>
       
       <ion-list>
-        <div collection-repeat="job in service.data" item-height="120" item-width="95%">
+        <div data-ng-repeat="job in service.data" item-height="120" item-width="95%">
           <ion-item class="animated fadeIn item-thumbnail-left"
                     type="item-text-wrap" href="#/home/favorites/{{job.id}}">
             
-            <img data-ng-src="{{job.image}}">
+            <img src="{{job.image}}" fallback-src="images/search.png"/>
             <h2>{{job.title}}</h2>
             <p>{{job.desc}}</p>
             <p>{{dic('Плачу')}} {{job.cost}} {{dic('руб.')}}</p>

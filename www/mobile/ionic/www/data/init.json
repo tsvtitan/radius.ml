@@ -12,13 +12,16 @@
       "birthdate": "1976-01-01T00:00:00"
     },
     "captcha": false,
-    "changeLocation": false
+    "changeLocation": false,
+    "radius": 5000
   },
   "location": {
     "latitude": 55.752951,
     "longitude": 37.622858
   },
   "search": {
+    "list": false,
+    "zoom": 12,
     "limit": 5,
     "string": "",
     "total":100,

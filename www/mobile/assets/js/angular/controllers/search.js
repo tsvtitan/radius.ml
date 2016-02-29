@@ -1,20 +1,27 @@
 
 app.controller('search',['$scope','$element','$state','$timeout',
                          '$ionicScrollDelegate','$ionicFilterBar',   
-                         'Dictionary','Alert','Log','States','Const','Utils',
-                         'Refresher','InfiniteScroll','Search','Loader',
+                         'Dictionary','Alert','Log','States','Const','Utils','Profile',
+                         'Refresher','InfiniteScroll','Search','Loader','Geolocation',
                          function($scope,$element,$state,$timeout,
                                   $ionicScrollDelegate,$ionicFilterBar,
-                                  Dictionary,Alert,Log,States,Const,Utils,
-                                  Refresher,InfiniteScroll,Search,Loader) {
+                                  Dictionary,Alert,Log,States,Const,Utils,Profile,
+                                  Refresher,InfiniteScroll,Search,Loader,Geolocation) {
    
   $scope.dic = Dictionary.dic($element);                                 
   $scope.service = Search;
   $scope.loader = Loader;
   $scope.string = Search.getString();
+  $scope.profile = Profile;
+  $scope.location = Geolocation.location;
+  
   
   $scope.favorites = function() {
     $state.go(States.favorites);
+  }
+  
+  $scope.toggle = function() {
+    $scope.service.list = !$scope.service.list;
   }
   
   $scope.canMore = function() {

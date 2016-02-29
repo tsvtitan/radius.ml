@@ -9,6 +9,7 @@ app.factory('Profile',['$rootScope','$http',
     user: false,
     captcha: false,
     changeLocation: false,
+    radius: 5000,
     
     get: function(result) {
             
@@ -41,11 +42,13 @@ app.factory('Profile',['$rootScope','$http',
       if (Utils.isObject(profile)) {
         this.user = profile.user;
         this.captcha = profile.captcha;
-        this.changeLocation = profile.changeLocation;
+        this.changeLocation = (profile.changeLocation);
+        this.radius = Utils.isInteger(profile.radius)?profile.radius:this.radius;
       } else {
         this.user = false;
         this.captcha = false;
         this.changeLocation = false;
+        this.radius = 5000;
       }
     },
     

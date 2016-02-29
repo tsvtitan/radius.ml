@@ -5,6 +5,8 @@ app.service('Search',['$http',
                                Urls,Payload,Data,Utils,Cache,Const) {
   
   this.total = 0;
+  this.list = true;
+  this.zoom = 10;
   this.data = [];
   this.conditions = {};
   
@@ -62,9 +64,14 @@ app.service('Search',['$http',
   this.set = function(d,clear,result) {
     
     if (clear) this.clear();
+    
     this.conditions.limit = Utils.isInteger(d.limit)?d.limit:this.conditions.limit;
     this.conditions.string = Utils.isString(d.string)?d.string:this.conditions.string;
-    this.total = Utils.isInteger(d.total)?d.total:0;
+    
+    this.total = Utils.isInteger(d.total)?d.total:this.total;
+    this.list = (d.list);
+    this.zoom = Utils.isInteger(d.zoom)?d.zoom:this.zoom;
+    
     if (Utils.isArray(d.data)) {
       
       var data = d.data.slice(0,this.getLimit());
@@ -104,6 +111,10 @@ app.service('Search',['$http',
   
   this.getData = function() {
     return this.data;
+  }
+  
+  this.getList = function() {
+    return this.list;
   }
   
 }]);

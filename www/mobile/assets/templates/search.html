@@ -3,22 +3,25 @@
   <ion-view view-title="{{dic('Поиск')}}">
   
     <ion-nav-buttons side="right">
+      <button class="button button-icon" data-ng-class="(service.list)?'ion-earth':'ion-navicon'"
+              data-ng-click="toggle()"></button>
       <button class="button button-icon ion-search"
               data-ng-click="showFilterBar()"></button>
     </ion-nav-buttons>    
     
     <ion-content padding="true" overflow-scroll="false"
                  has-bouncing="true"
-                 class="has-header">
+                 class="has-header"
+                 data-ng-show="service.list">
       
       <ion-refresher on-refresh="refresh()"></ion-refresher>
-      
+
       <ion-list>
-        
+
         <div data-ng-repeat="job in service.data" item-height="120" item-width="95%" data-ng-hide="loader.visible">
           <ion-item class="animated fadeIn item-thumbnail-left"
                     type="item-text-wrap" href="#/home/search/{{job.id}}">
-            
+
             <!--img data-ng-src="{{job.image}}" src="images/search.png"/>-->
             <img src="{{job.image}}" fallback-src="images/search.png"/>
             <!--img image-lazy-src="{{job.image}}" image-lazy-loader="lines" 
@@ -30,11 +33,39 @@
           </ion-item>
           <div class="spacer" style="width: 100%; height: 8px;"></div>
         </div>
-        
+
       </ion-list>
-      
+
       <ion-infinite-scroll data-ng-if="canMore()" on-infinite="more()" distance="1%"></ion-infinite-scroll>
       
     </ion-content>
+    
+    <ion-content scroll="false" data-tap-disabled="true" 
+                 data-ng-hide="service.list">
+      
+      <ng-map center="{{location.latitude}},{{location.longitude}}"
+              pan-control="true"
+              map-type-control="true"
+              map-type-control-options="{style:'HORIZONTAL_BAR',position:'TOP_RIGHT'}"
+              zoom-control="true"
+              zoom-control-options="{style:'SMALL'}"
+              zoom="{{service.zoom}}"
+              zoom-to-include-markers="false">
+
+        <marker position="{{location.latitude}}, {{location.longitude}}"
+                draggable="{{profile.changeLocation}}"
+                icon="{url:'images/logo.svg',scaledSize:[50,50]}"
+                animation="DROP"></marker>
+        
+        <shape id="circle" name="circle" centered="true"
+               center="{{location.latitude}},{{location.longitude}}"
+               stroke-color='#FF0000' stroke-opacity="0.5" stroke-weight="1"
+               fill-color="#FF0000" fill-opacity="0.05"
+               radius="{{profile.radius}}" ></shape>
+
+      </ng-map>
+      
+    </ion-content>
+    
   </ion-view>
 </div>
