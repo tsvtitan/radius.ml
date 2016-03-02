@@ -1,9 +1,9 @@
 
 app.controller('favorites',['$scope','$element','$state',
-                            'Dictionary','Alert','Log','States','Const',
+                            'Dictionary','Alert','Log','States','Const','States',
                             'Refresher','InfiniteScroll','Favorites', 
                             function($scope,$element,$state,
-                                     Dictionary,Alert,Log,States,Const,
+                                     Dictionary,Alert,Log,States,Const,States,
                                      Refresher,InfiniteScroll,Favorites) {
 
   $scope.dic = Dictionary.dic($element);
@@ -11,6 +11,11 @@ app.controller('favorites',['$scope','$element','$state',
   
   $scope.search = function() {
     $state.go(States.search);
+  }
+  
+  $scope.detail = function(job) {
+    
+    $state.go(States.favoritesDetail,{id:job.id});
   }
 
   $scope.canMore = function() {

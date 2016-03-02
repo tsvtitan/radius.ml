@@ -29,6 +29,7 @@ var dependenciesToInject = [
   'js/dependencies/moment-duration-format.js',
   
   'js/dependencies/imgcache.js',
+  'js/dependencies/markerclusterer.js',
   
   'js/dependencies/ionic.bundle.js',
   

@@ -13,7 +13,7 @@
     },
     "captcha": false,
     "changeLocation": false,
-    "radius": 5000
+    "radius": 10000
   },
   "location": {
     "latitude": 55.752951,
@@ -21,8 +21,8 @@
   },
   "search": {
     "list": false,
-    "zoom": 12,
-    "limit": 5,
+    "zoom": 11,
+    "limit": 10,
     "string": "",
     "total":100,
     "data": [

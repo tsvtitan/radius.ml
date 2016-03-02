@@ -1,10 +1,10 @@
 
 app.controller('search',['$scope','$element','$state','$timeout',
-                         '$ionicScrollDelegate','$ionicFilterBar',   
+                         '$ionicScrollDelegate','$ionicFilterBar','NgMap',   
                          'Dictionary','Alert','Log','States','Const','Utils','Profile',
                          'Refresher','InfiniteScroll','Search','Loader','Geolocation',
                          function($scope,$element,$state,$timeout,
-                                  $ionicScrollDelegate,$ionicFilterBar,
+                                  $ionicScrollDelegate,$ionicFilterBar,NgMap,
                                   Dictionary,Alert,Log,States,Const,Utils,Profile,
                                   Refresher,InfiniteScroll,Search,Loader,Geolocation) {
    
@@ -14,7 +14,7 @@ app.controller('search',['$scope','$element','$state','$timeout',
   $scope.string = Search.getString();
   $scope.profile = Profile;
   $scope.location = Geolocation.location;
-  
+  $scope.markers = [];
   
   $scope.favorites = function() {
     $state.go(States.favorites);
@@ -29,6 +29,39 @@ app.controller('search',['$scope','$element','$state','$timeout',
     var count = Search.getCount();
     var total = Search.getTotal();
     return (count>0 && count<total);
+  }
+  
+  function refreshMap(result) {
+    
+    Utils.forEach($scope.markers,function(m){
+      m.setMap(null);
+    });
+    
+    $scope.markers = [];
+    if ($scope.markerClusterer) $scope.markerClusterer.clearMarkers();
+    
+    NgMap.getMap().then(function(map){
+
+      var bounds = new google.maps.LatLngBounds();
+
+      Utils.forEach(Search.getData(),function(d){
+
+        var marker = new google.maps.Marker({
+          position: new google.maps.LatLng(d.lat,d.lon)
+        });
+
+        $scope.markers.push(marker);
+        bounds.extend(marker.getPosition());
+
+      });
+
+      $scope.markerClusterer = new MarkerClusterer(map,$scope.markers,{});
+
+      map.setCenter(bounds.getCenter());
+      map.fitBounds(bounds);  
+      
+      if (Utils.isFunction(result)) result();
+    });
   }
   
   $scope.more = function(clear,result) {
@@ -47,10 +80,9 @@ app.controller('search',['$scope','$element','$state','$timeout',
         
         Refresher.hide();
         InfiniteScroll.hide();
-      
-        if (Utils.isFunction(result)) result();
+        
+        refreshMap(result);
       });
-      
     });
   }
   
@@ -96,7 +128,9 @@ app.controller('search',['$scope','$element','$state','$timeout',
       }
     });
   }
-
+  
+  
+  refreshMap();
   
 }]);
                                   

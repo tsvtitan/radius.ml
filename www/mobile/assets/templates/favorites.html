@@ -11,7 +11,7 @@
       <ion-list>
         <div data-ng-repeat="job in service.data" item-height="120" item-width="95%">
           <ion-item class="animated fadeIn item-thumbnail-left"
-                    type="item-text-wrap" href="#/home/favorites/{{job.id}}">
+                    type="item-text-wrap" href1="#/home/favorites/{{job.id}}" href="" data-ng-click="detail(job)">
             
             <img src="{{job.image}}" fallback-src="images/search.png"/>
             <h2>{{job.title}}</h2>
